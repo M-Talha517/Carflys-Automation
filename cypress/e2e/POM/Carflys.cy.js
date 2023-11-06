@@ -20,7 +20,7 @@ import { login2 } from "./Add data.cy"
 
 describe('Carflys Website Test', function () {
 
-    it.only('SignUp Page', () => {
+    it('SignUp Page', () => {
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
         cy.contains("Login").click()
         signup()
@@ -35,6 +35,11 @@ describe('Carflys Website Test', function () {
         cy.contains("Login").click()
         login()
     })
+    it('Login2 page', () => {
+        cy.visit('https://carflys-frontend-new-dev.vercel.app/')
+        cy.contains("Login").click()
+        login2()
+    })
 
     it('Forget Button', () => {
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
@@ -42,10 +47,10 @@ describe('Carflys Website Test', function () {
         forget()
     })
 
-    it("2.1 Add User", () =>{
+    it.only("2.1 Add User", () =>{
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
         cy.contains("Login").click()
-        login()
+        login2()
         addUser()
     })
     it("3. View Dealership", () =>{

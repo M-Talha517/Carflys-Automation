@@ -40,8 +40,7 @@ export const forget= () =>{
 export const login = () => {
    cy.wait(10* second)
 // Email
-    cy.get('[placeholder="Enter Email"]').type(sign_up_email)
-    
+    cy.get('[placeholder="Enter Email"]').type(sign_up_email)   
 // Password
     cy.get('[placeholder="Enter Password"]').type(user_password)
     cy.get('[type="submit"]').click()
@@ -83,6 +82,7 @@ export const addUser = () => {
 
     ////////// View Users ///////
     cy.wait(10 * second)
+    cy.contains('2.2 View Users').click()
     cy.get('[placeholder="Filter by User"]').click()
     cy.contains("Seller").click()
     cy.get('[placeholder="Filter by Status"]').click()
