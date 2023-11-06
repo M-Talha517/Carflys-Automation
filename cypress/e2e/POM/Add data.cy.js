@@ -46,6 +46,7 @@ export const login = () => {
     cy.get('[type="submit"]').click()
     cy.wait(3*second)
     cy.contains("Logout").click()
+
  }
 
  export const login2 = () => {
@@ -56,6 +57,10 @@ export const login = () => {
  // Password
      cy.get('[placeholder="Enter Password"]').type(user_password)
      cy.get('[type="submit"]').click()
+     
+     //cy.contains("Dashboard")
+     //cy.contains("Invalid Password").should("not.exist")
+     //cy.url().should('eq', 'https://carflys-dev.vercel.app/dashboard')
   }
 
                                           ///////// 2.1 Add User ///////////
