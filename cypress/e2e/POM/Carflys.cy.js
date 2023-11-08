@@ -15,7 +15,7 @@ import { addReview } from "./Add data.cy"
 import { addcomplaint } from "./Add data.cy"
 import { logout } from "./Add data.cy"
 import { login2 } from "./Add data.cy"
-
+import { Invalidloginwithpass } from "./Add data.cy"
                                     //////// Test Cases //////////////
 
 describe('Carflys Website Test', function () {
@@ -30,24 +30,29 @@ describe('Carflys Website Test', function () {
         login2()
     })
 
-    it('Login page', () => {
+    it('Seller Login', () => {
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
         cy.contains("Login").click()
         login()
     })
-    it('Login2 page', () => {
+    it('Admin Login', () => {
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
         cy.contains("Login").click()
         login2()
     })
-
+    it.only("Login With Invalid Password", ()=>{
+        cy.visit('https://carflys-frontend-new-dev.vercel.app/')
+        cy.contains("Login").click()
+        Invalidloginwithpass()
+    })
+   
     it('Forget Button', () => {
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
         cy.contains("Login").click()
         forget()
     })
 
-    it.only("2.1 Add User", () =>{
+    it("2.1 Add User", () =>{
         cy.visit('https://carflys-frontend-new-dev.vercel.app/')
         cy.contains("Login").click()
         login2()

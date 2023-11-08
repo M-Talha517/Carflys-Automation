@@ -50,17 +50,27 @@ export const login = () => {
  }
 
  export const login2 = () => {
-    cy.wait(10* second)
+    //cy.wait(10* second)
  // Email
-     cy.get('[placeholder="Enter Email"]').type(x)
-     
+     cy.get('[placeholder="Enter Email"]').type(x)    
  // Password
      cy.get('[placeholder="Enter Password"]').type(user_password)
      cy.get('[type="submit"]').click()
-     
-     //cy.contains("Dashboard")
-     //cy.contains("Invalid Password").should("not.exist")
-     //cy.url().should('eq', 'https://carflys-dev.vercel.app/dashboard')
+     cy.wait(5*second)
+     cy.contains("Dashboard")
+     cy.contains("Login successful.").should("exist")        ///////Invalid Password
+     cy.url().should('eq', 'https://carflys-frontend-new-dev.vercel.app/dashboard')
+  }
+  export const Invalidloginwithpass = () => {
+    //cy.wait(10* second)
+ // Email
+     cy.get('[placeholder="Enter Email"]').type("usama@gmail.com")    
+ // Password
+     cy.get('[placeholder="Enter Password"]').type("Carflys@12345")
+     cy.get('[type="submit"]').click()
+     cy.wait(5*second)
+     cy.contains("Invalid password.").should("not.exist")        ///////Invalid Password
+     cy.url().should('eq', 'https://carflys-frontend-new-dev.vercel.app/auth/login')
   }
 
                                           ///////// 2.1 Add User ///////////
