@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cypress run",                           
-    "Carflys":"npm run test -- --spec"
+    "test": "cypress run --spec  cypress/e2e/POM/Carflys.cy.js",
+    "ci:teamcity-cy-run": "cypress run --reporter mocha-teamcity-reporter"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,8 @@
     "cypress-file-upload": "^5.0.8"
   },
   "dependencies": {
-    "file-upload": "^0.0.0"
+    "file-upload": "^0.0.0",
+    "mocha": "^10.2.0",
+    "mocha-teamcity-reporter": "^4.2.0"
   }
 }
