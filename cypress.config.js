@@ -1,9 +1,8 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "rj4v1f",
   e2e: {
-    projectId: "zxbhgd",
+    projectId: "1h9e4k",
     setupNodeEvents(on, config) {
       // ok
     },
