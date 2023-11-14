@@ -21,7 +21,7 @@ jobs:
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
         with:
-          start: npm cypress run cypress\e2e\POM\Carflys.cy.js
+          start: npx cypress run cypress\e2e\POM\Carflys.cy.js
           wait-on: 'http://localhost:8888'
           spec: '${{ github.event.inputs.specs }}'
           record: true
