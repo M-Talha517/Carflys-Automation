@@ -32,7 +32,7 @@ jobs:
       spec: '${{ github.event.inputs.specs }}'
       tag: '${{ github.event.inputs.recordingTag }}'
       group: Selected specs
-      start: npm cypress run
+      start: npx cypress run
       wait-on: 'http://localhost:3000'
       wait-on-timeout: 120000
       # each workflow execution should have its own recorded run
