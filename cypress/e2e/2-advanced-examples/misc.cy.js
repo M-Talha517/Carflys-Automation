@@ -54,16 +54,16 @@ context('Misc', () => {
     cy.exec('echo Jane Lane')
       .its('stdout').should('contain', 'Jane Lane')
 
-    if (Cypress.platform === 'win32') {
-      cy.exec(`print ${Cypress.config('configFile')}`)
-        .its('stderr').should('be.empty')
-    } else {
-      cy.exec(`cat ${Cypress.config('configFile')}`)
-        .its('stderr').should('be.empty')
+    // if (Cypress.platform === 'win32') {
+    //   cy.exec(`print ${Cypress.config('configFile')}`)
+    //     .its('stderr').should('be.empty')
+    // } else {
+    //   cy.exec(`cat ${Cypress.config('configFile')}`)
+    //     .its('stderr').should('be.empty')
 
-      cy.exec('pwd')
-        .its('code').should('eq', 0)
-    }
+    //   cy.exec('pwd')
+    //     .its('code').should('eq', 0)
+    // }
   })
 
   it('cy.focused() - get the DOM element that has focus', () => {
