@@ -7,7 +7,7 @@
     "test": "cypress run --spec  cypress/e2e/POM/Carflys.cy.js",
     "ci:teamcity-cy-run": "cypress run --reporter mocha-teamcity-reporter",
     "start": "npx cypress run",
-    "spec": "npx cypress run --spec -c-1"
+    "spec": "npx cypress run --spec"
   },
   "keywords": [],
   "author": "",
