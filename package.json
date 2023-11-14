@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cypress run --spec  cypress/e2e/POM/Carflys.cy.js",
     "ci:teamcity-cy-run": "cypress run --reporter mocha-teamcity-reporter",
-    "start": npx cypress run --spec "cypress/e2e/POM/Carflys.cy.js"
+    "start": npx cypress run --spec cypress/e2e/POM/Carflys.cy.js
   },
   "keywords": [],
   "author": "",
