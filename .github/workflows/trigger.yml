@@ -1,35 +1,33 @@
-name: Trigger specs
-on:
-  workflow_dispatch:
-    inputs:
-      specs:
-        description: Comma-separates spec filenames without spaces
-        required: true
+name: Trigger spec
+on: [push]
 jobs:
-  specs:
-    runs-on: ubuntu-20.04
+  cypress-run:
+    runs-on: ubuntu-latest
+    # Runs tests in parallel with matrix strategy https://docs.cypress.io/guides/guides/parallelization
+    # https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
+    # Also see warning here https://github.com/cypress-io/github-action#parallel
+    strategy:
+      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+      matrix:
+        containers: [1, 2] # Uses 2 parallel instances
     steps:
-      - name: Print specs 🖨️
-        env:
-          SPECS: ${{ toJson(github.event.inputs.specs) }}
-        run: echo "$SPECS"
-
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Run selected specs 🏃
-        # https://github.com/cypress-io/github-action
-        uses: cypress-io/github-action@v5
+      - name: Cypress run
+        # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
+        uses: cypress-io/github-action@v6
         with:
+          # Starts web server for E2E tests - replace with your own server invocation
+          # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
           start: npx cypress run
-          wait-on: 'http://localhost:8888'
-          spec: '${{ github.event.inputs.specs }}'
+          wait-on: 'http://localhost:3000' # Waits for above
+          # Records to Cypress Cloud
+          # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
-          tag: Trigger specs
-          group: Selected specs
-          # each workflow execution should have its own recorded run
-          ci-build-id: '${{ github.workflow }} - ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempts }}'
+          parallel: true # Runs test in parallel using settings above
         env:
-          # pass the Dashboard record key as an environment variable
+          # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
+          # in GitHub repo → Settings → Secrets → Actions
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
