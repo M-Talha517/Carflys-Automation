@@ -5,11 +5,6 @@ on:
       specs:
         description: Comma-separates spec filenames without spaces
         required: true
-      recordingTag:
-        description: Cypress Dashboard recording tag
-        required: false
-        default: Trigger specs
-
 jobs:
   specs:
     runs-on: ubuntu-20.04
@@ -26,11 +21,12 @@ jobs:
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v5
         with:
-          start: npm run start:ci
-          wait-on: 'http://localhost:8888'
+          start: npm run spec
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120000
           spec: '${{ github.event.inputs.specs }}'
           record: true
-          tag: '${{ github.event.inputs.recordingTag }}'
+          tag: Trigger specs
           group: Selected specs
           # each workflow execution should have its own recorded run
           ci-build-id: '${{ github.workflow }} - ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempts }}'
