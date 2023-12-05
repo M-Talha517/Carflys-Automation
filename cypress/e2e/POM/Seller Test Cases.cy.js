@@ -338,7 +338,7 @@ describe('Seller', function () {
                 login2()
                 Dealership_BlankField()
             })
-            it.only("10.3.2-Update button with Valid data (TTP)", ()=>{
+            it("10.3.2-Update button with Valid data (TTP)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
