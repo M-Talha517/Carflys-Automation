@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --spec  cypress/e2e/POM/Carflys.cy.js",
+    "test": "cypress run --spec  cypress/e2e/POM/Seller Test Cases.cy.js",
     "ci:teamcity-cy-run": "cypress run --reporter mocha-teamcity-reporter",
     "start": "npx cypress run",
     "spec": "npx cypress run --spec"
@@ -15,7 +15,8 @@
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",
     "cypress": "^13.5.0",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.7.0"
   },
   "dependencies": {
     "file-upload": "^0.0.0",
