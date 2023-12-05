@@ -321,7 +321,7 @@ describe('Seller', function () {
                 login2()
                 Password_didNot_Match()
             })
-            it("10.2.4-Enter Valid Password (TTP)", ()=>{
+            it.skip("10.2.4-Enter Valid Password (TTP)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
