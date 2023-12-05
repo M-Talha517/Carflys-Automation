@@ -6,7 +6,7 @@ const first_name = faker.name.firstName()                    // "Abdul"
 const last_name =  faker.name.lastName()                     //"Aziz"
 const user_type = "Seller"
 ///// Login Data ////
-const user_email = "admin@gmail.com"
+const user_email = "gmd@gmail.com"
 const user_password = "Carflys@123"
 //// Wait ////
 const millisecond = 1
@@ -59,8 +59,9 @@ export const login = () => {
      cy.wait(5*second)
      cy.contains("Dashboard")
      cy.contains("Login successful.").should("exist")        ///////Invalid Password
-     cy.url().should('eq', 'https://carflys-frontend-new-dev.vercel.app/dashboard')
+     cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
   }
+
   export const Invalidloginwithpass = () => {
     //cy.wait(10* second)
  // Email
@@ -218,7 +219,7 @@ export const ViewServices =() =>{
 
    cy.contains("5. View Services").click()
 //edit data 
-   cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click() 
+   cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
         //// enter Update service data/////
 //service name
    cy.get('[placeholder="Enter Service Name"]').clear().type("Credit Disability")
@@ -270,7 +271,6 @@ export const vieworder =() => {
 // Clear filter button
     //cy.contains("Clear Filters").click()
 }
-
                                    ////////////// 8.Leads //////////////
 export const leads =()=>{
   cy.contains("8. Leads").click()
