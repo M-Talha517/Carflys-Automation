@@ -64,7 +64,7 @@ describe('Seller', function () {
                 viewEmployee_SearchName()
 
              })
-             it.only("2.2.2.1- Search Bar Functionality Check with Email", ()=>{
+             it.only("2.2.2.2- Search Bar Functionality Check with Email", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
