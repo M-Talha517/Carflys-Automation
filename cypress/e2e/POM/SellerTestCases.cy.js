@@ -17,7 +17,7 @@ describe('Seller', function () {
 
        describe("2-Staff Management",function(){
           describe("2.1-Add Employee", function(){
-            it.only("2.1.1-Add Employee with blank field(TTF)", ()=>{
+            it("2.1.1-Add Employee with blank field(TTF)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
