@@ -23,7 +23,6 @@ describe('Seller', function () {
                 cy.contains("Login").click()
                 login2()
                 addEmployee_BlankField()
-
             })
             it("2.1.2-Zip Code filed With Valid Zip Code(TTP)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
