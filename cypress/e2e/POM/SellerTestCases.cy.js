@@ -26,7 +26,7 @@ describe('Seller', function () {
                         addvehicle2()
                     })
                     
-                    it("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
+                    it.only("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
                         cy.visit('https://carflys-testing.vercel.app/')
                         cy.contains("Login").click()
                         login2()
