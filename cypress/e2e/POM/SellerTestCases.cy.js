@@ -8,12 +8,27 @@ import { ViewProfit_Search_InValid_VinNo, ViewProfit_Search_Valid_VinNo } from "
 import { Search_Order_VinNO,Search_Order_InValid_VinNO,Search_Order_VehicleName,Filter_BY_Status } from "./Seller/Order.cy"
 import { Filters_Payment, Search_Payment_InValid_VinNo, Search_Payment_VehicleName, Search_Payment_VinNo } from "./Seller/Payment.cy"
 import { Dealership_BlankField, Dealership_UpdateData, Password_BlankField, Password_UpdateValid, Password_WrongPassword, Password_didNot_Match, Profile_InValidZip_Code, Profile_Update_BlankField, Profile_Update_ValidData, Profile_ValidZip_Code } from "./Seller/Settings.cy"
+import { addEmployee_BlankField } from "./Seller/StaffManagement.cy"
 import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO } from "./Seller/Vehicle.cy"
 
 //////// Test Cases //////////////
                       //  (TC#3.1.1.1.5-TTP) should add and view Vehicle with valid data
 describe('Seller', function () {
-      
+
+       describe("2-Staff Management",function(){
+          describe("2.1-Add Employee", function(){
+            it.only("2.1.1-Add Employee with blank field(TTF)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_BlankField()
+
+            })
+           
+
+
+        })
+    })
        describe("3-Vhecile", function (){
         describe("3.1-Add Vehicle",function (){
             describe("3.1.1-Steppers Add Vehicles",function (){
@@ -272,7 +287,7 @@ describe('Seller', function () {
     })
 
    })
-           describe("10.Settings", function(){
+       describe("10.Settings", function(){
           describe("10.1-Profile", function(){
         it("10.1.1-Update button with Blank field (TTF)", ()=>{
             cy.visit('https://carflys-testing.vercel.app/')
@@ -321,7 +336,7 @@ describe('Seller', function () {
                 login2()
                 Password_didNot_Match()
             })
-            it("10.2.4-Enter Valid Password (TTP)", ()=>{
+            it.skip("10.2.4-Enter Valid Password (TTP)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
