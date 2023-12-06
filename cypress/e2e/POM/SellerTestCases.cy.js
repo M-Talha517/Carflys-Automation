@@ -8,8 +8,9 @@ import { ViewProfit_Search_InValid_VinNo, ViewProfit_Search_Valid_VinNo } from "
 import { Search_Order_VinNO,Search_Order_InValid_VinNO,Search_Order_VehicleName,Filter_BY_Status } from "./Seller/Order.cy"
 import { Filters_Payment, Search_Payment_InValid_VinNo, Search_Payment_VehicleName, Search_Payment_VinNo } from "./Seller/Payment.cy"
 import { Dealership_BlankField, Dealership_UpdateData, Password_BlankField, Password_UpdateValid, Password_WrongPassword, Password_didNot_Match, Profile_InValidZip_Code, Profile_Update_BlankField, Profile_Update_ValidData, Profile_ValidZip_Code } from "./Seller/Settings.cy"
-import { addEmployee_BlankField } from "./Seller/StaffManagement.cy"
+import { addEmployee_BlankField, addEmployee_DuplicateData, addEmployee_InValid_ZipCode, addEmployee_ResetButton, addEmployee_ValidData, addEmployee_Valid_ZipCode, viewEmployee_SearchEmail, viewEmployee_SearchName } from "./Seller/StaffManagement.cy"
 import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO } from "./Seller/Vehicle.cy"
+
 
 //////// Test Cases //////////////
                       //  (TC#3.1.1.1.5-TTP) should add and view Vehicle with valid data
@@ -17,14 +18,61 @@ describe('Seller', function () {
 
        describe("2-Staff Management",function(){
           describe("2.1-Add Employee", function(){
-            it.only("2.1.1-Add Employee with blank field(TTF)", ()=>{
+            it("2.1.1-Add Employee with blank field(TTF)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
                 addEmployee_BlankField()
 
             })
-           
+            it("2.1.2-Zip Code filed With Valid Zip Code(TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_Valid_ZipCode()
+            })
+            it("2.1.3-Zip Code filed With InValid Zip Code(TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_InValid_ZipCode()
+            })
+            it("2.1.4- Add Employee with Valid Data(TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_ValidData()
+            })
+            it("2.1.5-Add Emplyee with duplicate data(TTF)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_DuplicateData()
+            })
+            it("2.1.6- Reset Button Functionality Test(TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_ResetButton() 
+            })
+        })
+        describe("2.2-View Employee", function(){
+          describe("Search", function(){
+             it.only("2.2.2.1- Search Bar Functionality Check with full name", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_SearchName()
+
+             })
+             it.only("2.2.2.1- Search Bar Functionality Check with Email", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_SearchEmail()
+             })
+
+          })
 
 
         })
@@ -34,14 +82,14 @@ describe('Seller', function () {
             describe("3.1.1-Steppers Add Vehicles",function (){
                 describe("3.1.1.1-Vehicle Info Form",function(){
 
-                    it.only("3.1.1.1.1-Add Vehicle with Blank Field (TTF)", ()=>{
+                    it("3.1.1.1.1-Add Vehicle with Blank Field (TTF)", ()=>{
                         cy.visit('https://carflys-testing.vercel.app/')
                         cy.contains("Login").click()
                         login2()
                         addvehicle2()
                     })
                     
-                    it.only("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
+                    it("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
                         cy.visit('https://carflys-testing.vercel.app/')
                         cy.contains("Login").click()
                         login2()
