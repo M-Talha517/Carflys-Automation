@@ -34,14 +34,14 @@ describe('Seller', function () {
             describe("3.1.1-Steppers Add Vehicles",function (){
                 describe("3.1.1.1-Vehicle Info Form",function(){
 
-                    it("3.1.1.1.1-Add Vehicle with Blank Field (TTF)", ()=>{
+                    it.only("3.1.1.1.1-Add Vehicle with Blank Field (TTF)", ()=>{
                         cy.visit('https://carflys-testing.vercel.app/')
                         cy.contains("Login").click()
                         login2()
                         addvehicle2()
                     })
                     
-                    it("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
+                    it.only("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
                         cy.visit('https://carflys-testing.vercel.app/')
                         cy.contains("Login").click()
                         login2()
