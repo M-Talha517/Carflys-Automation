@@ -22,11 +22,8 @@ describe('Seller', function () {
                 cy.contains("Login").click()
                 login2()
                 addEmployee_BlankField()
-
             })
            
-
-
         })
     })
        describe("3-Vhecile", function (){
