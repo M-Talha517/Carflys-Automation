@@ -34,3 +34,19 @@ const minute = 60000
                    cy.contains("Direct Payment Paid")
                 cy.contains("Direct Payment Paid").should("exist")
             }
+    export const order_View_IconButton =() => {
+
+                cy.contains("4. Orders").click()
+         //search field
+               cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+         //filters
+                cy.get('[placeholder="Filter by Status"]').click()
+                   cy.contains("Direct Payment Paid")
+                cy.contains("Direct Payment Paid").should("exist")
+                cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
+                cy.contains("View Order").should("exist")
+                cy.get("button").contains("Close").click()
+            }
+
+
+

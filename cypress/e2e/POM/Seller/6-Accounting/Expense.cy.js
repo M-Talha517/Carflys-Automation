@@ -73,5 +73,32 @@ export const ViewExpense_Search_InValid_VinNo=()=>{
     cy.get('[placeholder="Search"]').type("2C4HJKEG9MW851795")
     cy.contains("There are no records to display").should("exist")
 }
+export const ViewExpense_View_IconButton= ()=>{
+    cy.contains("6. Accounting").click()
+    cy.contains("6.4 View Expense").click()
+    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
+    cy.contains("View expense").should("exist")      
+   }
+   export const ViewExpense_Edit_IconButton= ()=>{
+    cy.contains("6. Accounting").click()
+    cy.contains("6.4 View Expense").click()
+    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
+    cy.contains("Update Expense").should("exist")
+
+   }
+   export const ViewExpense_Delete_IconButton= ()=>{
+    cy.contains("6. Accounting").click()
+    cy.contains("6.4 View Expense").click()
+    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-trash").click()
+    cy.contains("Delete Expense").should("exist") 
+    cy.get("button").contains("Delete").click()  
+    cy.contains("Expense Deleted Successfully").should("exist")
+   }
 
 

@@ -68,6 +68,35 @@ export const ViewRevenue_Search_VehicleName= ()=>{
       cy.get('[placeholder="Search"]').type("2021 Jeep Wrangler Unlimited Sahara")
       cy.contains("2021 Jeep Wrangler Unlimited Sahara").should("exist")
      }
+export const ViewRevenue_View_IconButton= ()=>{
+      cy.contains("6. Accounting").click()
+      cy.contains("6.2 View Revenue").click()
+      cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+      cy.contains("1C4HJXEG9MW851795").should("exist")
+      cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
+      cy.contains("View revenue").should("exist")      
+     }
+export const ViewRevenue_Edit_IconButton= ()=>{
+      cy.contains("6. Accounting").click()
+      cy.contains("6.2 View Revenue").click()
+      cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+      cy.contains("1C4HJXEG9MW851795").should("exist")
+      cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
+      cy.contains("Update Revenue").should("exist")
+
+     }
+export const ViewRevenue_Delete_IconButton= ()=>{
+      cy.contains("6. Accounting").click()
+      cy.contains("6.2 View Revenue").click()
+      cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+      cy.contains("1C4HJXEG9MW851795").should("exist")
+      cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-trash").click()
+      cy.contains("Delete Revenue").should("exist") 
+      cy.get("button").contains("Delete").click()   
+      cy.contains("Revenue Deleted Successfully").should("exist")  
+     }
+
+
      
 
 
