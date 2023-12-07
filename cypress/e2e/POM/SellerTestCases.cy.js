@@ -60,7 +60,7 @@ describe('Seller', function () {
             })
         })
         describe("2.2-View Employee", function(){
-          describe("2.2.2-Search", function(){
+          describe("Search", function(){
              it("2.2.2.1- Search Bar Functionality Check with full name", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
@@ -95,7 +95,7 @@ describe('Seller', function () {
                 login2()
                 viewEmployee_Edit_IconButton()
              })
-             it.only("2.2.1.5-Delete icon Action functionality check(TTP)", ()=>{
+             it("2.2.1.5-Delete icon Action functionality check(TTP)", ()=>{
                 cy.visit('https://carflys-testing.vercel.app/')
                 cy.contains("Login").click()
                 login2()
