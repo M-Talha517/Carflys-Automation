@@ -55,6 +55,30 @@ export const addRevenue_Valid_Data= ()=>{
     cy.get('[placeholder="Search"]').type(" 1C4HJXEG9MW851795")
     cy.contains("1C4HJXEG9MW851795").should("exist")
    }
+   export const addRevenue_ResetButton= ()=>{
+      cy.contains("6. Accounting").click()
+      cy.contains("6.1 Add Revenue").click()
+      
+      // Vehicle select
+      cy.get('[placeholder="Select Vehicle"]').click()
+         cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
+      
+      // Reference type
+      cy.get('[placeholder="Enter Reference"]').type("Full Payment for 1C4HJXEG9MW851795")        /// 1C4HJXDN7NW246787
+      // Reference Email 
+      cy.get('[placeholder="Enter Reference Email"]').type("gmd@gmail.com")
+      // Reference Details 
+      cy.get('[placeholder="Enter Reference Details"]').type("Full Payment for 1C4HJXEG9MW851795 in Vehicle Order")
+      // Reference Date
+      cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
+      // Revenue Amount 
+      cy.get('[placeholder="Enter Revenue Amount"]').type("35000")
+      // Revenue Details 
+      cy.get('[placeholder="Enter Revenue Details"]').type("Full Payment for 1C4HJXEG9MW851795")
+      // Add Revenue Button
+      cy.get("button").contains("Reset").click()
+     }
+
 
 export const ViewRevenue_Search_VinNo= ()=>{
       cy.contains("6. Accounting").click()

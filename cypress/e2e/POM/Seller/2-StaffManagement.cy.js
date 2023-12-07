@@ -261,8 +261,47 @@ export const viewEmployee_Check_AssignButton= () => {
     cy.wait("@User found Successfully").its('response.statusCode').should('eq', 200)
 
 }
+export const viewEmployee_ExistEpmloyee= () => {
+    cy.intercept('GET', `${backendURL}/user`).as('User found Successfully')
+    cy.contains('2. Staff Management').click()
+    cy.contains('2.2 View Employees').click()
+    cy.wait(1000)
+    cy.get('[placeholder="Filter by User"]').click()
+    cy.contains("Dispatcher").click()
+    cy.get('[placeholder="Filter by Status"]').click()
+    cy.contains("Active").click()
+    cy.get('[placeholder="Search"]').type("Shah Rukh")
+    cy.contains('Shah Rukh').should("exist")
+    cy.wait("@User found Successfully").its('response.statusCode').should('eq', 200);
+}
+export const viewEmployee_NotExistEpmloyee= () => {
+    cy.intercept('GET', `${backendURL}/user`).as('User found Successfully')
+    cy.contains('2. Staff Management').click()
+    cy.contains('2.2 View Employees').click()
+    cy.wait(1000)
+    cy.get('[placeholder="Filter by User"]').click()
+    cy.contains("Dispatcher").click()
+    cy.get('[placeholder="Filter by Status"]').click()
+    cy.contains("Active").click()
+    cy.get('[placeholder="Search"]').type("khan")
+    cy.contains('khan').should("exist")
+    cy.wait("@User found Successfully").its('response.statusCode').should('eq', 200);
+}
 
-
+export const viewEmployee_ClearFilterButton= () => {
+    cy.intercept('GET', `${backendURL}/user`).as('User found Successfully')
+    cy.contains('2. Staff Management').click()
+    cy.contains('2.2 View Employees').click()
+    cy.wait(1000)
+    cy.get('[placeholder="Filter by User"]').click()
+    cy.contains("Dispatcher").click()
+    cy.get('[placeholder="Filter by Status"]').click()
+    cy.contains("Active").click()
+    cy.get('[placeholder="Search"]').type("khan")
+    cy.get("button").contains("Clear Filters").click()
+   
+    cy.wait("@User found Successfully").its('response.statusCode').should('eq', 200);
+}
 
 
 

@@ -101,4 +101,25 @@ export const ViewExpense_View_IconButton= ()=>{
     cy.contains("Expense Deleted Successfully").should("exist")
    }
 
+   export const addExpense_ResetButton=()=>{
+    cy.contains("6. Accounting").click()
+    cy.contains("6.3 Add Expense").click()
+    
+    // select vehicle
+    cy.get('[placeholder="Select Vehicle"]').click()
+       cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
+    
+    //Expense Type
+    cy.get('[placeholder="Enter Expense Type"]').click()
+      cy.contains("Rent/Lease Payment").click()
+    // Reference Date
+    cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
+    // Expense Amount
+    cy.get('[placeholder="Enter Expense Amount"]').clear().type("39000")
+    // Expense Details
+    cy.get('[placeholder="Enter Expense Details"]').type("Vehicle Purchase: 1C4HJXEG9MW851795 - 2021 Jeep Wrangler Unlimited Sahara")
+    // add Expense button
+    cy.get("button").contains("Reset").click()
+}
+
 

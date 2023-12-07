@@ -40,3 +40,13 @@ export const  Filters_Payment =() =>{
             cy.contains("Success").click()
             cy.contains("2022 Ford Explorer Limited").should("exist") 
 }
+export const  ClearFilterButton_Payment_ =() =>{
+     cy.contains("5. Payments").click()
+     // Search Field    
+          cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+     // Filters
+          cy.get('[placeholder="Filter by Status"]').click()
+             cy.contains("Success").click()
+             cy.contains("1FMSK8FH8NGB68090").should("exist") 
+             cy.get("button").contains("Clear Filters").click()
+ }

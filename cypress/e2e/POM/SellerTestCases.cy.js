@@ -2,15 +2,15 @@
 import { logout } from "./Admin/Add data.cy"
 import { login2 } from "./Admin/Add data.cy"
 import { SellerSignup } from "./Seller SignUp.cy"
-import { ViewExpense_Delete_IconButton, ViewExpense_Edit_IconButton, ViewExpense_Search_InValid_VinNo, ViewExpense_Search_VehicleName, ViewExpense_Search_VinNo, ViewExpense_View_IconButton, addExpense_BlankData, addExpense_ExpenseType_DropDown, addExpense_ValidData, addExpense_Vehicle_DropDown } from "./Seller/6-Accounting/Expense.cy"
-import { ViewRevenue_Delete_IconButton, ViewRevenue_Edit_IconButton, ViewRevenue_Search_VehicleName, ViewRevenue_Search_VinNo, ViewRevenue_View_IconButton, addRevenue_Blank_filed, addRevenue_DropDown_List, addRevenue_Valid_Data } from "./Seller/6-Accounting/Revenue.cy"
+import { ViewExpense_Delete_IconButton, ViewExpense_Edit_IconButton, ViewExpense_Search_InValid_VinNo, ViewExpense_Search_VehicleName, ViewExpense_Search_VinNo, ViewExpense_View_IconButton, addExpense_BlankData, addExpense_ExpenseType_DropDown, addExpense_ResetButton, addExpense_ValidData, addExpense_Vehicle_DropDown } from "./Seller/6-Accounting/Expense.cy"
+import { ViewRevenue_Delete_IconButton, ViewRevenue_Edit_IconButton, ViewRevenue_Search_VehicleName, ViewRevenue_Search_VinNo, ViewRevenue_View_IconButton, addRevenue_Blank_filed, addRevenue_DropDown_List, addRevenue_ResetButton, addRevenue_Valid_Data } from "./Seller/6-Accounting/Revenue.cy"
 import { ViewProfit_Search_InValid_VinNo, ViewProfit_Search_Valid_VinNo } from "./Seller/6-Accounting/ViewProfit.cy"
 import { Search_Order_VinNO,Search_Order_InValid_VinNO,Search_Order_VehicleName,Filter_BY_Status, order_View_IconButton } from "./Seller/4-Order.cy"
-import { Filters_Payment, Search_Payment_InValid_VinNo, Search_Payment_VehicleName, Search_Payment_VinNo } from "./Seller/5-Payment.cy"
+import { ClearFilterButton_Payment_, Filters_Payment, Search_Payment_InValid_VinNo, Search_Payment_VehicleName, Search_Payment_VinNo } from "./Seller/5-Payment.cy"
 import { Search_Review_FirstName, Search_Review_Ivalid_CustomerName } from "./Seller/8-Review.cy"
 import { Dealership_BlankField, Dealership_UpdateData, Password_BlankField, Password_UpdateValid, Password_WrongPassword, Password_didNot_Match, Profile_InValidZip_Code, Profile_Update_BlankField, Profile_Update_ValidData, Profile_ValidZip_Code } from "./Seller/Settings.cy"
-import { addEmployee_BlankField, addEmployee_DuplicateData, addEmployee_InValid_ZipCode, addEmployee_ResetButton, addEmployee_ValidData, addEmployee_Valid_ZipCode, viewEmployee_Check_AssignButton, viewEmployee_Delete_IconButton, viewEmployee_Edit_IconButton, viewEmployee_Modal_CloseButton, viewEmployee_SearchEmail, viewEmployee_SearchName, viewEmployee_View_IconButton } from "./Seller/2-StaffManagement.cy"
-import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO, viewVehicle_View_IconButton, viewVehicle_Edit_IconButton, viewVehicle_Delete_IconButton, viewVehicle_AddNotes, viewVehicle_DeleteNotes } from "./Seller/3-Vehicle.cy"
+import { addEmployee_BlankField, addEmployee_DuplicateData, addEmployee_InValid_ZipCode, addEmployee_ResetButton, addEmployee_ValidData, addEmployee_Valid_ZipCode, viewEmployee_Check_AssignButton, viewEmployee_ClearFilterButton, viewEmployee_Delete_IconButton, viewEmployee_Edit_IconButton, viewEmployee_ExistEpmloyee, viewEmployee_Modal_CloseButton, viewEmployee_NotExistEpmloyee, viewEmployee_SearchEmail, viewEmployee_SearchName, viewEmployee_View_IconButton } from "./Seller/2-StaffManagement.cy"
+import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO, viewVehicle_View_IconButton, viewVehicle_Edit_IconButton, viewVehicle_Delete_IconButton, viewVehicle_AddNotes, viewVehicle_DeleteNotes, Search_ClearfilterButton } from "./Seller/3-Vehicle.cy"
 import { Search_Complaint_FirstName } from "./Seller/9-Complaints"
 import { Search_Complaint_ComplaintTitle } from "./Seller/9-Complaints"
 import { Chat_Search_AdminName, Chat_Search_EmployeeName } from "./Seller/7-Chats.cy"
@@ -74,7 +74,26 @@ describe('Seller', function () {
                 login2()
                 viewEmployee_SearchEmail()
              })
-
+             it("2.2.3.1-Clear filter button functionality check(TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_ClearFilterButton()
+             })
+             it("2.2.4.1-Exists employee by Searching and filter by User type or Status(TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_ExistEpmloyee()
+             })
+             it("2.2.4.2-Not Exists employee by Searching and filter by User type or Status(TTF)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_NotExistEpmloyee()
+             })
+           
+           
           })
           describe("2.2.1-Table List View", function (){
             it("2.2.1.1-Close Button On View Modal functionality check(TTP)", ()=>{
@@ -107,6 +126,7 @@ describe('Seller', function () {
                 login2()
                 viewEmployee_Check_AssignButton()
              })
+          
           })
         })
     })
@@ -180,8 +200,12 @@ describe('Seller', function () {
             login2()
             Search_InValid_VinNO()
         })
-
-       
+        it("3.2.4.1-Clear filter button functionality check", ()=>{
+            cy.visit('https://carflys-testing.vercel.app/')
+            cy.contains("Login").click()
+            login2()
+            Search_ClearfilterButton()
+        })
 
     })
     describe("3.2.1.3-Actions Column icons buttons",function(){
@@ -296,6 +320,13 @@ describe('Seller', function () {
         })
     
     })
+    it(" 5.3-Clear Filter button (TTP)", ()=>{
+        cy.visit('https://carflys-testing.vercel.app/')
+        cy.contains("Login").click()
+        login2()
+        ClearFilterButton_Payment_()
+    })
+   
    })
        describe("6-Accounting", function(){
            describe("Revenue",function(){
@@ -319,7 +350,12 @@ describe('Seller', function () {
                 addRevenue_Valid_Data()
     
             })
-    
+            it("6.1.4-Reset Button (TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addRevenue_ResetButton()
+            })
           })
         describe("6.2-View Revenue",function(){
             describe("6.2.1-Search", function (){
@@ -386,6 +422,12 @@ describe('Seller', function () {
                 cy.contains("Login").click()
                 login2()
                 addExpense_ValidData()
+            })
+            it("6.3.5-Reset Button (TTP)", ()=>{
+                cy.visit('https://carflys-testing.vercel.app/')
+                cy.contains("Login").click()
+                login2()
+                addExpense_ResetButton()
             })
         
 

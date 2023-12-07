@@ -154,6 +154,18 @@ export const Search_InValid_VinNO =()=>{
              cy.contains("Available").click()
              cy.contains("There are no records to display").should("exist")
 }
+export const Search_ClearfilterButton =()=>{
+    cy.contains("Login").click()                 
+    cy.contains("3. Vehicles").click()
+    cy.contains("3.2 View Vehicles").click()
+    
+        cy.get('[placeholder="Search"]').type("1C5HJXEG6MW851795")
+        cy.get('[placeholder="Filter by Status"]').click()   
+             cy.contains("Active").click()
+        cy.get('[placeholder="Filter by Phase"]').click()
+             cy.contains("Available").click()
+        cy.get("button").contains("Clear Filters").click()
+}
 export const viewVehicle_View_IconButton= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("3. Vehicles").click()
