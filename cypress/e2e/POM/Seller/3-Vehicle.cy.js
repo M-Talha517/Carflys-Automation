@@ -129,9 +129,6 @@ export const AddvehiclePdf = () => {
                        cy.get(".mantine-1hss7nx").contains("Select images of vehicle (PNG, JPG, JPEG)").attachFile('TEST PDF FILE.pdf',{ subjectType: 'drag-n-drop'})
                        cy.contains("This file type is not supported").should("exist")
     }
-
-
-
 export const Search_Valid_VinNO =()=>{
     cy.contains("Login").click()                 
     cy.contains("3. Vehicles").click()
@@ -209,7 +206,6 @@ export const viewVehicle_Delete_IconButton= () => {
     cy.contains("Vehicle Deleted successfully").should("exist")
     cy.wait("@Vehicle found Successfully").its('response.statusCode').should('eq', 201);
 }
-
 export const viewVehicle_AddNotes= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("3. Vehicles").click()
