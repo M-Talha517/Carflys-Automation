@@ -6,6 +6,7 @@ const first_name = faker.name.firstName()                    // "Abdul"
 const last_name =  faker.name.lastName()                     //"Aziz"
 const user_type = "Seller"
 ///// Login Data ////
+const Admin_email= "admin@gmail.com"
 const user_email = "gmd@gmail.com"
 const user_password = "Carflys@123"
 //// Wait ////
@@ -53,6 +54,19 @@ export const login = () => {
     //cy.wait(10* second)
  // Email
      cy.get('[placeholder="Enter Email"]').type(x)    
+ // Password
+     cy.get('[placeholder="Enter Password"]').type(user_password)
+     cy.get('[type="submit"]').click()
+     cy.wait(5*second)
+     cy.contains("Dashboard")
+     cy.contains("Login successful.").should("exist")        ///////Invalid Password
+     cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
+  }
+
+  export const Admin_login = () => {
+    //cy.wait(10* second)
+ // Email
+     cy.get('[placeholder="Enter Email"]').type(Admin_email)    
  // Password
      cy.get('[placeholder="Enter Password"]').type(user_password)
      cy.get('[type="submit"]').click()

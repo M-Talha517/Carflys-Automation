@@ -1,5 +1,5 @@
 
-import { logout } from "./Admin/Add data.cy"
+import { Admin_login, logout } from "./Admin/Add data.cy"
 import { login2 } from "./Admin/Add data.cy"
 import { SellerSignup } from "./Seller SignUp.cy"
 import { ViewExpense_Delete_IconButton, ViewExpense_Edit_IconButton, ViewExpense_Search_InValid_VinNo, ViewExpense_Search_VehicleName, ViewExpense_Search_VinNo, ViewExpense_View_IconButton, addExpense_BlankData, addExpense_ExpenseType_DropDown, addExpense_ResetButton, addExpense_ValidData, addExpense_Vehicle_DropDown } from "./Seller/6-Accounting/Expense.cy"
@@ -13,7 +13,7 @@ import { addEmployee_BlankField, addEmployee_DuplicateData, addEmployee_InValid_
 import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO, viewVehicle_View_IconButton, viewVehicle_Edit_IconButton, viewVehicle_Delete_IconButton, viewVehicle_AddNotes, viewVehicle_DeleteNotes, Search_ClearfilterButton } from "./Seller/3-Vehicle.cy"
 import { Search_Complaint_FirstName } from "./Seller/9-Complaints"
 import { Search_Complaint_ComplaintTitle } from "./Seller/9-Complaints"
-import { Chat_Search_AdminName, Chat_Search_EmployeeName } from "./Seller/7-Chats.cy"
+import { Chat_Search_AdminName, Chat_Search_EmployeeName, Chatwith_Admin } from "./Seller/7-Chats.cy"
 
 
 //////// Test Cases //////////////
@@ -512,7 +512,36 @@ describe('Seller', function () {
 
 
 
+
+
             })
+            // describe.only("7.2-Seller Chat",function(){
+            //     it("7.2.1-Seller Chat with Admin functionality(TTP)", ()=>{
+            //       cy.visit('https://carflys-testing.vercel.app/')
+            //       cy.contains("Login").click()
+            //       login2()
+            //       Chatwith_Admin()
+            //       logout()
+            //       Admin_login()
+            //     })
+
+// pending 
+                // it("7.2.2-Seller Chat with his Employees Functionality(TTP)", ()=>{
+                //   cy.visit('https://carflys-testing.vercel.app/')
+                //   cy.contains("Login").click()
+                //   login2()
+                //   Chat_Search_EmployeeName()
+                // })
+
+                 // it("7.3-Users gets notified for a new chat functionality Check(TTP)", ()=>{
+                //   cy.visit('https://carflys-testing.vercel.app/')
+                //   cy.contains("Login").click()
+                //   login2()
+                //   Chat_Search_EmployeeName()
+                // })
+
+            //   })
+
 
 
    })
