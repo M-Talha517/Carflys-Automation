@@ -2,7 +2,6 @@ const millisecond = 1
 const second = 1000
 const minute = 60000
 
-
 export const ViewProfit_Search_Valid_VinNo=()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.5 View Profit Report").click()

@@ -1,4 +1,5 @@
 import {faker} from "@faker-js/faker"
+import { backendURL } from "../Seller/extras"
 
 //// Sign Up Form data /////
 const sign_up_email = faker.internet.email()                    //"Aziz@gmail.com"
@@ -6,6 +7,7 @@ const first_name = faker.name.firstName()                    // "Abdul"
 const last_name =  faker.name.lastName()                     //"Aziz"
 const user_type = "Seller"
 ///// Login Data ////
+const employee_email ="Shah@gmail.com"
 const Admin_email= "admin@gmail.com"
 const user_email = "gmd@gmail.com"
 const user_password = "Carflys@123"
@@ -51,6 +53,7 @@ export const login = () => {
  }
 
  export const login2 = () => {
+    cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
     //cy.wait(10* second)
  // Email
      cy.get('[placeholder="Enter Email"]').type(x)    
@@ -61,9 +64,10 @@ export const login = () => {
      cy.contains("Dashboard")
      cy.contains("Login successful.").should("exist")        ///////Invalid Password
      cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
+     cy.wait("@Login Successfully").its('response.statusCode').should('eq', 200);
   }
-
   export const Admin_login = () => {
+    cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
     //cy.wait(10* second)
  // Email
      cy.get('[placeholder="Enter Email"]').type(Admin_email)    
@@ -74,8 +78,22 @@ export const login = () => {
      cy.contains("Dashboard")
      cy.contains("Login successful.").should("exist")        ///////Invalid Password
      cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
+     cy.wait("@Login Successfully").its('response.statusCode').should('eq', 200);
   }
-
+  export const Employee_login = () => {
+    cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
+    //cy.wait(10* second)
+ // Email
+     cy.get('[placeholder="Enter Email"]').type(employee_email)    
+ // Password
+     cy.get('[placeholder="Enter Password"]').type(user_password)
+     cy.get('[type="submit"]').click()
+     cy.wait(5*second)
+     cy.contains("Dashboard")
+     cy.contains("Login successful.").should("exist")        ///////Invalid Password
+     cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
+     cy.wait("@Login Successfully").its('response.statusCode').should('eq', 200);
+  }
   export const Invalidloginwithpass = () => {
     //cy.wait(10* second)
  // Email

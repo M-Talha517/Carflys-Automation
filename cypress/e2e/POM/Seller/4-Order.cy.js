@@ -6,17 +6,17 @@ const minute = 60000
 
     cy.contains("4. Orders").click()
 //search field
-    cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
-    cy.contains("FMSK8FH8NGB68090").should("exist")
+    cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
+    cy.contains("5FNYF6H22MB016055").should("exist")
     }
     export const Search_Order_VehicleName  =() => {
         cy.contains("4. Orders").click()
     //search field
-        cy.get('[placeholder="Search"]').type("2022 Ford Explorer Limited")
+        cy.get('[placeholder="Search"]').type("2021 Honda Pilot SE")
     //filters
         cy.get('[placeholder="Filter by Status"]').click()
            cy.contains("Direct Payment Paid").click
-        cy.contains("2022 Ford Explorer Limited").should("exist")
+        cy.contains("2021 Honda Pilot SE").should("exist")
         }
     export const Search_Order_InValid_VinNO =() => {
             cy.contains("4. Orders").click()
@@ -28,7 +28,7 @@ const minute = 60000
 
                 cy.contains("4. Orders").click()
          //search field
-               cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+               cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
          //filters
                 cy.get('[placeholder="Filter by Status"]').click()
                    cy.contains("Direct Payment Paid")
@@ -38,11 +38,12 @@ const minute = 60000
 
                 cy.contains("4. Orders").click()
          //search field
-               cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+               cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
          //filters
                 cy.get('[placeholder="Filter by Status"]').click()
                    cy.contains("Direct Payment Paid")
                 cy.contains("Direct Payment Paid").should("exist")
+                cy.wait(2000)
                 cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
                 cy.contains("View Order").should("exist")
                 cy.get("button").contains("Close").click()

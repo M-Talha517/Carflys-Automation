@@ -35,7 +35,7 @@ export const Profile_Update_ValidData = () => {
     cy.get('[placeholder="Enter First Name"]').clear().type("New")
     cy.get('[placeholder="Enter Last Name"]').clear().type("Seller")
     cy.get('[placeholder="Enter Cell Number"]').clear().type("+1(222)-222-2222")
-    cy.get('[placeholder="Enter Zip Code"]').type("10001")
+    cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').type("10001")
     cy.get(".mantine-1avyp1d").contains("Drag and drop a file").attachFile('usama.jpg', { subjectType: 'drag-n-drop' })
     cy.contains("Profile Information").parent().find("button").contains("Update").click()
     cy.contains("Profile updated successfully").should("exist")

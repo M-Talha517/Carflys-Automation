@@ -97,7 +97,7 @@ export const AddvehicleImage = () => {
                    cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
                    cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
                    cy.contains("Next step").click()
-               
+                   cy.wait(1000)
                            ////////// Vehicle Description //////////
                    cy.get('[class="ProseMirror"]').clear().type("This used car is a reliable and well-maintained vehicle that has been carefully inspected and serviced to ensure its optimal performance.")    
                    cy.contains("Next step").click()

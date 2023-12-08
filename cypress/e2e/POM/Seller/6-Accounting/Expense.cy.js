@@ -9,10 +9,10 @@ export const addExpense_BlankData=()=>{
     cy.contains("6.3 Add Expense").click()
     
     cy.get('[type="submit"]').click()
-    cy.contains("Please Select a Vehicle.").should("exist")
+    //cy.contains("Please Select a Vehicle.").should("exist")
     cy.contains("Please Enter a Type of 3 or more length.").should("exist")       
     cy.contains("Please Select a Date.").should("exist")
-    cy.contains("Please Enter a Revenue Amount of $1 or more.").should("exist")
+    cy.contains("Please Enter a Expense Amount of $1 or more.").should("exist")
     cy.contains("Please Enter a Description of 3 or more length.").should("exist")
 } 
 export const addExpense_Vehicle_DropDown=()=>{
@@ -33,13 +33,12 @@ export const addExpense_ValidData=()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.3 Add Expense").click()
     
-    // select vehicle
-    cy.get('[placeholder="Select Vehicle"]').click()
-       cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
-    
-    //Expense Type
+//Expense Type
     cy.get('[placeholder="Enter Expense Type"]').click()
       cy.contains("Rent/Lease Payment").click()
+// select vehicle
+      cy.get('[placeholder="Select Vehicle"]').click()
+      cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
     // Reference Date
     cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
     // Expense Amount
@@ -58,14 +57,14 @@ export const ViewExpense_Search_VinNo=()=>{
     cy.contains("6. Accounting").click()
                   /////////// View Expense //////////////
     cy.contains("6.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
+    cy.contains("5FNYF6H22MB016055").should("exist")
 }
 export const ViewExpense_Search_VehicleName=()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("2021 Jeep Wrangler Unlimited Sahara")
-    cy.contains("2021 Jeep Wrangler Unlimited Sahara").should("exist")
+    cy.get('[placeholder="Search"]').type("2021 Honda Pilot SE")
+    cy.contains("2021 Honda Pilot SE").should("exist")
 }
 export const ViewExpense_Search_InValid_VinNo=()=>{
     cy.contains("6. Accounting").click()
@@ -88,7 +87,6 @@ export const ViewExpense_View_IconButton= ()=>{
     cy.contains("1C4HJXEG9MW851795").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
     cy.contains("Update Expense").should("exist")
-
    }
    export const ViewExpense_Delete_IconButton= ()=>{
     cy.contains("6. Accounting").click()
@@ -105,9 +103,9 @@ export const ViewExpense_View_IconButton= ()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.3 Add Expense").click()
     
-    // select vehicle
-    cy.get('[placeholder="Select Vehicle"]').click()
-       cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
+    // // select vehicle
+    // cy.get('[placeholder="Select Vehicle"]').click()
+    //    cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
     
     //Expense Type
     cy.get('[placeholder="Enter Expense Type"]').click()

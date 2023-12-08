@@ -52,7 +52,7 @@ export const addRevenue_Valid_Data= ()=>{
     cy.wait(10* second)
     /////////////////  View Revenue //////////////
     cy.contains("6.2 View Revenue").click()
-    cy.get('[placeholder="Search"]').type(" 1C4HJXEG9MW851795")
+    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
     cy.contains("1C4HJXEG9MW851795").should("exist")
    }
    export const addRevenue_ResetButton= ()=>{
@@ -61,7 +61,7 @@ export const addRevenue_Valid_Data= ()=>{
       
       // Vehicle select
       cy.get('[placeholder="Select Vehicle"]').click()
-         cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
+         cy.contains("2024 Ram 1500 Lone Star").click()
       
       // Reference type
       cy.get('[placeholder="Enter Reference"]').type("Full Payment for 1C4HJXEG9MW851795")        /// 1C4HJXDN7NW246787
@@ -83,14 +83,14 @@ export const addRevenue_Valid_Data= ()=>{
 export const ViewRevenue_Search_VinNo= ()=>{
       cy.contains("6. Accounting").click()
       cy.contains("6.2 View Revenue").click()
-      cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-      cy.contains("1C4HJXEG9MW851795").should("exist")
+      cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
+      cy.contains("5FNYF6H22MB016055").should("exist")
      }
 export const ViewRevenue_Search_VehicleName= ()=>{
       cy.contains("6. Accounting").click()
       cy.contains("6.2 View Revenue").click()
-      cy.get('[placeholder="Search"]').type("2021 Jeep Wrangler Unlimited Sahara")
-      cy.contains("2021 Jeep Wrangler Unlimited Sahara").should("exist")
+      cy.get('[placeholder="Search"]').type("2021 Honda Pilot SE")
+      cy.contains("2021 Honda Pilot SE").should("exist")
      }
 export const ViewRevenue_View_IconButton= ()=>{
       cy.contains("6. Accounting").click()
