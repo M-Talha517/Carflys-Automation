@@ -1,6 +1,4 @@
 import { logout } from "../Admin/Add data.cy"
-
-
 //// Wait ////
 const millisecond = 1
 const second = 1000
@@ -45,7 +43,6 @@ export const Chatwith_Admin_To_Seller =()=>{
 
 export const Chatwith_Seller_To_Employee =()=>{
     // Seller Side Chat
-    
        // search 
         cy.contains("7. Chats").click()
         cy.get('[placeholder="Search Users"]').type("Shah")

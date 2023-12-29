@@ -16,8 +16,10 @@ cy.contains("3. Vehicles").click()
 
     // VIN
     cy.get('[placeholder="Enter VIN"]').type("1C4HJXEG9MW851795", { force: true })
-    cy.get('.mantine-1swk166').click()
-    cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type(45500)
+
+    cy.get('.mantine-1swk166').click()  
+    cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
+    cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
     cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
     cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
     cy.contains("Next step").click()
@@ -261,6 +263,39 @@ export const viewVehicle_DeleteNotes= () => {
    cy.get("button").contains("Delete").click()
   cy.contains("Note Deleted Successfully").should("exist")
     cy.wait("@Vehicle found Successfully").its('response.statusCode').should('eq', 201);
+}
+
+export const Seller_Vehicle_StatusChanges_Active =()=>{
+    cy.contains("Login").click()                 
+    cy.contains("3. Vehicles").click()
+    cy.contains("3.2 View Vehicles").click()
+    
+        cy.get('[placeholder="Search"]').type("1C6RRFFG9RN120861")
+        cy.get('[placeholder="Filter by Status"]').click()   
+             cy.contains("Active").click()
+        cy.get('[placeholder="Filter by Phase"]').click()
+             cy.contains("Available").click()
+             cy.contains("1C6RRFFG9RN120861").should("exist")
+        cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
+        cy.contains("Block").click()
+        cy.contains("Status Updated Successfully").should("exist")
+
+}
+export const Seller_Vehicle_StatusChanges_Block=()=>{
+    cy.contains("Login").click()                 
+    cy.contains("3. Vehicles").click()
+    cy.contains("3.2 View Vehicles").click()
+    
+        cy.get('[placeholder="Search"]').type("1C6RRFFG9RN120861")
+        cy.get('[placeholder="Filter by Status"]').click()   
+             cy.contains("Active").click()
+        cy.get('[placeholder="Filter by Phase"]').click()
+             cy.contains("Available").click()
+             cy.contains("1C6RRFFG9RN120861").should("exist")
+        cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
+        cy.contains("Unblock").click()
+        cy.contains("Status Updated Successfully").should("exist")
+        
 }
 
 

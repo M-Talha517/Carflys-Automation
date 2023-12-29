@@ -41,9 +41,9 @@ export const Profile_Update_ValidData = () => {
     cy.contains("Profile updated successfully").should("exist")
 }
 export const Profile_ValidZip_Code = () => {
-
     cy.contains("10. Settings").click()
     cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').type("10001")
+    cy.get('[placeholder="Select State Location"]').invoke('val').should('eq', 'New York')
 }
 export const Profile_InValidZip_Code = () => {
     cy.contains("10. Settings").click()

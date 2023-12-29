@@ -48,6 +48,28 @@ const minute = 60000
                 cy.contains("View Order").should("exist")
                 cy.get("button").contains("Close").click()
             }
+    export const Seller_Order_statusChanges  =() => {
+                cy.contains("4. Orders").click()
+            //search field
+                cy.get('[placeholder="Search"]').type("2010 Honda Pilot Touring")
+            //filters
+                cy.get('[placeholder="Filter by Status"]').click()
+                   cy.contains("Down Payment Paid").click
+                cy.contains("2010 Honda Pilot Touring").should("exist")
+            /// down payment paid to shipped    
+                cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
+                cy.contains("Shipped").click()
+                cy.contains("Status Updated Successfully").should("exist")
+            //// shipped to delivered
+                cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
+                cy.contains("Delivered").click()
+                cy.contains("Status Updated Successfully").should("exist")
+            /// Delivered to completed
+            cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
+            cy.contains("Completed").click()
+            cy.contains("Status Updated Successfully").should("exist")
+        
+                }
 
 
 
