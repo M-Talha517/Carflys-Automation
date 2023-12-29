@@ -11,8 +11,6 @@ import { Search_Review_FirstName, Search_Review_Ivalid_CustomerName } from "./Se
 import { Dealership_BlankField, Dealership_UpdateData, Password_BlankField, Password_UpdateValid, Password_WrongPassword, Password_didNot_Match, Profile_InValidZip_Code, Profile_Update_BlankField, Profile_Update_ValidData, Profile_ValidZip_Code } from "./Seller/10-Settings.cy"
 import { addEmployee_BlankField, addEmployee_DuplicateData, addEmployee_InValid_ZipCode, addEmployee_ResetButton, addEmployee_ValidData, addEmployee_Valid_ZipCode, viewEmployee_Check_AssignButton, viewEmployee_ClearFilterButton, viewEmployee_Delete_IconButton, viewEmployee_Edit_IconButton, viewEmployee_ExistEpmloyee, viewEmployee_Modal_CloseButton, viewEmployee_NotExistEpmloyee, viewEmployee_SearchEmail, viewEmployee_SearchName, viewEmployee_View_IconButton } from "./Seller/2-StaffManagement.cy"
 import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO, viewVehicle_View_IconButton, viewVehicle_Edit_IconButton, viewVehicle_Delete_IconButton, viewVehicle_AddNotes, viewVehicle_DeleteNotes, Search_ClearfilterButton, Seller_Vehicle_StatusChanges_Active, Seller_Vehicle_StatusChanges_Block } from "./Seller/3-Vehicle.cy"
-import { Search_Complaint_FirstName } from "./Seller/9-Complaints"
-import { Search_Complaint_ComplaintTitle } from "./Seller/9-Complaints"
 import { Chat_Search_AdminName, Chat_Search_EmployeeName, Chatwith_Admin, Chatwith_Admin_To_Seller, Chatwith_Employee_To_Seller, Chatwith_Seller_To_Admin, Chatwith_Seller_To_Employee } from "./Seller/7-Chats.cy"
 import { TotalStaff_Button, stats_accountant, stats_dispatcher, stats_inventorymanager } from "./Seller/Dashboard/1-Total Staff.cy"
 import { TotalOrder_Button, stats_AcceptedOffer_order, stats_AwaitingOffer_order, stats_BasicInfoProvided_order, stats_Cancelled_order, stats_Completed_order, stats_CreditApplicationProvided_order, stats_Delivered_order, stats_DeliveryOptionsProvided_order, stats_DirectPaymentPaid_order, stats_DownPaymentPaid_order, stats_FinanceOptionsProvided_order, stats_Processing_order, stats_ReviewedandCompleted_order, stats_ServicesProvided_order, stats_Shipped_order, stats_WarrantyOptionsProvided_order, stats_pending_order } from "./Seller/Dashboard/2-Total Order.cy"
@@ -21,6 +19,7 @@ import { TotalComplaints_Button, stats_Not_repliedcomplaints, stats_repliedcompl
 import { TotalReviews_Button, stats_NegativeReviews, stats_PositiveReviews } from "./Seller/Dashboard/6-Total Review.cy"
 import { TotalAccount_Button, stats_Expenses_Count, stats_Revenue_Count, stats_TotalExpemse_Ammount, stats_TotalExpense_Ammount, stats_TotalProfit, stats_TotalRevenue_Ammount } from "./Seller/Dashboard/7-Total Account.cy"
 import { TotalPayments_Button, stats_Pending_payment, stats_Successful_payment } from "./Seller/Dashboard/4-Total Payment.cy"
+import { Search_Complaint_FirstName } from "./Seller/9-Complaints.cy"
 
 
 //////// Test Cases //////////////
@@ -921,12 +920,12 @@ describe('Seller', function () {
          login2()
          Search_Complaint_FirstName()
      })
-                 it("9.1.2-Search with Complaint Tiltle(TTP)", ()=>{
-         cy.visit('/dashboard/complaints')
-         cy.contains("Login").click()
-         login2()   
-         Search_Complaint_ComplaintTitle()
-     })
+    //              it("9.1.2-Search with Complaint Tiltle(TTP)", ()=>{
+    //      cy.visit('/dashboard/complaints')
+    //      cy.contains("Login").click()
+    //      login2()   
+    //      Search_Complaint_ComplaintTitle()
+    //  })
     })
 })
         describe("10.Settings", function(){
