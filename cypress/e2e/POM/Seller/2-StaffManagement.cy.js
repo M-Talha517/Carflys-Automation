@@ -228,7 +228,7 @@ export const viewEmployee_Delete_IconButton= () => {
 /////// view table
     cy.wait(2000)
     cy.contains('2.2 View Employee').click()
-    cy.get('[placeholder="Filter by User"]').click()
+    cy.get('[placeholder="Filter by User Type"]').click()
     cy.contains("Dispatcher").click()                   
     cy.get('[placeholder="Filter by Status"]').click()
     cy.contains("Active").click()

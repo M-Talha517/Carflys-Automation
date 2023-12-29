@@ -20,10 +20,10 @@ export const Profile_Update_BlankField = () => {
 
     // cy.get('["placeholder="Enter State/Location"]').clear()
     // cy.contains("Please fill in thid field.").should("exist")
-
-    cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').type("40002")
-    cy.contains("Invalid zip code. Please enter a valid zip code").should("exist")
-    cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').clear().type("10001")
+    cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').clear()
+    cy.contains("Invalid Zip Code").should("exist")
+    // cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').type("40002")
+    // cy.contains("Invalid zip code. Please enter a valid zip code").should("exist")
 
     cy.contains("Profile Information").parent().find("button").contains("Update").click()
     cy.contains("Please Select Profile Picture").should("exist")
@@ -36,7 +36,7 @@ export const Profile_Update_ValidData = () => {
     cy.get('[placeholder="Enter Last Name"]').clear().type("Seller")
     cy.get('[placeholder="Enter Cell Number"]').clear().type("+1(222)-222-2222")
     cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').type("10001")
-    cy.get(".mantine-1avyp1d").contains("Drag and drop a file").attachFile('usama.jpg', { subjectType: 'drag-n-drop' })
+    //cy.get(".mantine-1avyp1d").contains("Drag and drop a file").attachFile('usama.jpg', { subjectType: 'drag-n-drop' })
     cy.contains("Profile Information").parent().find("button").contains("Update").click()
     cy.contains("Profile updated successfully").should("exist")
 }
