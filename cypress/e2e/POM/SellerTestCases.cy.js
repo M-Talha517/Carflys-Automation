@@ -835,79 +835,79 @@ describe('Seller', function () {
 //     })
 
 //    })
-       describe("7-Chats", function(){
-            describe("7.1-Seller search-Bar",function(){
-              it("7.1.1-Seller can Search Admin in Search-Baar(TTP)", ()=>{
-                cy.visit('/dashboard/chat')
-                cy.contains("Login").click()
-                login2()
-                Chat_Search_AdminName()
-              })
-              it("7.1.1-Seller can Search Employees in Search-Baar(TTP)", ()=>{
-                cy.visit('/dashboard/chat')
-                cy.contains("Login").click()
-                login2()
-                Chat_Search_EmployeeName()
-              })
-            })
-             describe("7.2-Seller Chat",function(){
-                it("7.2.1-Seller Chat with Admin functionality(TTP)", ()=>{
-                  cy.visit('/dashboard/chat')
-                  cy.contains("Login").click()
-                  login2()
-                  Chatwith_Seller_To_Admin()
-                  logout()
-                  Admin_login()
-                  Chatwith_Admin_To_Seller()
-                  logout()
-                })
-                it("7.2.2-Seller Chat with his Employees Functionality(TTP)", ()=>{
-                  cy.visit('/dashboard/chat')
-                  cy.contains("Login").click()
-                  login2()
-                  Chatwith_Seller_To_Employee()
-                  logout()
-                  Employee_login()
-                  Chatwith_Employee_To_Seller()
-                  logout()
+//        describe("7-Chats", function(){
+//             describe("7.1-Seller search-Bar",function(){
+//               it("7.1.1-Seller can Search Admin in Search-Baar(TTP)", ()=>{
+//                 cy.visit('/dashboard/chat')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 Chat_Search_AdminName()
+//               })
+//               it("7.1.1-Seller can Search Employees in Search-Baar(TTP)", ()=>{
+//                 cy.visit('/dashboard/chat')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 Chat_Search_EmployeeName()
+//               })
+//             })
+//              describe("7.2-Seller Chat",function(){
+//                 it("7.2.1-Seller Chat with Admin functionality(TTP)", ()=>{
+//                   cy.visit('/dashboard/chat')
+//                   cy.contains("Login").click()
+//                   login2()
+//                   Chatwith_Seller_To_Admin()
+//                   logout()
+//                   Admin_login()
+//                   Chatwith_Admin_To_Seller()
+//                   logout()
+//                 })
+//                 it("7.2.2-Seller Chat with his Employees Functionality(TTP)", ()=>{
+//                   cy.visit('/dashboard/chat')
+//                   cy.contains("Login").click()
+//                   login2()
+//                   Chatwith_Seller_To_Employee()
+//                   logout()
+//                   Employee_login()
+//                   Chatwith_Employee_To_Seller()
+//                   logout()
 
-                })
-               })
-   })
-        describe("8.Reviews",function(){
-       describe("8.1-Search ",function(){
-        it("8.1.1-Search with First Name (TTP)", ()=>{
-            cy.visit('/dashboard/reviews')
-            cy.contains("Login").click()
-            login2()
-            Search_Review_FirstName()
-        })
+//                 })
+//                })
+//    })
+//         describe("8.Reviews",function(){
+//        describe("8.1-Search ",function(){
+//         it("8.1.1-Search with First Name (TTP)", ()=>{
+//             cy.visit('/dashboard/reviews')
+//             cy.contains("Login").click()
+//             login2()
+//             Search_Review_FirstName()
+//         })
 
-        it("8.1.2-Search with Invalid Customer Name (TTP)", ()=>{
-            cy.visit('/dashboard/reviews')
-            cy.contains("Login").click()
-            login2()
-            Search_Review_Ivalid_CustomerName()
+//         it("8.1.2-Search with Invalid Customer Name (TTP)", ()=>{
+//             cy.visit('/dashboard/reviews')
+//             cy.contains("Login").click()
+//             login2()
+//             Search_Review_Ivalid_CustomerName()
 
-        })
-       })
-})
-//         describe("9.Complaints",function(){
-//            describe("9.1-Search ",function(){
-//                 it("9.1.1-Search with First Name (TTP)", ()=>{
-//          cy.visit('/dashboard/complaints')
-//          cy.contains("Login").click()
-//          login2()
-//          Search_Complaint_FirstName()
-//      })
-//     //              it("9.1.2-Search with Complaint Tiltle(TTP)", ()=>{
-//     //      cy.visit('/dashboard/complaints')
-//     //      cy.contains("Login").click()
-//     //      login2()   
-//     //      Search_Complaint_ComplaintTitle()
-//     //  })
-//     })
+//         })
+//        })
 // })
+        describe("9.Complaints",function(){
+           describe("9.1-Search ",function(){
+                it("9.1.1-Search with First Name (TTP)", ()=>{
+         cy.visit('/dashboard/complaints')
+         cy.contains("Login").click()
+         login2()
+         Search_Complaint_FirstName()
+     })
+    //              it("9.1.2-Search with Complaint Tiltle(TTP)", ()=>{
+    //      cy.visit('/dashboard/complaints')
+    //      cy.contains("Login").click()
+    //      login2()   
+    //      Search_Complaint_ComplaintTitle()
+    //  })
+    })
+})
 //         describe("10.Settings", function(){
 //     describe("10.1-Profile", function(){
 //   it("10.1.1-Update button with Blank field (TTF)", ()=>{
