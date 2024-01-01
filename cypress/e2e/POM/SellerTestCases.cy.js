@@ -669,172 +669,172 @@ describe('Seller', function () {
     })
    
    })
-//        describe("6-Accounting", function(){
-//            describe("Revenue",function(){
-//         describe("6.1-Add Revenue",function(){
-//             it("6.1.1-Add Button with Blank Field (TTF)", ()=>{
-//                 cy.visit('/dashboard/add-revenue')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addRevenue_Blank_filed()
-//             })
-//             it("6.1.2-Add Vehicle Drop down List (TTP)", ()=>{
-//                 cy.visit('/dashboard/add-revenue')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addRevenue_DropDown_List()
-//             })
-//             it("6.1.3-Add Revenue with Valid Data(TTP)", ()=>{
-//                 cy.visit('/dashboard/add-revenue')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addRevenue_Valid_Data()
+       describe("6-Accounting", function(){
+           describe("Revenue",function(){
+        describe("6.1-Add Revenue",function(){
+            it("6.1.1-Add Button with Blank Field (TTF)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                login2()
+                addRevenue_Blank_filed()
+            })
+            it("6.1.2-Add Vehicle Drop down List (TTP)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                login2()
+                addRevenue_DropDown_List()
+            })
+            it("6.1.3-Add Revenue with Valid Data(TTP)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                login2()
+                addRevenue_Valid_Data()
     
-//             })
-//             it("6.1.4-Reset Button (TTP)", ()=>{
-//                 cy.visit('/dashboard/add-revenue')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addRevenue_ResetButton()
-//             })
-//           })
-//         describe("6.2-View Revenue",function(){
-//             describe("6.2.1-Search", function (){
-//                 it(" 6.2.1.1-Search With Vin No (TTP)", ()=>{
-//                     cy.visit('/dashboard/view-revenue')
-//                     cy.contains("Login").click()
-//                     login2()
-//                     ViewRevenue_Search_VinNo()
-//                 })
-//                 it(" 6.2.1.2-Search With Vehicle Name (TTP)", ()=>{
-//                     cy.visit('/dashboard/view-revenue')
-//                     cy.contains("Login").click()
-//                     login2()
-//                     ViewRevenue_Search_VehicleName()
-//                 })
-//             describe("6.2.3-Table list view",function(){
-//                     it("6.2.3.1-View Icon button (TTP)", ()=>{
-//                         cy.visit('/dashboard/view-revenue')
-//                         cy.contains("Login").click()
-//                         login2()
-//                         ViewRevenue_View_IconButton()
-//                     })
-//                     it("6.2.3.2-Edit Icon button (TTP)", ()=>{
-//                         cy.visit('/dashboard/view-revenue')
-//                         cy.contains("Login").click()
-//                         login2()
-//                         ViewRevenue_Edit_IconButton()
-//                     })
-//                     it("6.2.3.3-Delete Icon button (TTP)", ()=>{
-//                         cy.visit('/dashboard/view-revenue')
-//                         cy.contains("Login").click()
-//                         login2()
-//                         ViewRevenue_Delete_IconButton()
-//                     })
+            })
+            it("6.1.4-Reset Button (TTP)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                login2()
+                addRevenue_ResetButton()
+            })
+          })
+        describe("6.2-View Revenue",function(){
+            describe("6.2.1-Search", function (){
+                it(" 6.2.1.1-Search With Vin No (TTP)", ()=>{
+                    cy.visit('/dashboard/view-revenue')
+                    cy.contains("Login").click()
+                    login2()
+                    ViewRevenue_Search_VinNo()
+                })
+                it(" 6.2.1.2-Search With Vehicle Name (TTP)", ()=>{
+                    cy.visit('/dashboard/view-revenue')
+                    cy.contains("Login").click()
+                    login2()
+                    ViewRevenue_Search_VehicleName()
+                })
+            describe("6.2.3-Table list view",function(){
+                    it("6.2.3.1-View Icon button (TTP)", ()=>{
+                        cy.visit('/dashboard/view-revenue')
+                        cy.contains("Login").click()
+                        login2()
+                        ViewRevenue_View_IconButton()
+                    })
+                    it("6.2.3.2-Edit Icon button (TTP)", ()=>{
+                        cy.visit('/dashboard/view-revenue')
+                        cy.contains("Login").click()
+                        login2()
+                        ViewRevenue_Edit_IconButton()
+                    })
+                    it("6.2.3.3-Delete Icon button (TTP)", ()=>{
+                        cy.visit('/dashboard/view-revenue')
+                        cy.contains("Login").click()
+                        login2()
+                        ViewRevenue_Delete_IconButton()
+                    })
 
-//                 })
-//             })
+                })
+            })
     
-//           })
+          })
 
-//     })
-//            describe("Expense",function(){
-//         describe("6.3-Add Expense",function(){
-//             it("6.3.1-Add Expense With Blank Field (TTF)", ()=>{
-//                 cy.visit('/dashboard/add-expense')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addExpense_BlankData()
-//             })
-//             it("6.3.2-Add Vehicle Drop down List (TTP)", ()=>{
-//                 cy.visit('/dashboard/add-expense')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addExpense_Vehicle_DropDown()
-//             })
-//             it("6.3.3-Add Expense type Drop down List (TTP)", ()=>{
-//                 cy.visit('/dashboard/add-expense')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addExpense_ExpenseType_DropDown()
-//             })
-//             it("6.3.4-Add Expense with Valid Data(TTP)", ()=>{
-//                 cy.visit('/dashboard/add-expense')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addExpense_ValidData()
-//             })
-//             it("6.3.5-Reset Button (TTP)", ()=>{
-//                 cy.visit('/dashboard/add-expense')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addExpense_ResetButton()
-//             })
+    })
+           describe("Expense",function(){
+        describe("6.3-Add Expense",function(){
+            it("6.3.1-Add Expense With Blank Field (TTF)", ()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                login2()
+                addExpense_BlankData()
+            })
+            it("6.3.2-Add Vehicle Drop down List (TTP)", ()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                login2()
+                addExpense_Vehicle_DropDown()
+            })
+            it("6.3.3-Add Expense type Drop down List (TTP)", ()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                login2()
+                addExpense_ExpenseType_DropDown()
+            })
+            it("6.3.4-Add Expense with Valid Data(TTP)", ()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                login2()
+                addExpense_ValidData()
+            })
+            it("6.3.5-Reset Button (TTP)", ()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                login2()
+                addExpense_ResetButton()
+            })
         
 
-//           })
-//         describe("6.4-View Expense", function(){
-//             describe("6.4.1-Search", function (){
-//                 it("6.4.1.1-Search With Vin No (TTP)", ()=>{
-//                     cy.visit('/dashboard/view-expense')
-//                     cy.contains("Login").click()
-//                     login2()
-//                     ViewExpense_Search_VinNo()
-//                 })
-//                 it("6.4.1.2-Search With Vehicle Name (TTP)", ()=>{
-//                     cy.visit('/dashboard/view-expense')
-//                     cy.contains("Login").click()
-//                     login2()
-//                     ViewExpense_Search_VehicleName()
-//                 })
-//                 it("6.4.1.3-Search with Inavalid Vin No or Vehicle name (TTF)", ()=>{
-//                     cy.visit('/dashboard/view-expense')
-//                     cy.contains("Login").click()
-//                     login2()
-//                     ViewExpense_Search_InValid_VinNo()
-//                 })
-//                 describe("6.4.3-Table list view",function(){
-//                     it("6.4.3.1-View Icon button (TTP)", ()=>{
-//                         cy.visit('/dashboard/view-expense')
-//                         cy.contains("Login").click()
-//                         login2()
-//                         ViewExpense_View_IconButton()
-//                     })
-//                     it("6.4.3.2-Edit Icon button (TTP)", ()=>{
-//                         cy.visit('/dashboard/view-expense')
-//                         cy.contains("Login").click()
-//                         login2()
-//                         ViewExpense_Edit_IconButton()
+          })
+        describe("6.4-View Expense", function(){
+            describe("6.4.1-Search", function (){
+                it("6.4.1.1-Search With Vin No (TTP)", ()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    login2()
+                    ViewExpense_Search_VinNo()
+                })
+                it("6.4.1.2-Search With Vehicle Name (TTP)", ()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    login2()
+                    ViewExpense_Search_VehicleName()
+                })
+                it("6.4.1.3-Search with Inavalid Vin No or Vehicle name (TTF)", ()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    login2()
+                    ViewExpense_Search_InValid_VinNo()
+                })
+                describe("6.4.3-Table list view",function(){
+                    it("6.4.3.1-View Icon button (TTP)", ()=>{
+                        cy.visit('/dashboard/view-expense')
+                        cy.contains("Login").click()
+                        login2()
+                        ViewExpense_View_IconButton()
+                    })
+                    it("6.4.3.2-Edit Icon button (TTP)", ()=>{
+                        cy.visit('/dashboard/view-expense')
+                        cy.contains("Login").click()
+                        login2()
+                        ViewExpense_Edit_IconButton()
                        
-//                     })
-//                     it("6.4.3.3-Delete Icon button (TTP)", ()=>{
-//                         cy.visit('/dashboard/view-expense')
-//                         cy.contains("Login").click()
-//                         login2()
-//                         ViewExpense_Delete_IconButton()
-//                     })
-//                 })
-//          })
-//         })
-//     })
-//            describe("6-View Profit Report",function(){
-//         describe("6.5.1-Search", function (){
-//             it("6.5.1.1-Serching with Vin No(TTP)", ()=>{
-//                 cy.visit('/dashboard/profit-report')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 ViewProfit_Search_Valid_VinNo()
-//             })
-//             it("6.5.1.2-Searching with Invalid Vin no (TTF)", ()=>{
-//                 cy.visit('/dashboard/profit-report')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 ViewProfit_Search_InValid_VinNo()
-//             })
-//      })
-//     })
+                    })
+                    it("6.4.3.3-Delete Icon button (TTP)", ()=>{
+                        cy.visit('/dashboard/view-expense')
+                        cy.contains("Login").click()
+                        login2()
+                        ViewExpense_Delete_IconButton()
+                    })
+                })
+         })
+        })
+    })
+           describe("6-View Profit Report",function(){
+        describe("6.5.1-Search", function (){
+            it("6.5.1.1-Serching with Vin No(TTP)", ()=>{
+                cy.visit('/dashboard/profit-report')
+                cy.contains("Login").click()
+                login2()
+                ViewProfit_Search_Valid_VinNo()
+            })
+            it("6.5.1.2-Searching with Invalid Vin no (TTF)", ()=>{
+                cy.visit('/dashboard/profit-report')
+                cy.contains("Login").click()
+                login2()
+                ViewProfit_Search_InValid_VinNo()
+            })
+     })
+    })
 
-//    })
+   })
 //        describe("7-Chats", function(){
 //             describe("7.1-Seller search-Bar",function(){
 //               it("7.1.1-Seller can Search Admin in Search-Baar(TTP)", ()=>{
