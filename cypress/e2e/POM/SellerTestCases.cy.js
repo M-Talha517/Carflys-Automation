@@ -892,92 +892,92 @@ describe('Seller', function () {
 //         })
 //        })
 // })
-        describe("9.Complaints",function(){
-           describe("9.1-Search ",function(){
-                it("9.1.1-Search with First Name (TTP)", ()=>{
-         cy.visit('/dashboard/complaints')
-         cy.contains("Login").click()
-         login2()
-         Search_Complaint_FirstName()
-     })
-    //              it("9.1.2-Search with Complaint Tiltle(TTP)", ()=>{
-    //      cy.visit('/dashboard/complaints')
-    //      cy.contains("Login").click()
-    //      login2()   
-    //      Search_Complaint_ComplaintTitle()
-    //  })
-    })
-})
-//         describe("10.Settings", function(){
-//     describe("10.1-Profile", function(){
-//   it("10.1.1-Update button with Blank field (TTF)", ()=>{
-//       cy.visit('/dashboard/settings')
-//       cy.contains("Login").click()
-//       login2()
-//       Profile_Update_BlankField()
-//   })
-//   it("10.1.2-Update Valid Data (TTP) ", ()=>{
-//       cy.visit('/dashboard/settings')
-//       cy.contains("Login").click()
-//       login2()
-//       Profile_Update_ValidData()
-//   })
-//   it("10.1.3-Enter Valid Zip Code (TTP)", ()=>{
-//       cy.visit('/dashboard/settings')
-//       cy.contains("Login").click()
-//       login2()
-//       Profile_ValidZip_Code()
-
-//   })
-//    it("10.1.4-Enter Invalid Zip Code (TTF)", ()=>{
-//       cy.visit('/dashboard/settings')
-//       cy.contains("Login").click()
-//       login2()
-//       Profile_InValidZip_Code()
-//   })
-//    })
-//     describe("10.2-Password", function(){
-//       it("10.2.1-Update Button With Blank  (TTF)", ()=>{
-//           cy.visit('/dashboard/settings')
-//           cy.contains("Login").click()
-//           login2()
-//           Password_BlankField()
-          
-//       })
-//       it("10.2.2-Enter wrong passwod in Old Password text Field (TTF)", ()=>{
-//           cy.visit('/dashboard/settings')
-//           cy.contains("Login").click()
-//           login2()
-//           Password_WrongPassword()
-          
-//       })
-//       it("10.2.3-Enter did not match password in text field(TTF)", ()=>{
-//           cy.visit('/dashboard/settings')
-//           cy.contains("Login").click()
-//           login2()
-//           Password_didNot_Match()
-//       })
-//       it.skip("10.2.4-Enter Valid Password (TTP)", ()=>{
-//           cy.visit('/dashboard/settings')
-//           cy.contains("Login").click()
-//           login2()
-//           Password_UpdateValid()
-
-//       })
-//     }) 
-//     describe("10.3-Dealership", function(){
-//       it("10.3.1-Update button with Blank field data (TTF)", ()=>{
-//           cy.visit('/dashboard/settings')
-//           cy.contains("Login").click()
-//           login2()
-//           Dealership_BlankField()
-//       })
-//       it("10.3.2-Update button with Valid data (TTP)", ()=>{
-//           cy.visit('/dashboard/settings')
-//           cy.contains("Login").click()
-//           login2()
-//           Dealership_UpdateData()
-//       })
+//         describe("9.Complaints",function(){
+//            describe("9.1-Search ",function(){
+//                 it("9.1.1-Search with First Name (TTP)", ()=>{
+//          cy.visit('/dashboard/complaints')
+//          cy.contains("Login").click()
+//          login2()
+//          Search_Complaint_FirstName()
+//      })
+//     //              it("9.1.2-Search with Complaint Tiltle(TTP)", ()=>{
+//     //      cy.visit('/dashboard/complaints')
+//     //      cy.contains("Login").click()
+//     //      login2()   
+//     //      Search_Complaint_ComplaintTitle()
+//     //  })
 //     })
 // })
+        describe("10.Settings", function(){
+    describe("10.1-Profile", function(){
+  it("10.1.1-Update button with Blank field (TTF)", ()=>{
+      cy.visit('/dashboard/settings')
+      cy.contains("Login").click()
+      login2()
+      Profile_Update_BlankField()
+  })
+  it("10.1.2-Update Valid Data (TTP) ", ()=>{
+      cy.visit('/dashboard/settings')
+      cy.contains("Login").click()
+      login2()
+      Profile_Update_ValidData()
+  })
+  it("10.1.3-Enter Valid Zip Code (TTP)", ()=>{
+      cy.visit('/dashboard/settings')
+      cy.contains("Login").click()
+      login2()
+      Profile_ValidZip_Code()
+
+  })
+   it("10.1.4-Enter Invalid Zip Code (TTF)", ()=>{
+      cy.visit('/dashboard/settings')
+      cy.contains("Login").click()
+      login2()
+      Profile_InValidZip_Code()
+  })
+   })
+    describe("10.2-Password", function(){
+      it("10.2.1-Update Button With Blank  (TTF)", ()=>{
+          cy.visit('/dashboard/settings')
+          cy.contains("Login").click()
+          login2()
+          Password_BlankField()
+          
+      })
+      it("10.2.2-Enter wrong passwod in Old Password text Field (TTF)", ()=>{
+          cy.visit('/dashboard/settings')
+          cy.contains("Login").click()
+          login2()
+          Password_WrongPassword()
+          
+      })
+      it("10.2.3-Enter did not match password in text field(TTF)", ()=>{
+          cy.visit('/dashboard/settings')
+          cy.contains("Login").click()
+          login2()
+          Password_didNot_Match()
+      })
+      it.skip("10.2.4-Enter Valid Password (TTP)", ()=>{
+          cy.visit('/dashboard/settings')
+          cy.contains("Login").click()
+          login2()
+          Password_UpdateValid()
+
+      })
+    }) 
+    describe("10.3-Dealership", function(){
+      it("10.3.1-Update button with Blank field data (TTF)", ()=>{
+          cy.visit('/dashboard/settings')
+          cy.contains("Login").click()
+          login2()
+          Dealership_BlankField()
+      })
+      it("10.3.2-Update button with Valid data (TTP)", ()=>{
+          cy.visit('/dashboard/settings')
+          cy.contains("Login").click()
+          login2()
+          Dealership_UpdateData()
+      })
+    })
+})
 })

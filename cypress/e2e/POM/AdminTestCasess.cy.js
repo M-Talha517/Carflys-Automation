@@ -1171,146 +1171,146 @@ describe("Admin", ()=>{
 
       //       })   
       //   })
-        describe("14.Complaints",()=>{
-           describe("14.1-Add Complaint",()=>{
-            it("14.1.1-Add Complaint with no data(TTP)", ()=>{
-                cy.visit('/dashboard/add-complaint')
-                cy.contains("Login").click()
-                Admin_login()
-               addcomplaint_NoData()
-              })
-              it("14.1.2-Add Complaint with Valid data(TTP)", ()=>{
-                cy.visit('/dashboard/add-complaint')
-                cy.contains("Login").click()
-                Admin_login()
-               addcomplaint_ValidData()
-              })
-              it("14.1.3-Reset Button Functionality(TTP)", ()=>{
-                cy.visit('/dashboard/add-complaint')
-                cy.contains("Login").click()
-                Admin_login()
-               addcomplaint_ResetButton()
-              })
-              it("14.1.4-Select Order by drop down list(TTP)", ()=>{
-                cy.visit('/dashboard/add-complaint')
-                cy.contains("Login").click()
-                Admin_login()
-                addcomplaint_Order_dropdown()
-              })
-           })
-           describe("14.2-View Complaint",()=>{
-            describe("14.2.1-Search",()=>{
-                it("14.2.1.1-Search Complaint by Car-Name(TTP)", ()=>{
-                    cy.visit('/dashboard/complaints')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewcomplaint_Search_CarNAme()
+      //   describe("14.Complaints",()=>{
+      //      describe("14.1-Add Complaint",()=>{
+      //       it("14.1.1-Add Complaint with no data(TTP)", ()=>{
+      //           cy.visit('/dashboard/add-complaint')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //          addcomplaint_NoData()
+      //         })
+      //         it("14.1.2-Add Complaint with Valid data(TTP)", ()=>{
+      //           cy.visit('/dashboard/add-complaint')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //          addcomplaint_ValidData()
+      //         })
+      //         it("14.1.3-Reset Button Functionality(TTP)", ()=>{
+      //           cy.visit('/dashboard/add-complaint')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //          addcomplaint_ResetButton()
+      //         })
+      //         it("14.1.4-Select Order by drop down list(TTP)", ()=>{
+      //           cy.visit('/dashboard/add-complaint')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //           addcomplaint_Order_dropdown()
+      //         })
+      //      })
+      //      describe("14.2-View Complaint",()=>{
+      //       describe("14.2.1-Search",()=>{
+      //           it("14.2.1.1-Search Complaint by Car-Name(TTP)", ()=>{
+      //               cy.visit('/dashboard/complaints')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewcomplaint_Search_CarNAme()
                     
-                  })
-                  it("14.2.1.2-Search Complaint by Order-No(TTP)", ()=>{
-                    cy.visit('/dashboard/complaints')
-                    cy.contains("Login").click()
-                    Admin_login()
-                  viewcomplaint_Search_OrderNo()
-                  })
-                  it("14.2.1.3-Search Complaint by Complaint Title(TTP)", ()=>{
-                    cy.visit('/dashboard/complaints')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewcomplaint_Search_ComplaintTitle()
-                  })
-                  it("14.2.1.4-Search Complaint by Dealership(TTP)", ()=>{
-                    cy.visit('/dashboard/complaints')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewcomplaint_Search_Dealership()
-                  })
-
-
-
-            })
-            describe("14.2.3-View Icon In Action(TTP)",()=>{
-                it("14.2.3-View Icon In Action(TTP)",()=>{
-                    cy.visit('/dashboard/complaints')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewcomplaint_View_IconButton()
-                })
-                it("14.2.3.1-Close Button On View Modal",()=>{
-                    cy.visit('/dashboard/complaints')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewcomplaint_View_ModalCloseButton()
-                })
-
-
-
-            })
-            it("14.2.4-Clear Search Button functionality check(TTP)",()=>{
-                cy.visit('/dashboard/complaints')
-                cy.contains("Login").click()
-                Admin_login()
-                viewcomplaint_ClearSearchButtton()
-            })
-           })
-        })
-
-      //   describe("15.Settings",()=>{
-      //       describe("15.1-Profile",()=>{
-      //           it("15.1.1-Update profile with no data(TTF)", ()=>{
-      //               cy.visit('/dashboard/settings')
+      //             })
+      //             it("14.2.1.2-Search Complaint by Order-No(TTP)", ()=>{
+      //               cy.visit('/dashboard/complaints')
       //               cy.contains("Login").click()
       //               Admin_login()
-      //               Admin_Profile_Update_BlankField()
+      //             viewcomplaint_Search_OrderNo()
+      //             })
+      //             it("14.2.1.3-Search Complaint by Complaint Title(TTP)", ()=>{
+      //               cy.visit('/dashboard/complaints')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewcomplaint_Search_ComplaintTitle()
+      //             })
+      //             it("14.2.1.4-Search Complaint by Dealership(TTP)", ()=>{
+      //               cy.visit('/dashboard/complaints')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewcomplaint_Search_Dealership()
       //             })
 
-      //             it("15.1.2-Update Profile with valid data(TTP)", ()=>{
-      //               cy.visit('/dashboard/settings')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               Admin_Profile_Update_ValidData()
-      //             })
-      //             it("15.1.3-Update Profile with Valid Zip-code(TTP)", ()=>{
-      //               cy.visit('/dashboard/settings')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               Admin_Profile_ValidZip_Code()
-      //             })
-      //             it("15.1.4-Update Profile with Invalid Zip-code(TTF)", ()=>{
-      //               cy.visit('/dashboard/settings')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               Admin_Profile_InValidZip_Code()
-      //             })
+
+
       //       })
-      //       describe("15.2-Password",()=>{
-      //           it("15.2.1-Update Password with blank fields(TTF)", ()=>{
-      //               cy.visit('/dashboard/settings')
+      //       describe("14.2.3-View Icon In Action(TTP)",()=>{
+      //           it("14.2.3-View Icon In Action(TTP)",()=>{
+      //               cy.visit('/dashboard/complaints')
       //               cy.contains("Login").click()
       //               Admin_login()
-      //              admin_Password_BlankField()
-      //             })
-      //             it("15.2.2-Update password with Wrong Old Password(TTP)", ()=>{
-      //               cy.visit('/dashboard/settings')
+      //               viewcomplaint_View_IconButton()
+      //           })
+      //           it("14.2.3.1-Close Button On View Modal",()=>{
+      //               cy.visit('/dashboard/complaints')
       //               cy.contains("Login").click()
       //               Admin_login()
-      //              admin_Password_WrongPassword()
-      //             })
-      //             it("15.2.4-Different passwords in New and Confirm Password(TTF)", ()=>{
-      //                cy.visit('/dashboard/settings')
-      //                cy.contains("Login").click()
-      //                Admin_login()
-      //               admin_Password_didNot_Match()
-      //              })
-      //             it.skip("15.2.3-Update password with Valid data(TTP)", ()=>{
-      //               cy.visit('/dashboard/settings')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //              admin_Password_UpdateValid()
-      //             })
-               
+      //               viewcomplaint_View_ModalCloseButton()
+      //           })
+
+
+
       //       })
+      //       it("14.2.4-Clear Search Button functionality check(TTP)",()=>{
+      //           cy.visit('/dashboard/complaints')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //           viewcomplaint_ClearSearchButtton()
+      //       })
+      //      })
       //   })
+
+        describe("15.Settings",()=>{
+            describe("15.1-Profile",()=>{
+                it("15.1.1-Update profile with no data(TTF)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Admin_Profile_Update_BlankField()
+                  })
+
+                  it("15.1.2-Update Profile with valid data(TTP)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Admin_Profile_Update_ValidData()
+                  })
+                  it("15.1.3-Update Profile with Valid Zip-code(TTP)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Admin_Profile_ValidZip_Code()
+                  })
+                  it("15.1.4-Update Profile with Invalid Zip-code(TTF)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Admin_Profile_InValidZip_Code()
+                  })
+            })
+            describe("15.2-Password",()=>{
+                it("15.2.1-Update Password with blank fields(TTF)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                   admin_Password_BlankField()
+                  })
+                  it("15.2.2-Update password with Wrong Old Password(TTP)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                   admin_Password_WrongPassword()
+                  })
+                  it("15.2.4-Different passwords in New and Confirm Password(TTF)", ()=>{
+                     cy.visit('/dashboard/settings')
+                     cy.contains("Login").click()
+                     Admin_login()
+                    admin_Password_didNot_Match()
+                   })
+                  it.skip("15.2.3-Update password with Valid data(TTP)", ()=>{
+                    cy.visit('/dashboard/settings')
+                    cy.contains("Login").click()
+                    Admin_login()
+                   admin_Password_UpdateValid()
+                  })
+               
+            })
+        })
        
 
 })
