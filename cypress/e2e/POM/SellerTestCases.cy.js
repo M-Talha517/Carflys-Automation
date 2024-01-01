@@ -25,430 +25,430 @@ import { Search_Complaint_FirstName } from "./Seller/9-Complaints.cy"
 //////// Test Cases //////////////
                       //  (TC#3.1.1.1.5-TTP) should add and view Vehicle with valid data
 describe('Seller', function () {
-  describe("1-Dashboard",()=>{
-    describe("1.1-Total Staff",()=>{
-        it("1.1.1-Verifying Total Staff Functionality(TTP)",()=>{
-           cy.visit('/dashboard/stats-details')
-           cy.contains("Login").click()
-           login2()
-          TotalStaff_Button()
-        })
-        it("1.1.1.1-Verifying Stats of Inventory Managers(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_inventorymanager()
-         })
-         it("1.1.1.2-Verifying Stats of Accountant(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_accountant()
-           
-         })
-         it("1.1.1.2-Verifying Stats of Dispatchers(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_dispatcher()
-         })
-
-
-   })
-   describe("1.2-Total Orders",()=>{
-     describe("1.2.1-Verifying Total Orders(TTP)",()=>{
-        it("1.1.1.2-Verifying Stats of Orders(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            TotalOrder_Button()
-         })
-
-         it("1.2.1.1-Verify stats of Pending Order(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_pending_order()
-
-         })
-         it("1.2.1.2-Verify stats of Down-Payment Paid(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_DownPaymentPaid_order()
-
-         })
-
-         it("1.2.1.3-Verify stats of Direct Payment Paid(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_DirectPaymentPaid_order()
-
-         })
-
-         it("1.2.1.4-Verify stats of Shipped(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Shipped_order()
-
-         })
-
-         it("1.2.1.5-Verify stats of Delivered(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Delivered_order()
-
-         })
-         it("1.2.1.6-Verify stats of Completed(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Completed_order()
-
-         })
-
-          it("1.2.1.7-Verify stats of Reviewed and Completed(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_ReviewedandCompleted_order()
-
-         })
-         it("1.2.1.8-Verify stats of Processing(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Processing_order()
-
-         })
-
-         it("1.2.1.9-Verify stats of Cancelled(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Cancelled_order()
-
-         })
-         it("1.2.1.10-Verify stats of Basic Info Provided(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_BasicInfoProvided_order()
-
-         })
-
-         it("1.2.1.11-Verify stats of Finance Options Provided(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_FinanceOptionsProvided_order()
-
-         })
-         it("1.2.1.12-Verify stats of Credit Application Provided(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_CreditApplicationProvided_order()
-
-         })
-
-         it("1.2.1.13-Verify stats of Delivery Options Provided(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_DeliveryOptionsProvided_order()
-
-         })
-         it("1.2.1.14-Verify stats of Warranty Options Provided(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_WarrantyOptionsProvided_order()
-
-         })
-         it("1.2.1.15-Verify stats of Services Provided(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_ServicesProvided_order()
-
-         })
-         it("1.2.1.16-Verify stats of Awaiting Offer(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_AwaitingOffer_order()
-
-         })
-         it("1.2.1.17-Verify stats of Accepted Offer(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_AcceptedOffer_order()
-
-         })
-     })
-   })
-
-   describe("1.3-Total Vehiles",()=>{
-    it("1.3.1-Verifying Total Vehicles(TTP)",()=>{
-        cy.visit('/dashboard/stats-details')
-        cy.contains("Login").click()
-        login2()
-        TotalVehicle_Button()
-     })
-
-     it("1.3.1.1-Verify status of Active Vehicles(TTP)",()=>{
-        cy.visit('/dashboard/stats-details')
-        cy.contains("Login").click()
-        login2()
-        stats_Active_vehicle()
-
-     })
-
-     it("1.3.1.2-Verify status of Block Vehicles(TTP)",()=>{
-        cy.visit('/dashboard/stats-details')
-        cy.contains("Login").click()
-        login2()
-        stats_Blocked_vehicle()
-     })
-     it("1.3.1.3-Verify status of In-Deal Vehicles(TTP)",()=>{
-        cy.visit('/dashboard/stats-details')
-        cy.contains("Login").click()
-        login2()
-        stats_InDeal_vehicle()
-     })
-      it("1.3.1.4-Verify status of Sold Vehicles(TTP)",()=>{
-        cy.visit('/dashboard/stats-details')
-        cy.contains("Login").click()
-        login2()
-        stats_Sold_vehicle()
-     })
-   })
-   describe("1.4-Payment",()=>{
-    describe("1.4.1-Verifying Total Payments(TTP)",()=>{
-        it("1.4.1-Verifying Total Payments(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            TotalPayments_Button()
-         })
-         it("1.4.1.1-Verify Stats Of Pending Status(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Pending_payment()
-        })
-         it("1.4.1.2-Verify stats of Success Status(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_Successful_payment()
-         })
-    })
-   })
-   describe("1.5-Total Complaint",()=>{
-      describe("1.5.1-Verifying Total Complaints(TTP)",()=>{
-        it("1.5.1-Verifying Total Complaints(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            TotalComplaints_Button()
-         })
-          it("1.5.1.1-Verify Stats of Replied status(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_repliedcomplaints()
-         })
-         it("1.5.1.2-Verify Status of Non-Replied Status(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_Not_repliedcomplaints()
-         })
-
-
-      })
-   })
-   describe("1.6-Reviews",()=>{
-       describe("1.6.1-Verifying Total Reviews(TTP)",()=>{
-        it("1.6.1-VerifyingTotal Reviews(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            TotalReviews_Button()
-         })
-         it("1.6.1.1-Verify Stats of Negative Reviews(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_NegativeReviews()
-         })
-         it("1.6.1.2-Verify Stats of Positive Reviews(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()
-            login2()
-            stats_PositiveReviews()
-         })
-       })
-   })
-   describe("1.7-Total Accounts",()=>{
-     describe("1.7.1-Verifying Total Accounts(TTP)",()=>{
-        it("1.7.1-Verifying Total Accounts(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            TotalAccount_Button()
-         })
-         it("1.7.1.1-Verify Stat of Expense Count(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_Expenses_Count()
-         })
-         it("1.7.1.2-Verify Stat of Revenue Count(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_Revenue_Count()
-         })
-         it("1.7.1.3-Verify Stat of Total Expense Amount(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_TotalExpense_Ammount()
-         })
-
-         it("1.7.1.4-Verify Stat of Total Revenue Amount(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_TotalRevenue_Ammount()
-         })
-
-         it("1.7.1.5-Verify Stat of Total Profit(TTP)",()=>{
-            cy.visit('/dashboard/stats-details')
-            cy.contains("Login").click()  
-            login2()
-            stats_TotalProfit()
-         })
-     })
-   })
-  })
-//        describe("2-Staff Management",function(){
-//           describe("2.1-Add Employee", function(){
-//             it("2.1.1-Add Employee with blank field(TTF)", ()=>{
-//                 cy.visit('/dashboard/add-employee')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addEmployee_BlankField()
-//             })
-//             it("2.1.2-Zip Code filed With Valid Zip Code(TTP)", ()=>{
-//                 cy.visit('/dashboard/add-employee')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addEmployee_Valid_ZipCode()
-//             })
-//             it("2.1.3-Zip Code filed With InValid Zip Code(TTP)", ()=>{
-//                 cy.visit('/dashboard/add-employee')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addEmployee_InValid_ZipCode()
-//             })
-//             it("2.1.4- Add Employee with Valid Data(TTP)", ()=>{
-//                 cy.visit('/dashboard/add-employee')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addEmployee_ValidData()
-//             })
-//             it("2.1.5-Add Emplyee with duplicate data(TTF)", ()=>{
-//                 cy.visit('/dashboard/add-employee')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addEmployee_DuplicateData()
-//             })
-//             it("2.1.6- Reset Button Functionality Test(TTP)", ()=>{
-//                 cy.visit('/dashboard/add-employee')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 addEmployee_ResetButton() 
-//             })
+//   describe("1-Dashboard",()=>{
+//     describe("1.1-Total Staff",()=>{
+//         it("1.1.1-Verifying Total Staff Functionality(TTP)",()=>{
+//            cy.visit('/dashboard/stats-details')
+//            cy.contains("Login").click()
+//            login2()
+//           TotalStaff_Button()
 //         })
-//         describe("2.2-View Employee", function(){
-//           describe("Search", function(){
-//              it("2.2.2.1- Search Bar Functionality Check with full name", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_SearchName()
+//         it("1.1.1.1-Verifying Stats of Inventory Managers(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_inventorymanager()
+//          })
+//          it("1.1.1.2-Verifying Stats of Accountant(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_accountant()
+           
+//          })
+//          it("1.1.1.2-Verifying Stats of Dispatchers(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_dispatcher()
+//          })
 
-//              })
-//              it("2.2.2.2- Search Bar Functionality Check with Email", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_SearchEmail()
-//              })
-//              it("2.2.3.1-Clear filter button functionality check(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_ClearFilterButton()
-//              })
-//              it("2.2.4.1-Exists employee by Searching and filter by User type or Status(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_ExistEpmloyee()
-//              })
-//              it("2.2.4.2-Not Exists employee by Searching and filter by User type or Status(TTF)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_NotExistEpmloyee()
-//              })
-           
-           
-//           })
-//           describe("2.2.1-Table List View", function (){
-//             it("2.2.1.1-Close Button On View Modal functionality check(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_Modal_CloseButton()
-//              })
-//             it("2.2.1.2-View icon Action functionality check(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_View_IconButton()
-//              })
-//              it("2.2.1.3-Edit icon Action functionality check(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_Edit_IconButton()
-//              })
-//              it("2.2.1.5-Delete icon Action functionality check(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_Delete_IconButton()
-//              })
-//              it("2.2.1.5-Manage Employee Access  functionality(TTP)", ()=>{
-//                 cy.visit('/dashboard/view-employees')
-//                 cy.contains("Login").click()
-//                 login2()
-//                 viewEmployee_Check_AssignButton()
-//              })
-          
-//           })
+
+//    })
+//    describe("1.2-Total Orders",()=>{
+//      describe("1.2.1-Verifying Total Orders(TTP)",()=>{
+//         it("1.1.1.2-Verifying Stats of Orders(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             TotalOrder_Button()
+//          })
+
+//          it("1.2.1.1-Verify stats of Pending Order(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_pending_order()
+
+//          })
+//          it("1.2.1.2-Verify stats of Down-Payment Paid(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_DownPaymentPaid_order()
+
+//          })
+
+//          it("1.2.1.3-Verify stats of Direct Payment Paid(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_DirectPaymentPaid_order()
+
+//          })
+
+//          it("1.2.1.4-Verify stats of Shipped(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Shipped_order()
+
+//          })
+
+//          it("1.2.1.5-Verify stats of Delivered(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Delivered_order()
+
+//          })
+//          it("1.2.1.6-Verify stats of Completed(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Completed_order()
+
+//          })
+
+//           it("1.2.1.7-Verify stats of Reviewed and Completed(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_ReviewedandCompleted_order()
+
+//          })
+//          it("1.2.1.8-Verify stats of Processing(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Processing_order()
+
+//          })
+
+//          it("1.2.1.9-Verify stats of Cancelled(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Cancelled_order()
+
+//          })
+//          it("1.2.1.10-Verify stats of Basic Info Provided(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_BasicInfoProvided_order()
+
+//          })
+
+//          it("1.2.1.11-Verify stats of Finance Options Provided(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_FinanceOptionsProvided_order()
+
+//          })
+//          it("1.2.1.12-Verify stats of Credit Application Provided(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_CreditApplicationProvided_order()
+
+//          })
+
+//          it("1.2.1.13-Verify stats of Delivery Options Provided(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_DeliveryOptionsProvided_order()
+
+//          })
+//          it("1.2.1.14-Verify stats of Warranty Options Provided(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_WarrantyOptionsProvided_order()
+
+//          })
+//          it("1.2.1.15-Verify stats of Services Provided(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_ServicesProvided_order()
+
+//          })
+//          it("1.2.1.16-Verify stats of Awaiting Offer(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_AwaitingOffer_order()
+
+//          })
+//          it("1.2.1.17-Verify stats of Accepted Offer(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_AcceptedOffer_order()
+
+//          })
+//      })
+//    })
+
+//    describe("1.3-Total Vehiles",()=>{
+//     it("1.3.1-Verifying Total Vehicles(TTP)",()=>{
+//         cy.visit('/dashboard/stats-details')
+//         cy.contains("Login").click()
+//         login2()
+//         TotalVehicle_Button()
+//      })
+
+//      it("1.3.1.1-Verify status of Active Vehicles(TTP)",()=>{
+//         cy.visit('/dashboard/stats-details')
+//         cy.contains("Login").click()
+//         login2()
+//         stats_Active_vehicle()
+
+//      })
+
+//      it("1.3.1.2-Verify status of Block Vehicles(TTP)",()=>{
+//         cy.visit('/dashboard/stats-details')
+//         cy.contains("Login").click()
+//         login2()
+//         stats_Blocked_vehicle()
+//      })
+//      it("1.3.1.3-Verify status of In-Deal Vehicles(TTP)",()=>{
+//         cy.visit('/dashboard/stats-details')
+//         cy.contains("Login").click()
+//         login2()
+//         stats_InDeal_vehicle()
+//      })
+//       it("1.3.1.4-Verify status of Sold Vehicles(TTP)",()=>{
+//         cy.visit('/dashboard/stats-details')
+//         cy.contains("Login").click()
+//         login2()
+//         stats_Sold_vehicle()
+//      })
+//    })
+//    describe("1.4-Payment",()=>{
+//     describe("1.4.1-Verifying Total Payments(TTP)",()=>{
+//         it("1.4.1-Verifying Total Payments(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             TotalPayments_Button()
+//          })
+//          it("1.4.1.1-Verify Stats Of Pending Status(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Pending_payment()
 //         })
+//          it("1.4.1.2-Verify stats of Success Status(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_Successful_payment()
+//          })
 //     })
+//    })
+//    describe("1.5-Total Complaint",()=>{
+//       describe("1.5.1-Verifying Total Complaints(TTP)",()=>{
+//         it("1.5.1-Verifying Total Complaints(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             TotalComplaints_Button()
+//          })
+//           it("1.5.1.1-Verify Stats of Replied status(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_repliedcomplaints()
+//          })
+//          it("1.5.1.2-Verify Status of Non-Replied Status(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_Not_repliedcomplaints()
+//          })
+
+
+//       })
+//    })
+//    describe("1.6-Reviews",()=>{
+//        describe("1.6.1-Verifying Total Reviews(TTP)",()=>{
+//         it("1.6.1-VerifyingTotal Reviews(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             TotalReviews_Button()
+//          })
+//          it("1.6.1.1-Verify Stats of Negative Reviews(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_NegativeReviews()
+//          })
+//          it("1.6.1.2-Verify Stats of Positive Reviews(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()
+//             login2()
+//             stats_PositiveReviews()
+//          })
+//        })
+//    })
+//    describe("1.7-Total Accounts",()=>{
+//      describe("1.7.1-Verifying Total Accounts(TTP)",()=>{
+//         it("1.7.1-Verifying Total Accounts(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             TotalAccount_Button()
+//          })
+//          it("1.7.1.1-Verify Stat of Expense Count(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_Expenses_Count()
+//          })
+//          it("1.7.1.2-Verify Stat of Revenue Count(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_Revenue_Count()
+//          })
+//          it("1.7.1.3-Verify Stat of Total Expense Amount(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_TotalExpense_Ammount()
+//          })
+
+//          it("1.7.1.4-Verify Stat of Total Revenue Amount(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_TotalRevenue_Ammount()
+//          })
+
+//          it("1.7.1.5-Verify Stat of Total Profit(TTP)",()=>{
+//             cy.visit('/dashboard/stats-details')
+//             cy.contains("Login").click()  
+//             login2()
+//             stats_TotalProfit()
+//          })
+//      })
+//    })
+//   })
+       describe("2-Staff Management",function(){
+          describe("2.1-Add Employee", function(){
+            it("2.1.1-Add Employee with blank field(TTF)", ()=>{
+                cy.visit('/dashboard/add-employee')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_BlankField()
+            })
+            it("2.1.2-Zip Code filed With Valid Zip Code(TTP)", ()=>{
+                cy.visit('/dashboard/add-employee')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_Valid_ZipCode()
+            })
+            it("2.1.3-Zip Code filed With InValid Zip Code(TTP)", ()=>{
+                cy.visit('/dashboard/add-employee')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_InValid_ZipCode()
+            })
+            it("2.1.4- Add Employee with Valid Data(TTP)", ()=>{
+                cy.visit('/dashboard/add-employee')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_ValidData()
+            })
+            it("2.1.5-Add Emplyee with duplicate data(TTF)", ()=>{
+                cy.visit('/dashboard/add-employee')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_DuplicateData()
+            })
+            it("2.1.6- Reset Button Functionality Test(TTP)", ()=>{
+                cy.visit('/dashboard/add-employee')
+                cy.contains("Login").click()
+                login2()
+                addEmployee_ResetButton() 
+            })
+        })
+        describe("2.2-View Employee", function(){
+          describe("Search", function(){
+             it("2.2.2.1- Search Bar Functionality Check with full name", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_SearchName()
+
+             })
+             it("2.2.2.2- Search Bar Functionality Check with Email", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_SearchEmail()
+             })
+             it("2.2.3.1-Clear filter button functionality check(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_ClearFilterButton()
+             })
+             it("2.2.4.1-Exists employee by Searching and filter by User type or Status(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_ExistEpmloyee()
+             })
+             it("2.2.4.2-Not Exists employee by Searching and filter by User type or Status(TTF)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_NotExistEpmloyee()
+             })
+           
+           
+          })
+          describe("2.2.1-Table List View", function (){
+            it("2.2.1.1-Close Button On View Modal functionality check(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_Modal_CloseButton()
+             })
+            it("2.2.1.2-View icon Action functionality check(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_View_IconButton()
+             })
+             it("2.2.1.3-Edit icon Action functionality check(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_Edit_IconButton()
+             })
+             it("2.2.1.5-Delete icon Action functionality check(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_Delete_IconButton()
+             })
+             it("2.2.1.5-Manage Employee Access  functionality(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                login2()
+                viewEmployee_Check_AssignButton()
+             })
+          
+          })
+        })
+    })
 //        describe("3-Vhecile", function (){
 //         describe("3.1-Add Vehicle",function (){
 //             describe("3.1.1-Steppers Add Vehicles",function (){
