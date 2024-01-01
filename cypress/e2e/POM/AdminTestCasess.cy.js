@@ -1061,116 +1061,116 @@ describe("Admin", ()=>{
       //    })
         
       //   })
-        describe("12-Chats", function(){
-            describe("12.1-Search-Bar",function(){
-              it("12.1.1-Can Search every User(TTP)", ()=>{
-                cy.visit('/dashboard/chat')
-                cy.contains("Login").click()
-                Admin_login()
-                Admin_Chat_Search_UserName()
-              })
-            })
-            describe("12.2-Seller Chat",function(){
-                it("12.2.1-Admin can Chat with every Employee(TTP)", ()=>{
-                  cy.visit('/dashboard/chat')
-                  cy.contains("Login").click()
-                  Admin_login()
-                  Chatwith_Admin_To_Seller()
-                  logout()
-                  login2()
-                  Admin_Chatwith_Seller_To_Admin
-                })
-               })
-            describe("12.4-Media Sending ",()=>{
-               it("12.4.1-User Can send an Image(TTP)", ()=>{
-                  cy.visit('/dashboard/chat')
-                  cy.contains("Login").click()
-                  Admin_login()
-                  Chatwith_Admin_To_Seller_ImageSending()
-              
-                })
-                it("12.4.2-User can Send a Video(TTP)", ()=>{
-                  cy.visit('/dashboard/chat')
-                  cy.contains("Login").click()
-                  Admin_login()
-                  Chatwith_Admin_To_Seller_VideoSending()
-                 
-                })
-                it("12.4.3-User can Send a document(TTP)", ()=>{
-                  cy.visit('/dashboard/chat')
-                  cy.contains("Login").click()
-                  Admin_login()
-                  Chatwith_Admin_To_Seller_DocumentSending()
-                 
-                })
-            })
-          })
-      //   describe("13-Review",()=>{
-      //       describe("13.1-Add Review",()=>{
-      //           it(" 13.1.1-Add Review with no data(TTF)", ()=>{
-      //               cy.visit('/dashboard/add-review')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               addReview_BlankField()
-      //             })
-      //             it("13.1.2-Add Review with Valid data(TTP)", ()=>{
-      //               cy.visit('/dashboard/add-review')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               addReview_ValidData()
-      //             })
-      //             it("13.1.3-Reset Button Functionality(TTP)", ()=>{
-      //               cy.visit('/dashboard/add-review')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               addReview_ResetButton()
-      //             })
-      //             it("13.1.4-Select Vehicle by Drop Down list(TTP)", ()=>{
-      //               cy.visit('/dashboard/add-review')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               addReview_VehicleDropDown()
-      //             })
- 
+      //   describe("12-Chats", function(){
+      //       describe("12.1-Search-Bar",function(){
+      //         it("12.1.1-Can Search every User(TTP)", ()=>{
+      //           cy.visit('/dashboard/chat')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //           Admin_Chat_Search_UserName()
+      //         })
       //       })
-      //       describe("13.2-View Review",()=>{
-      //           describe(" 13.2.1-Search",()=>{
-      //               it("13.1.1-Search by Car Name(TTP)", ()=>{
-                     
-      //                   cy.visit('/dashboard/add-review')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewReview_Search_CarName()
-      //                 })
-      //                 it("13.1.2-Search by Dealership(TTP)", ()=>{
-      //                   cy.visit('/dashboard/reviews')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewReview_Search_Dealeship()
-      //                 })
-      //                 it("13.1.3-Search by Customer Name(TTP)", ()=>{
-      //                   cy.visit('/dashboard/reviews')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewReview_Search_CustomerNAme()
-      //                 })
-        
+      //       describe("12.2-Seller Chat",function(){
+      //           it("12.2.1-Admin can Chat with every Employee(TTP)", ()=>{
+      //             cy.visit('/dashboard/chat')
+      //             cy.contains("Login").click()
+      //             Admin_login()
+      //             Chatwith_Admin_To_Seller()
+      //             logout()
+      //             login2()
+      //             Admin_Chatwith_Seller_To_Admin
       //           })
-      //           it("13.2.3-View Icon functionality(TTP)", ()=>{
-      //               cy.visit('/dashboard/reviews')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //              viewReview_view_IconButton()
-      //             })
-      //             it("13.3.1-Close Button on View Modal(TTP)", ()=>{
-      //               cy.visit('/dashboard/reviews')
-      //               cy.contains("Login").click()
-      //               Admin_login()
+      //          })
+      //       describe("12.4-Media Sending ",()=>{
+      //          it("12.4.1-User Can send an Image(TTP)", ()=>{
+      //             cy.visit('/dashboard/chat')
+      //             cy.contains("Login").click()
+      //             Admin_login()
+      //             Chatwith_Admin_To_Seller_ImageSending()
+              
+      //           })
+      //           it("12.4.2-User can Send a Video(TTP)", ()=>{
+      //             cy.visit('/dashboard/chat')
+      //             cy.contains("Login").click()
+      //             Admin_login()
+      //             Chatwith_Admin_To_Seller_VideoSending()
+                 
+      //           })
+      //           it("12.4.3-User can Send a document(TTP)", ()=>{
+      //             cy.visit('/dashboard/chat')
+      //             cy.contains("Login").click()
+      //             Admin_login()
+      //             Chatwith_Admin_To_Seller_DocumentSending()
+                 
+      //           })
+      //       })
+      //     })
+        describe("13-Review",()=>{
+            describe("13.1-Add Review",()=>{
+                it(" 13.1.1-Add Review with no data(TTF)", ()=>{
+                    cy.visit('/dashboard/add-review')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addReview_BlankField()
+                  })
+                  it("13.1.2-Add Review with Valid data(TTP)", ()=>{
+                    cy.visit('/dashboard/add-review')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addReview_ValidData()
+                  })
+                  it("13.1.3-Reset Button Functionality(TTP)", ()=>{
+                    cy.visit('/dashboard/add-review')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addReview_ResetButton()
+                  })
+                  it("13.1.4-Select Vehicle by Drop Down list(TTP)", ()=>{
+                    cy.visit('/dashboard/add-review')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addReview_VehicleDropDown()
+                  })
+ 
+            })
+            describe("13.2-View Review",()=>{
+                describe(" 13.2.1-Search",()=>{
+                    it("13.1.1-Search by Car Name(TTP)", ()=>{
+                     
+                        cy.visit('/dashboard/add-review')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewReview_Search_CarName()
+                      })
+                      it("13.1.2-Search by Dealership(TTP)", ()=>{
+                        cy.visit('/dashboard/reviews')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewReview_Search_Dealeship()
+                      })
+                      it("13.1.3-Search by Customer Name(TTP)", ()=>{
+                        cy.visit('/dashboard/reviews')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewReview_Search_CustomerNAme()
+                      })
+        
+                })
+                it("13.2.3-View Icon functionality(TTP)", ()=>{
+                    cy.visit('/dashboard/reviews')
+                    cy.contains("Login").click()
+                    Admin_login()
+                   viewReview_view_IconButton()
+                  })
+                  it("13.3.1-Close Button on View Modal(TTP)", ()=>{
+                    cy.visit('/dashboard/reviews')
+                    cy.contains("Login").click()
+                    Admin_login()
                    
-      //             })
+                  })
 
-      //       })   
-      //   })
+            })   
+        })
       //   describe("14.Complaints",()=>{
       //      describe("14.1-Add Complaint",()=>{
       //       it("14.1.1-Add Complaint with no data(TTP)", ()=>{

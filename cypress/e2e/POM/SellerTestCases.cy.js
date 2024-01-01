@@ -874,24 +874,24 @@ describe('Seller', function () {
                 })
                })
    })
-//         describe("8.Reviews",function(){
-//        describe("8.1-Search ",function(){
-//         it("8.1.1-Search with First Name (TTP)", ()=>{
-//             cy.visit('/dashboard/reviews')
-//             cy.contains("Login").click()
-//             login2()
-//             Search_Review_FirstName()
-//         })
+        describe("8.Reviews",function(){
+       describe("8.1-Search ",function(){
+        it("8.1.1-Search with First Name (TTP)", ()=>{
+            cy.visit('/dashboard/reviews')
+            cy.contains("Login").click()
+            login2()
+            Search_Review_FirstName()
+        })
 
-//         it("8.1.2-Search with Invalid Customer Name (TTP)", ()=>{
-//             cy.visit('/dashboard/reviews')
-//             cy.contains("Login").click()
-//             login2()
-//             Search_Review_Ivalid_CustomerName()
+        it("8.1.2-Search with Invalid Customer Name (TTP)", ()=>{
+            cy.visit('/dashboard/reviews')
+            cy.contains("Login").click()
+            login2()
+            Search_Review_Ivalid_CustomerName()
 
-//         })
-//        })
-// })
+        })
+       })
+})
 //         describe("9.Complaints",function(){
 //            describe("9.1-Search ",function(){
 //                 it("9.1.1-Search with First Name (TTP)", ()=>{
