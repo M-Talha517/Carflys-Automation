@@ -3,6 +3,7 @@ import { backendURL } from "../Seller/extras"
 
 //// Sign Up Form data /////
 const sign_up_email = faker.internet.email()                    //"Aziz@gmail.com"
+//const sign_up_email = "Aziz@gmail.com"
 const first_name = faker.name.firstName()                    // "Abdul"
 const last_name =  faker.name.lastName()                     //"Aziz"
 const user_type = "Seller"
@@ -25,13 +26,15 @@ const x= user_email
     cy.get('[placeholder="Enter First Name"]').type(first_name)
     cy.get('[placeholder="Enter Last Name"]').type(last_name)
     cy.get('[placeholder="Enter Cell Number"]').type("+1(372)-873-8728")
-    cy.wait(3* second)
+    // cy.get('[placeholder="Enter Email"]').as('email')
+    // cy.wait('@email')
     cy.get('[placeholder="Enter Email"]').type(sign_up_email)
-    cy.wait(3* second)
     cy.get('[placeholder="Enter Password"]').type("Carflys@123")
-    cy.wait(3* second)
+    cy.wait(5* second)
     cy.get('[placeholder="Confirm Password"]').type("Carflys@123")
+    cy.wait(5* second)
     cy.contains('Sign up').click()
+
 }
                                       ///// forget //////
 export const forget= () =>{
@@ -47,14 +50,11 @@ export const login = () => {
 // Password
     cy.get('[placeholder="Enter Password"]').type(user_password)
     cy.get('[type="submit"]').click()
-    cy.wait(3*second)
-    cy.contains("Logout").click()
-
  }
 
  export const login2 = () => {
     cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
-    //cy.wait(10* second)
+    cy.wait(10* second)
  // Email
      cy.get('[placeholder="Enter Email"]').type(x)    
  // Password

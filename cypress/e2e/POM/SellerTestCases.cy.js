@@ -1,5 +1,5 @@
 
-import { Admin_login, Employee_login, logout } from "./Admin/Add data.cy"
+import { Admin_login, Employee_login, login, logout, signup } from "./Admin/Add data.cy"
 import { login2 } from "./Admin/Add data.cy"
 import { SellerSignup } from "./Seller SignUp.cy"
 import { ViewExpense_Delete_IconButton, ViewExpense_Edit_IconButton, ViewExpense_Search_InValid_VinNo, ViewExpense_Search_VehicleName, ViewExpense_Search_VinNo, ViewExpense_View_IconButton, addExpense_BlankData, addExpense_ExpenseType_DropDown, addExpense_ResetButton, addExpense_ValidData, addExpense_Vehicle_DropDown } from "./Seller/6-Accounting/Expense.cy"
@@ -25,7 +25,6 @@ import { Search_Complaint_FirstName } from "./Seller/9-Complaints.cy"
 //////// Test Cases //////////////
                       //  (TC#3.1.1.1.5-TTP) should add and view Vehicle with valid data
 describe('Seller', function () {
-
   describe("1-Dashboard",()=>{
     describe("1.1-Total Staff",()=>{
         it("1.1.1-Verifying Total Staff Functionality(TTP)",()=>{
@@ -228,11 +227,6 @@ describe('Seller', function () {
         login2()
         stats_Sold_vehicle()
      })
-
-
-
-
-
    })
    describe("1.4-Payment",()=>{
     describe("1.4.1-Verifying Total Payments(TTP)",()=>{
@@ -300,13 +294,7 @@ describe('Seller', function () {
             login2()
             stats_PositiveReviews()
          })
-
-
-
        })
-
-
-
    })
    describe("1.7-Total Accounts",()=>{
      describe("1.7.1-Verifying Total Accounts(TTP)",()=>{
