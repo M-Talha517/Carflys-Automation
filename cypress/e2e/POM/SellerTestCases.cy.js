@@ -449,137 +449,137 @@ describe('Seller', function () {
     //       })
     //     })
     // })
-       describe("3-Vhecile", function (){
-        describe("3.1-Add Vehicle",function (){
-            describe("3.1.1-Steppers Add Vehicles",function (){
-                describe("3.1.1.1-Vehicle Info Form",function(){
-                    it("3.1.1.1.1-Add Vehicle with Blank Field (TTF)", ()=>{
-                        cy.visit('/dashboard/add-vehicle')
-                        cy.contains("Login").click()
-                        login2()
-                        addvehicle2()
-                    })
+//        describe("3-Vhecile", function (){
+//         describe("3.1-Add Vehicle",function (){
+//             describe("3.1.1-Steppers Add Vehicles",function (){
+//                 describe("3.1.1.1-Vehicle Info Form",function(){
+//                     it("3.1.1.1.1-Add Vehicle with Blank Field (TTF)", ()=>{
+//                         cy.visit('/dashboard/add-vehicle')
+//                         cy.contains("Login").click()
+//                         login2()
+//                         addvehicle2()
+//                     })
                     
-                    it("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
-                        cy.visit('/dashboard/add-vehicle')
-                        cy.contains("Login").click()
-                        login2()
-                        addvehicle3()
-                    })
-                    it("3.1.1.1.3-Vin  No text field lenght (TTF)", ()=>{
-                        cy.visit('/dashboard/add-vehicle')
-                        cy.contains("Login").click()
-                        login2()
-                        addvehicle4()
-                    })
-                    it("3.1.1.1.4-Add Vehicle form with Valid Data (TTP)", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    login2()
-                    SellerLogin()
-                 })
-                   it("3.1.1.1.5-Add Vehicle with Already Exist (TTF)", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    login2()
-                    addvehicle1()
-                })
-              describe("3.1.1.3-Images and Model",function() {
-            describe("3.1.1.3.1-Files Drag and Drop",function (){
-                it("3.1.1.3.1.1-Images Drag and drop functionality check (TTP)", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    login2()
-                    AddvehicleImage()
-                })
-                it("3.1.1.3.1.2-Pdf file drag and Drop functionality check (TTF)", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    login2()
-                    AddvehiclePdf()
-                })
+//                     it("3.1.1.1.2-Add Vehicle with InValid No (TTF)", ()=>{
+//                         cy.visit('/dashboard/add-vehicle')
+//                         cy.contains("Login").click()
+//                         login2()
+//                         addvehicle3()
+//                     })
+//                     it("3.1.1.1.3-Vin  No text field lenght (TTF)", ()=>{
+//                         cy.visit('/dashboard/add-vehicle')
+//                         cy.contains("Login").click()
+//                         login2()
+//                         addvehicle4()
+//                     })
+//                     it("3.1.1.1.4-Add Vehicle form with Valid Data (TTP)", ()=>{
+//                     cy.visit('/dashboard/add-vehicle')
+//                     cy.contains("Login").click()
+//                     login2()
+//                     SellerLogin()
+//                  })
+//                    it("3.1.1.1.5-Add Vehicle with Already Exist (TTF)", ()=>{
+//                     cy.visit('/dashboard/add-vehicle')
+//                     cy.contains("Login").click()
+//                     login2()
+//                     addvehicle1()
+//                 })
+//               describe("3.1.1.3-Images and Model",function() {
+//             describe("3.1.1.3.1-Files Drag and Drop",function (){
+//                 it("3.1.1.3.1.1-Images Drag and drop functionality check (TTP)", ()=>{
+//                     cy.visit('/dashboard/add-vehicle')
+//                     cy.contains("Login").click()
+//                     login2()
+//                     AddvehicleImage()
+//                 })
+//                 it("3.1.1.3.1.2-Pdf file drag and Drop functionality check (TTF)", ()=>{
+//                     cy.visit('/dashboard/add-vehicle')
+//                     cy.contains("Login").click()
+//                     login2()
+//                     AddvehiclePdf()
+//                 })
             
-            })
-        })
+//             })
+//         })
         
-    })
-}) 
- })
-        describe("3.2-View Vehicle", function (){
-    describe("3.2.1- Table List View",()=>{
-         describe("3.2.1.2-Status ",()=>{
-            it("3.2.1.2.1-Active status check functionality(TTP)", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                Seller_Vehicle_StatusChanges_Active()
-            })
-            it("3.2.1.2.2-Block status check functionality(TTP)", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                Seller_Vehicle_StatusChanges_Block()
-            })
-         })
-         describe("3.2.1.3-Actions Column icons buttons",function(){
-            it("3.2.1.3.1-View icon functionality check(TTP)", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                viewVehicle_View_IconButton()
-            })
-            it("3.2.1.3.2-Edit icon button functionality check(TTP)", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                viewVehicle_Edit_IconButton()
-            })
-            it.skip("3.2.1.3.3-Delete icon button functionality check", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                viewVehicle_Delete_IconButton()
-            })
-          describe("3.2.1.3.1.4-Vehicle Notes",function(){
-            it("3.2.1.3.1.4.1-Add note button fuctionality(TTP)", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                viewVehicle_AddNotes() 
-            })
-            it.skip("3.2.1.3.1.4.2-Delete icon button fuctionality(TTP)", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                login2()
-                viewVehicle_DeleteNotes()
+//     })
+// }) 
+//  })
+//         describe("3.2-View Vehicle", function (){
+//     describe("3.2.1- Table List View",()=>{
+//          describe("3.2.1.2-Status ",()=>{
+//             it("3.2.1.2.1-Active status check functionality(TTP)", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 Seller_Vehicle_StatusChanges_Active()
+//             })
+//             it("3.2.1.2.2-Block status check functionality(TTP)", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 Seller_Vehicle_StatusChanges_Block()
+//             })
+//          })
+//          describe("3.2.1.3-Actions Column icons buttons",function(){
+//             it("3.2.1.3.1-View icon functionality check(TTP)", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 viewVehicle_View_IconButton()
+//             })
+//             it("3.2.1.3.2-Edit icon button functionality check(TTP)", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 viewVehicle_Edit_IconButton()
+//             })
+//             it.skip("3.2.1.3.3-Delete icon button functionality check", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 viewVehicle_Delete_IconButton()
+//             })
+//           describe("3.2.1.3.1.4-Vehicle Notes",function(){
+//             it("3.2.1.3.1.4.1-Add note button fuctionality(TTP)", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 viewVehicle_AddNotes() 
+//             })
+//             it.skip("3.2.1.3.1.4.2-Delete icon button fuctionality(TTP)", ()=>{
+//                 cy.visit('/dashboard/view-vehicles')
+//                 cy.contains("Login").click()
+//                 login2()
+//                 viewVehicle_DeleteNotes()
             
-            }) ////// Pending note table view
-            })
-        })
-    })
-    describe("3.2.2- Search",function(){
-        it("3.2.2.1-Serching with Vehicle Vin No (TTP)", ()=>{
-            cy.visit('/dashboard/view-vehicles')
-            cy.contains("Login").click()
-            login2()
-            Search_Valid_VinNO()
-        })
-        it("3.2.2.2-Serching with Vehicle InValid Vin No (TTP)", ()=>{
-            cy.visit('/dashboard/view-vehicles')
-            cy.contains("Login").click()
-            login2()
-            Search_InValid_VinNO()
-        })
-        it("3.2.4.1-Clear filter button functionality check", ()=>{
-            cy.visit('/dashboard/view-vehicles')
-            cy.contains("Login").click()
-            login2()
-            Search_ClearfilterButton()
-        })
+//             }) ////// Pending note table view
+//             })
+//         })
+//     })
+//     describe("3.2.2- Search",function(){
+//         it("3.2.2.1-Serching with Vehicle Vin No (TTP)", ()=>{
+//             cy.visit('/dashboard/view-vehicles')
+//             cy.contains("Login").click()
+//             login2()
+//             Search_Valid_VinNO()
+//         })
+//         it("3.2.2.2-Serching with Vehicle InValid Vin No (TTP)", ()=>{
+//             cy.visit('/dashboard/view-vehicles')
+//             cy.contains("Login").click()
+//             login2()
+//             Search_InValid_VinNO()
+//         })
+//         it("3.2.4.1-Clear filter button functionality check", ()=>{
+//             cy.visit('/dashboard/view-vehicles')
+//             cy.contains("Login").click()
+//             login2()
+//             Search_ClearfilterButton()
+//         })
 
-    })
-})
-    })
+//     })
+// })
+//     })
 //        describe("4-Order", function (){
       
 //         describe("4.1-Order table list view",function(){

@@ -698,98 +698,98 @@ describe("Admin", ()=>{
             
       //       })
       //   })
-        describe("6-Warantay",()=>{
-          describe("6.1- Add Waranty",()=>{
-            it("6.1.1-Add Waranty With blank fields(TTF)",()=>{
-                cy.visit('/dashboard/add-warranty')
-                cy.contains("Login").click()
-                Admin_login()
-                addWaranty_BlankFields()
-        })
-
-            it("6.1.2-Add Waranty with Valid Data(TTP)",()=>{
-            cy.visit('/dashboard/add-warranty')
-            cy.contains("Login").click()
-            Admin_login()
-            addWaranty_ValidData()
-        })
-            it("6.1.4-Reset Button functionality check(TTP)",()=>{
-              cy.visit('/dashboard/add-warranty')
-              cy.contains("Login").click()
-              Admin_login()
-              addWaranty_ResetButton()
-       })
-          })
-          describe("6.2-View Waranty",()=>{
-             it("6.2.2-Add Warranty Button functionality check(TTP)",()=>{
-                cy.visit('/dashboard/view-warranties')
-                cy.contains("Login").click()
-                Admin_login()
-                viewWaranty_AddButton()
-             })
-            describe("6.2.3-Actions Icons In table",()=>{
-                describe("6.2.3.1-View Icon button (TTP)",()=>{
-                    it("6.2.3.1.1-View Icon functionality check(TTP)",()=>{
-                        cy.visit('/dashboard/view-warranties')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewWaranty_View_IconButton()
-                       
-                     })
-                     it("6.2.3.1.2-Close Button On View Modal functionality check(TTP)",()=>{
-                        cy.visit('/dashboard/view-warranties')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewWaranty_ViewIcon_CloseButton()
-                       
-                     })
-                })
-                describe("6.2.3.2-Edit Icon Button(TTP)",()=>{
-                    it("6.2.3.2.1-Reset Button functionality check(TTP)",()=>{
-                        cy.visit('/dashboard/view-warranties')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewWaranty_Edit_ResetButton()
-                     })
-                     it("6.2.3.2.2-Edit Icon functionality check(TTP)",()=>{
-                        cy.visit('/dashboard/view-warranties')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewWaranty_Edit_IconButton()
-                     })
-                })
-                it("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
-                    cy.visit('/dashboard/view-warranties')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewWaranty_Delete_IconButton()
-                 })
-            })
-          })
-        
-         })
-      //   describe("7-Leads",()=>{
-      //       describe("7.2-View Icon functionality (TTP)",()=>{
-      //           it("7.2-View Icon functionality (TTP)",()=>{
-      //               cy.visit('/dashboard/view-leads')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               leads_View_IconButton()
-      //            })
-      //            it("7.2.1-Close Button on View Modal(TTP)",()=>{
-      //               cy.visit('/dashboard/view-leads')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               leads_View_ModalCloseButton()
-      //            })
-      //        })
-      //        it("7.3-Delete Icon Functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/view-leads')
+      //   describe("6-Warantay",()=>{
+      //     describe("6.1- Add Waranty",()=>{
+      //       it("6.1.1-Add Waranty With blank fields(TTF)",()=>{
+      //           cy.visit('/dashboard/add-warranty')
       //           cy.contains("Login").click()
       //           Admin_login()
-      //           leads_Delete_IconButton()
-      //        })
+      //           addWaranty_BlankFields()
       //   })
+
+      //       it("6.1.2-Add Waranty with Valid Data(TTP)",()=>{
+      //       cy.visit('/dashboard/add-warranty')
+      //       cy.contains("Login").click()
+      //       Admin_login()
+      //       addWaranty_ValidData()
+      //   })
+      //       it("6.1.4-Reset Button functionality check(TTP)",()=>{
+      //         cy.visit('/dashboard/add-warranty')
+      //         cy.contains("Login").click()
+      //         Admin_login()
+      //         addWaranty_ResetButton()
+      //  })
+      //     })
+      //     describe("6.2-View Waranty",()=>{
+      //        it("6.2.2-Add Warranty Button functionality check(TTP)",()=>{
+      //           cy.visit('/dashboard/view-warranties')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //           viewWaranty_AddButton()
+      //        })
+      //       describe("6.2.3-Actions Icons In table",()=>{
+      //           describe("6.2.3.1-View Icon button (TTP)",()=>{
+      //               it("6.2.3.1.1-View Icon functionality check(TTP)",()=>{
+      //                   cy.visit('/dashboard/view-warranties')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewWaranty_View_IconButton()
+                       
+      //                })
+      //                it("6.2.3.1.2-Close Button On View Modal functionality check(TTP)",()=>{
+      //                   cy.visit('/dashboard/view-warranties')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewWaranty_ViewIcon_CloseButton()
+                       
+      //                })
+      //           })
+      //           describe("6.2.3.2-Edit Icon Button(TTP)",()=>{
+      //               it("6.2.3.2.1-Reset Button functionality check(TTP)",()=>{
+      //                   cy.visit('/dashboard/view-warranties')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewWaranty_Edit_ResetButton()
+      //                })
+      //                it("6.2.3.2.2-Edit Icon functionality check(TTP)",()=>{
+      //                   cy.visit('/dashboard/view-warranties')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewWaranty_Edit_IconButton()
+      //                })
+      //           })
+      //           it("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
+      //               cy.visit('/dashboard/view-warranties')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewWaranty_Delete_IconButton()
+      //            })
+      //       })
+      //     })
+        
+      //    })
+        describe("7-Leads",()=>{
+            describe("7.2-View Icon functionality (TTP)",()=>{
+                it("7.2-View Icon functionality (TTP)",()=>{
+                    cy.visit('/dashboard/view-leads')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    leads_View_IconButton()
+                 })
+                 it("7.2.1-Close Button on View Modal(TTP)",()=>{
+                    cy.visit('/dashboard/view-leads')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    leads_View_ModalCloseButton()
+                 })
+             })
+             it("7.3-Delete Icon Functionality(TTP)",()=>{
+                cy.visit('/dashboard/view-leads')
+                cy.contains("Login").click()
+                Admin_login()
+                leads_Delete_IconButton()
+             })
+        })
       //   describe("8-Orders", ()=>{
       //     describe("8.1-Order table list View",()=>{
       //       it("8.1.1-View Icon Button Check functionality(TTP)",()=>{
