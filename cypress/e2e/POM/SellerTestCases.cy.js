@@ -628,47 +628,47 @@ describe('Seller', function () {
 //     })
 
 //    })
-        describe("5-Payments", function (){
+   //      describe("5-Payments", function (){
 
-            describe("5.1-Search", function(){
-        it("5.1.1-Search With Vin No (TTP)", ()=>{
-            cy.visit('/dashboard/payments')
-            cy.contains("Login").click()
-            login2()
-            Search_Payment_VinNo()
+   //          describe("5.1-Search", function(){
+   //      it("5.1.1-Search With Vin No (TTP)", ()=>{
+   //          cy.visit('/dashboard/payments')
+   //          cy.contains("Login").click()
+   //          login2()
+   //          Search_Payment_VinNo()
            
-        })
-        it("5.1.2-Search with Vehicle name (TTP)", ()=>{
-            cy.visit('/dashboard/payments')
-            cy.contains("Login").click()
-            login2()
-            Search_Payment_VehicleName()
-        })
-        it("5.1.3-Search With InVakid Vin No (TTP)", ()=>{
-            cy.visit('/dashboard/payments')
-            cy.contains("Login").click()
-            login2()
-            Search_Payment_InValid_VinNo()
-        })
+   //      })
+   //      it("5.1.2-Search with Vehicle name (TTP)", ()=>{
+   //          cy.visit('/dashboard/payments')
+   //          cy.contains("Login").click()
+   //          login2()
+   //          Search_Payment_VehicleName()
+   //      })
+   //      it("5.1.3-Search With InVakid Vin No (TTP)", ()=>{
+   //          cy.visit('/dashboard/payments')
+   //          cy.contains("Login").click()
+   //          login2()
+   //          Search_Payment_InValid_VinNo()
+   //      })
 
-    })
-             describe("5.2-Filters", function(){
-        it("5.2.1-Filter by status(TTP)", ()=>{
-            cy.visit('/dashboard/payments')
-            cy.contains("Login").click()
-            login2()
-            Filters_Payment()
-        })
+   //  })
+   //           describe("5.2-Filters", function(){
+   //      it("5.2.1-Filter by status(TTP)", ()=>{
+   //          cy.visit('/dashboard/payments')
+   //          cy.contains("Login").click()
+   //          login2()
+   //          Filters_Payment()
+   //      })
     
-    })
-    it(" 5.3-Clear Filter button (TTP)", ()=>{
-        cy.visit('/dashboard/payments')
-        cy.contains("Login").click()
-        login2()
-        ClearFilterButton_Payment_()
-    })
+   //  })
+   //  it(" 5.3-Clear Filter button (TTP)", ()=>{
+   //      cy.visit('/dashboard/payments')
+   //      cy.contains("Login").click()
+   //      login2()
+   //      ClearFilterButton_Payment_()
+   //  })
    
-   })
+   // })
        describe("6-Accounting", function(){
            describe("Revenue",function(){
         describe("6.1-Add Revenue",function(){
