@@ -768,97 +768,97 @@ describe("Admin", ()=>{
       //     })
         
       //    })
-        describe("7-Leads",()=>{
-            describe("7.2-View Icon functionality (TTP)",()=>{
-                it("7.2-View Icon functionality (TTP)",()=>{
-                    cy.visit('/dashboard/view-leads')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    leads_View_IconButton()
-                 })
-                 it("7.2.1-Close Button on View Modal(TTP)",()=>{
-                    cy.visit('/dashboard/view-leads')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    leads_View_ModalCloseButton()
-                 })
-             })
-             it("7.3-Delete Icon Functionality(TTP)",()=>{
-                cy.visit('/dashboard/view-leads')
+      //   describe("7-Leads",()=>{
+      //       describe("7.2-View Icon functionality (TTP)",()=>{
+      //           it("7.2-View Icon functionality (TTP)",()=>{
+      //               cy.visit('/dashboard/view-leads')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               leads_View_IconButton()
+      //            })
+      //            it("7.2.1-Close Button on View Modal(TTP)",()=>{
+      //               cy.visit('/dashboard/view-leads')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               leads_View_ModalCloseButton()
+      //            })
+      //        })
+      //        it("7.3-Delete Icon Functionality(TTP)",()=>{
+      //           cy.visit('/dashboard/view-leads')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //           leads_Delete_IconButton()
+      //        })
+      //   })
+        describe("8-Orders", ()=>{
+          describe("8.1-Order table list View",()=>{
+            it("8.1.1-View Icon Button Check functionality(TTP)",()=>{
+                cy.visit('/dashboard/orders')
                 cy.contains("Login").click()
                 Admin_login()
-                leads_Delete_IconButton()
+                Admin_order_View_IconButton()
              })
+             it("8.1.1.1-Close Button On View Modal functionality Check(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_order_View_ModalCloseButton()
+             })
+             it("8.1.2-Status functionality check(TTP)",()=>{
+               cy.visit('/dashboard/orders')
+               cy.contains("Login").click()
+               Admin_login()
+               Admin_Order_statusChanges()
+            })
+          })
+          describe("8.2-Search",()=>{
+            it("8.2.1-Search with Valid VIN(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_Search_Order_VinNO()
+            
+             })
+             it("8.2.2-Search with Invalid VIN(TTF)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_Search_Order_InValid_VinNO()
+            
+             })
+             it("8.2.3-Search with Valid Vehicle Name(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_Search_Order_VehicleName()
+            
+             })
+             it("8.2.4-Search with Valid Customer Name(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_Search_Order_CustomerName()
+             })
+            
+
+
+          })
+          describe("8.3-Filters", ()=>{
+            it("8.3-Filters by status Check functionality(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_order_Filter_BY_Status()
+             })
+          })
+          it("8.4-Clear Filter Button",()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            Admin_login()
+            Admin_Order_ClearFilterButton()
+         })
+
         })
-      //   describe("8-Orders", ()=>{
-      //     describe("8.1-Order table list View",()=>{
-      //       it("8.1.1-View Icon Button Check functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_order_View_IconButton()
-      //        })
-      //        it("8.1.1.1-Close Button On View Modal functionality Check(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_order_View_ModalCloseButton()
-      //        })
-      //        it("8.1.2-Status functionality check(TTP)",()=>{
-      //          cy.visit('/dashboard/orders')
-      //          cy.contains("Login").click()
-      //          Admin_login()
-      //          Admin_Order_statusChanges()
-      //       })
-      //     })
-      //     describe("8.2-Search",()=>{
-      //       it("8.2.1-Search with Valid VIN(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_VinNO()
-            
-      //        })
-      //        it("8.2.2-Search with Invalid VIN(TTF)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_InValid_VinNO()
-            
-      //        })
-      //        it("8.2.3-Search with Valid Vehicle Name(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_VehicleName()
-            
-      //        })
-      //        it("8.2.4-Search with Valid Customer Name(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_CustomerName()
-      //        })
-            
-
-
-      //     })
-      //     describe("8.3-Filters", ()=>{
-      //       it("8.3-Filters by status Check functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_order_Filter_BY_Status()
-      //        })
-      //     })
-      //     it("8.4-Clear Filter Button",()=>{
-      //       cy.visit('/dashboard/orders')
-      //       cy.contains("Login").click()
-      //       Admin_login()
-      //       Admin_Order_ClearFilterButton()
-      //    })
-
-      //   })
       //   describe("10.Payments", ()=>{
       //     describe("10.1-Search",()=>{
       //       it("10.1.1-Search by Valid VIN(TTP)",()=>{

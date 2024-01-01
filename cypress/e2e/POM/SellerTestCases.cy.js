@@ -580,54 +580,54 @@ describe('Seller', function () {
 //     })
 // })
 //     })
-//        describe("4-Order", function (){
+       describe("4-Order", function (){
       
-//         describe("4.1-Order table list view",function(){
-//          it("4.1.1-View Icon button check Functionality(TTP)",()=>{
-//             cy.visit('/dashboard/orders')
-//             cy.contains("Login").click()
-//             login2()
-//             order_View_IconButton()
-//          })
-//          it("4.1.2-Status functionality check(TTP)",()=>{
-//             cy.visit('/dashboard/orders')
-//             cy.contains("Login").click()
-//             login2()
-//             Seller_Order_statusChanges()
-//          })
+        describe("4.1-Order table list view",function(){
+         it("4.1.1-View Icon button check Functionality(TTP)",()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            login2()
+            order_View_IconButton()
+         })
+         it("4.1.2-Status functionality check(TTP)",()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            login2()
+            Seller_Order_statusChanges()
+         })
        
-//       })
-//     describe("4.2-Search", function (){
-//         it("4.2.1-Serching with Vehicle Vin No(TTP)", ()=>{
-//             cy.visit('/dashboard/orders')
-//             cy.contains("Login").click()
-//             login2()
-//             Search_Order_VinNO()
-//         })
-//         it("4.2.2-Serching with Vehicle Name(TTP)", ()=>{
-//             cy.visit('/dashboard/orders')
-//             cy.contains("Login").click()
-//             login2()
-//             Search_Order_VehicleName()
-//         })
-//         it("4.2.3-Serching with Vehicle InValid Vin NO(TTP)", ()=>{
-//             cy.visit('/dashboard/orders')
-//             cy.contains("Login").click()
-//             login2()
-//             Search_Order_InValid_VinNO()
-//         })
-//     })
-//     describe("4.3-filter", function(){
+      })
+    describe("4.2-Search", function (){
+        it("4.2.1-Serching with Vehicle Vin No(TTP)", ()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            login2()
+            Search_Order_VinNO()
+        })
+        it("4.2.2-Serching with Vehicle Name(TTP)", ()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            login2()
+            Search_Order_VehicleName()
+        })
+        it("4.2.3-Serching with Vehicle InValid Vin NO(TTP)", ()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            login2()
+            Search_Order_InValid_VinNO()
+        })
+    })
+    describe("4.3-filter", function(){
 
-//         it("4.3.1-filters by status fuctionality check(TTP)", ()=>{
-//             cy.visit('/dashboard/orders')
-//             cy.contains("Login").click()
-//             login2()
-//             Filter_BY_Status()
-//         })  
-//     })
+        it("4.3.1-filters by status fuctionality check(TTP)", ()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            login2()
+            Filter_BY_Status()
+        })  
+    })
 
-//    })
+   })
 //         describe("5-Payments", function (){
 
 //             describe("5.1-Search", function(){
