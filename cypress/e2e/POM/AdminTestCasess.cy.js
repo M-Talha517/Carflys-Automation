@@ -344,139 +344,139 @@ describe("Admin", ()=>{
    //     })
    //   })
    //  })
-        describe("2-User MAnagement", ()=>{
-            describe("2.1- Add User", ()=>{
-                it("2.1.1-Add user with no data (TTF)", ()=>{
-                    cy.visit('/dashboard/add-employee')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    addUser_NoData()
-                 })
-                 it("2.1.2-Add user with Valid data(TTP)", ()=>{
-                    cy.visit('/dashboard/add-employee')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    addUser_ValidData()
+      //   describe("2-User MAnagement", ()=>{
+      //       describe("2.1- Add User", ()=>{
+      //           it("2.1.1-Add user with no data (TTF)", ()=>{
+      //               cy.visit('/dashboard/add-employee')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               addUser_NoData()
+      //            })
+      //            it("2.1.2-Add user with Valid data(TTP)", ()=>{
+      //               cy.visit('/dashboard/add-employee')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               addUser_ValidData()
 
-                 })
-                 it("2.1.3-Add user with duplicate data(TTF)", ()=>{
-                    cy.visit('/dashboard/add-employee')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    addUser_DuplicateData()
+      //            })
+      //            it("2.1.3-Add user with duplicate data(TTF)", ()=>{
+      //               cy.visit('/dashboard/add-employee')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               addUser_DuplicateData()
 
-                 })
-                 it("2.1.4-Reset Button Functionality check(TTP)", ()=>{
-                    cy.visit('/dashboard/add-employee')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    addUser_ResetButton()
-                 })
-                 it(" 2.1.5- InValid Zip-code throw error check(TTF)", ()=>{
-                    cy.visit('/dashboard/add-employee')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    addUser_InValid_ZipCode()
+      //            })
+      //            it("2.1.4-Reset Button Functionality check(TTP)", ()=>{
+      //               cy.visit('/dashboard/add-employee')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               addUser_ResetButton()
+      //            })
+      //            it(" 2.1.5- InValid Zip-code throw error check(TTF)", ()=>{
+      //               cy.visit('/dashboard/add-employee')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               addUser_InValid_ZipCode()
     
-                 })
-                 it("2.1.6-Enter Valid Zip-Code(TTP)", ()=>{
-                    cy.visit('/dashboard/add-employee')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    addUser_Valid_ZipCode()
-                 })
+      //            })
+      //            it("2.1.6-Enter Valid Zip-Code(TTP)", ()=>{
+      //               cy.visit('/dashboard/add-employee')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               addUser_Valid_ZipCode()
+      //            })
                 
-            })
-            describe("2.2- View Users",()=>{
-                it("2.2.2-Filter Bar functionality Check(TTP)", ()=>{
-                    cy.visit('/dashboard/view-employees')
-                    cy.contains("Login").click()
-                    Admin_login()
-                   viewuser_filters()
-                 })
-            describe("2.2.3-Search-Bar", ()=>{
-                it("2.2.1-Search With Exist UserName(TTP)", ()=>{
-                    cy.visit('/dashboard/view-employees')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewuser_SearchName()
+      //       })
+      //       describe("2.2- View Users",()=>{
+      //           it("2.2.2-Filter Bar functionality Check(TTP)", ()=>{
+      //               cy.visit('/dashboard/view-employees')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //              viewuser_filters()
+      //            })
+      //       describe("2.2.3-Search-Bar", ()=>{
+      //           it("2.2.1-Search With Exist UserName(TTP)", ()=>{
+      //               cy.visit('/dashboard/view-employees')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewuser_SearchName()
     
-                 })
-                 it("2.2.2- Search with Exist User Email(TTP)", ()=>{
-                    cy.visit('/dashboard/view-employees')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewuser_SearchEmail()
+      //            })
+      //            it("2.2.2- Search with Exist User Email(TTP)", ()=>{
+      //               cy.visit('/dashboard/view-employees')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewuser_SearchEmail()
     
-                 })
-                 it("2.2.3-Search by Dealership(TTP)", ()=>{
-                    cy.visit('/dashboard/view-employees')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewuser_SearchDealership()
-                 })
-            })
-            it("2.2.4-Clear filter Button functionality check(TTP)", ()=>{
-                cy.visit('/dashboard/view-employees')
-                cy.contains("Login").click()
-                Admin_login()
-                viewuser_ClearFilterButton()
-             })
-             describe("2.2.5-Actions functionality check",()=>{
-                it("2.2.5.1.1-Close Button On View Modal Functionality check", ()=>{
-                    cy.visit('/dashboard/view-employees')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewuser_Modal_CloseButton()
-                 })
-                 it("2.2.5.1.2-View Icon functionality check(TTP)", ()=>{
-                    cy.visit('/dashboard/view-employees')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewuser_View_IconButton()
-                 })
-                describe("2.2.5.2-Edit Icon functionality check(TTP)", ()=>{
-                    it("2.2.5.2.1-Edit Icon functionality check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-employees')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewuser_Edit_IconButton()
-                     })
+      //            })
+      //            it("2.2.3-Search by Dealership(TTP)", ()=>{
+      //               cy.visit('/dashboard/view-employees')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewuser_SearchDealership()
+      //            })
+      //       })
+      //       it("2.2.4-Clear filter Button functionality check(TTP)", ()=>{
+      //           cy.visit('/dashboard/view-employees')
+      //           cy.contains("Login").click()
+      //           Admin_login()
+      //           viewuser_ClearFilterButton()
+      //        })
+      //        describe("2.2.5-Actions functionality check",()=>{
+      //           it("2.2.5.1.1-Close Button On View Modal Functionality check", ()=>{
+      //               cy.visit('/dashboard/view-employees')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewuser_Modal_CloseButton()
+      //            })
+      //            it("2.2.5.1.2-View Icon functionality check(TTP)", ()=>{
+      //               cy.visit('/dashboard/view-employees')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               viewuser_View_IconButton()
+      //            })
+      //           describe("2.2.5.2-Edit Icon functionality check(TTP)", ()=>{
+      //               it("2.2.5.2.1-Edit Icon functionality check(TTP)", ()=>{
+      //                   cy.visit('/dashboard/view-employees')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewuser_Edit_IconButton()
+      //                })
 
-                     it("2.2.5.2.2-Reset Button Functionality Check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-employees')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewuser_Reset_Button()
-                     })
-                })
-                    it("2.2.5.3-Delete Icon functionality check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-employees')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewuser_Delete_IconButton()
-                     })
-                     it("2.2.5.4-Assign Access Column(TTP)", ()=>{
-                        cy.visit('/dashboard/view-employees')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewuser_Check_AssignButton()
-                     })
-                     it("2.2.6-Active Block Status functionality  Check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-employees')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        Viewuser_StatusChanges()
-                     })
-                     it("2.2.7-Add Employee Button functionality check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-employees')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        viewuser_AddUser_Button()
-                     })   
-             })
-            })
-        })
+      //                it("2.2.5.2.2-Reset Button Functionality Check(TTP)", ()=>{
+      //                   cy.visit('/dashboard/view-employees')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewuser_Reset_Button()
+      //                })
+      //           })
+      //               it("2.2.5.3-Delete Icon functionality check(TTP)", ()=>{
+      //                   cy.visit('/dashboard/view-employees')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewuser_Delete_IconButton()
+      //                })
+      //                it("2.2.5.4-Assign Access Column(TTP)", ()=>{
+      //                   cy.visit('/dashboard/view-employees')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewuser_Check_AssignButton()
+      //                })
+      //                it("2.2.6-Active Block Status functionality  Check(TTP)", ()=>{
+      //                   cy.visit('/dashboard/view-employees')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   Viewuser_StatusChanges()
+      //                })
+      //                it("2.2.7-Add Employee Button functionality check(TTP)", ()=>{
+      //                   cy.visit('/dashboard/view-employees')
+      //                   cy.contains("Login").click()
+      //                   Admin_login()
+      //                   viewuser_AddUser_Button()
+      //                })   
+      //        })
+      //       })
+      //   })
       //   describe("3-View Dealerships", ()=>{
       //       describe("3.1-Actions Icon Functionality", ()=>{
       //           describe("3.1.1-View icon functionality(TTP)", ()=>{
@@ -698,76 +698,76 @@ describe("Admin", ()=>{
             
       //       })
       //   })
-      //   describe("6-Warantay",()=>{
-      //     describe("6.1- Add Waranty",()=>{
-      //       it("6.1.1-Add Waranty With blank fields(TTF)",()=>{
-      //           cy.visit('/dashboard/add-warranty')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           addWaranty_BlankFields()
-      //   })
+        describe("6-Warantay",()=>{
+          describe("6.1- Add Waranty",()=>{
+            it("6.1.1-Add Waranty With blank fields(TTF)",()=>{
+                cy.visit('/dashboard/add-warranty')
+                cy.contains("Login").click()
+                Admin_login()
+                addWaranty_BlankFields()
+        })
 
-      //       it("6.1.2-Add Waranty with Valid Data(TTP)",()=>{
-      //       cy.visit('/dashboard/add-warranty')
-      //       cy.contains("Login").click()
-      //       Admin_login()
-      //       addWaranty_ValidData()
-      //   })
-      //       it("6.1.4-Reset Button functionality check(TTP)",()=>{
-      //         cy.visit('/dashboard/add-warranty')
-      //         cy.contains("Login").click()
-      //         Admin_login()
-      //         addWaranty_ResetButton()
-      //  })
-      //     })
-      //     describe("6.2-View Waranty",()=>{
-      //        it("6.2.2-Add Warranty Button functionality check(TTP)",()=>{
-      //           cy.visit('/dashboard/view-warranties')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           viewWaranty_AddButton()
-      //        })
-      //       describe("6.2.3-Actions Icons In table",()=>{
-      //           describe("6.2.3.1-View Icon button (TTP)",()=>{
-      //               it("6.2.3.1.1-View Icon functionality check(TTP)",()=>{
-      //                   cy.visit('/dashboard/view-warranties')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewWaranty_View_IconButton()
+            it("6.1.2-Add Waranty with Valid Data(TTP)",()=>{
+            cy.visit('/dashboard/add-warranty')
+            cy.contains("Login").click()
+            Admin_login()
+            addWaranty_ValidData()
+        })
+            it("6.1.4-Reset Button functionality check(TTP)",()=>{
+              cy.visit('/dashboard/add-warranty')
+              cy.contains("Login").click()
+              Admin_login()
+              addWaranty_ResetButton()
+       })
+          })
+          describe("6.2-View Waranty",()=>{
+             it("6.2.2-Add Warranty Button functionality check(TTP)",()=>{
+                cy.visit('/dashboard/view-warranties')
+                cy.contains("Login").click()
+                Admin_login()
+                viewWaranty_AddButton()
+             })
+            describe("6.2.3-Actions Icons In table",()=>{
+                describe("6.2.3.1-View Icon button (TTP)",()=>{
+                    it("6.2.3.1.1-View Icon functionality check(TTP)",()=>{
+                        cy.visit('/dashboard/view-warranties')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewWaranty_View_IconButton()
                        
-      //                })
-      //                it("6.2.3.1.2-Close Button On View Modal functionality check(TTP)",()=>{
-      //                   cy.visit('/dashboard/view-warranties')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewWaranty_ViewIcon_CloseButton()
+                     })
+                     it("6.2.3.1.2-Close Button On View Modal functionality check(TTP)",()=>{
+                        cy.visit('/dashboard/view-warranties')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewWaranty_ViewIcon_CloseButton()
                        
-      //                })
-      //           })
-      //           describe("6.2.3.2-Edit Icon Button(TTP)",()=>{
-      //               it("6.2.3.2.1-Reset Button functionality check(TTP)",()=>{
-      //                   cy.visit('/dashboard/view-warranties')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewWaranty_Edit_ResetButton()
-      //                })
-      //                it("6.2.3.2.2-Edit Icon functionality check(TTP)",()=>{
-      //                   cy.visit('/dashboard/view-warranties')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewWaranty_Edit_IconButton()
-      //                })
-      //           })
-      //           it.skip("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
-      //               cy.visit('/dashboard/view-warranties')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               viewWaranty_Delete_IconButton()
-      //            })
-      //       })
-      //     })
+                     })
+                })
+                describe("6.2.3.2-Edit Icon Button(TTP)",()=>{
+                    it("6.2.3.2.1-Reset Button functionality check(TTP)",()=>{
+                        cy.visit('/dashboard/view-warranties')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewWaranty_Edit_ResetButton()
+                     })
+                     it("6.2.3.2.2-Edit Icon functionality check(TTP)",()=>{
+                        cy.visit('/dashboard/view-warranties')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        viewWaranty_Edit_IconButton()
+                     })
+                })
+                it("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
+                    cy.visit('/dashboard/view-warranties')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    viewWaranty_Delete_IconButton()
+                 })
+            })
+          })
         
-      //   })
+         })
       //   describe("7-Leads",()=>{
       //       describe("7.2-View Icon functionality (TTP)",()=>{
       //           it("7.2-View Icon functionality (TTP)",()=>{
