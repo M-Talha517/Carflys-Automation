@@ -477,70 +477,70 @@ describe("Admin", ()=>{
       //        })
       //       })
       //   })
-      //   describe("3-View Dealerships", ()=>{
-      //       describe("3.1-Actions Icon Functionality", ()=>{
-      //           describe("3.1.1-View icon functionality(TTP)", ()=>{
-      //               it("3.1.1.1-View icon functionality check(TTP)", ()=>{
-      //                   cy.visit('/dashboard/view-dealerships')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   Viewdealership_ViewIconButton()
-      //                })
-      //                it("3.1.1.2.Close Icon On View Modal Functionality check(TTP)", ()=>{
-      //                   cy.visit('/dashboard/view-dealerships')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   Viewdealership_Modal_CloseButton()
-      //               })
-      //       })
-      //          it("3.1.2-Edit icon functionality(TTP)", ()=>{
-      //           cy.visit('/dashboard/view-dealerships')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Viewdealership_EditIconButton()
-      //        })
-      //          it("3.1.3-Delete Icon functionality(TTP)", ()=>{
-      //           cy.visit('/dashboard/view-dealerships')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Viewdealership_DeleteIconButton()
-      //        })
-      //   })
-      //   describe("3.2-Search Bar",()=>{
-      //       it("3.2.1-Search With Dealership Name (TTP)", ()=>{
-      //           cy.visit('/dashboard/view-dealerships')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Viewdealership_SearchName()
-      //        })
-      //   })
+        describe("3-View Dealerships", ()=>{
+            describe("3.1-Actions Icon Functionality", ()=>{
+                describe("3.1.1-View icon functionality(TTP)", ()=>{
+                    it("3.1.1.1-View icon functionality check(TTP)", ()=>{
+                        cy.visit('/dashboard/view-dealerships')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        Viewdealership_ViewIconButton()
+                     })
+                     it("3.1.1.2.Close Icon On View Modal Functionality check(TTP)", ()=>{
+                        cy.visit('/dashboard/view-dealerships')
+                        cy.contains("Login").click()
+                        Admin_login()
+                        Viewdealership_Modal_CloseButton()
+                    })
+            })
+               it("3.1.2-Edit icon functionality(TTP)", ()=>{
+                cy.visit('/dashboard/view-dealerships')
+                cy.contains("Login").click()
+                Admin_login()
+                Viewdealership_EditIconButton()
+             })
+               it("3.1.3-Delete Icon functionality(TTP)", ()=>{
+                cy.visit('/dashboard/view-dealerships')
+                cy.contains("Login").click()
+                Admin_login()
+                Viewdealership_DeleteIconButton()
+             })
+        })
+        describe("3.2-Search Bar",()=>{
+            it("3.2.1-Search With Dealership Name (TTP)", ()=>{
+                cy.visit('/dashboard/view-dealerships')
+                cy.contains("Login").click()
+                Admin_login()
+                Viewdealership_SearchName()
+             })
+        })
 
-      //          it("3.3-filters functionality check(TTP)", ()=>{
-      //               cy.visit('/dashboard/view-dealerships')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               Viewdealership_Filters()
-      //            })
-      //            it("3.4-Clear filter Button functionality check(TTP)", ()=>{
-      //               cy.visit('/dashboard/view-dealerships')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               Viewdealership_ClearFilterButton()
-      //            })
-      //           it("3.5-Status Functionality check( Active And Block)", ()=>{
-      //               cy.visit('/dashboard/view-dealerships')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               Viewdealership_StatusChanges()
-      //            })
-      //           //  it("3.6-Dealership Approval with Admin", ()=>{
-      //           //     cy.visit('/dashboard/view-dealerships')
-      //           //     cy.contains("Login").click()
-      //           //     Admin_login()
-      //           //     Viewdealership_AdminApproval()
-      //           //  })
+               it("3.3-filters functionality check(TTP)", ()=>{
+                    cy.visit('/dashboard/view-dealerships')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Viewdealership_Filters()
+                 })
+                 it("3.4-Clear filter Button functionality check(TTP)", ()=>{
+                    cy.visit('/dashboard/view-dealerships')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Viewdealership_ClearFilterButton()
+                 })
+                it("3.5-Status Functionality check( Active And Block)", ()=>{
+                    cy.visit('/dashboard/view-dealerships')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Viewdealership_StatusChanges()
+                 })
+                //  it("3.6-Dealership Approval with Admin", ()=>{
+                //     cy.visit('/dashboard/view-dealerships')
+                //     cy.contains("Login").click()
+                //     Admin_login()
+                //     Viewdealership_AdminApproval()
+                //  })
                
-      //   })
+        })
 
       //   describe("4-Vehicles", ()=>{
       //     describe("4.1-Add Vehicle",()=>{
@@ -1255,62 +1255,62 @@ describe("Admin", ()=>{
       //      })
       //   })
 
-        describe("15.Settings",()=>{
-            describe("15.1-Profile",()=>{
-                it("15.1.1-Update profile with no data(TTF)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_Profile_Update_BlankField()
-                  })
+      //   describe("15.Settings",()=>{
+      //       describe("15.1-Profile",()=>{
+      //           it("15.1.1-Update profile with no data(TTF)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               Admin_Profile_Update_BlankField()
+      //             })
 
-                  it("15.1.2-Update Profile with valid data(TTP)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_Profile_Update_ValidData()
-                  })
-                  it("15.1.3-Update Profile with Valid Zip-code(TTP)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_Profile_ValidZip_Code()
-                  })
-                  it("15.1.4-Update Profile with Invalid Zip-code(TTF)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_Profile_InValidZip_Code()
-                  })
-            })
-            describe("15.2-Password",()=>{
-                it("15.2.1-Update Password with blank fields(TTF)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                   admin_Password_BlankField()
-                  })
-                  it("15.2.2-Update password with Wrong Old Password(TTP)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                   admin_Password_WrongPassword()
-                  })
-                  it("15.2.4-Different passwords in New and Confirm Password(TTF)", ()=>{
-                     cy.visit('/dashboard/settings')
-                     cy.contains("Login").click()
-                     Admin_login()
-                    admin_Password_didNot_Match()
-                   })
-                  it.skip("15.2.3-Update password with Valid data(TTP)", ()=>{
-                    cy.visit('/dashboard/settings')
-                    cy.contains("Login").click()
-                    Admin_login()
-                   admin_Password_UpdateValid()
-                  })
+      //             it("15.1.2-Update Profile with valid data(TTP)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               Admin_Profile_Update_ValidData()
+      //             })
+      //             it("15.1.3-Update Profile with Valid Zip-code(TTP)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               Admin_Profile_ValidZip_Code()
+      //             })
+      //             it("15.1.4-Update Profile with Invalid Zip-code(TTF)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //               Admin_Profile_InValidZip_Code()
+      //             })
+      //       })
+      //       describe("15.2-Password",()=>{
+      //           it("15.2.1-Update Password with blank fields(TTF)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //              admin_Password_BlankField()
+      //             })
+      //             it("15.2.2-Update password with Wrong Old Password(TTP)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //              admin_Password_WrongPassword()
+      //             })
+      //             it("15.2.4-Different passwords in New and Confirm Password(TTF)", ()=>{
+      //                cy.visit('/dashboard/settings')
+      //                cy.contains("Login").click()
+      //                Admin_login()
+      //               admin_Password_didNot_Match()
+      //              })
+      //             it.skip("15.2.3-Update password with Valid data(TTP)", ()=>{
+      //               cy.visit('/dashboard/settings')
+      //               cy.contains("Login").click()
+      //               Admin_login()
+      //              admin_Password_UpdateValid()
+      //             })
                
-            })
-        })
+      //       })
+      //   })
        
 
 })
