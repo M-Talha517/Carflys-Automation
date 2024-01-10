@@ -188,7 +188,7 @@ describe('Seller', function () {
             cy.contains("Login").click()
             login2()
             stats_AcceptedOffer_order()
-
+    
          })
      })
    })
