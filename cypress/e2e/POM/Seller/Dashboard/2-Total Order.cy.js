@@ -1,4 +1,4 @@
- <reference types="cypress" />
+
 import { backendURL } from "../extras"
 //// Wait ////
 const millisecond = 1
