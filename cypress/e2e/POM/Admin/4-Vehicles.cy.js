@@ -13,7 +13,8 @@ export const Admin_AddVehicle_Nodata = () => {
        cy.contains("Please Enter a Title of 3 or more length").should("exist")
        cy.contains("Please Enter a minimum price of $1").should("exist")
        cy.contains("Please Enter a minimum price of $1").should("exist")       
-       cy.contains("Please Enter a valid mileage between 1 and 999,999").should("exist")
+       cy.contains("Please Enter a valid mileage between 1 and 250,000").should("exist")
+       cy.contains("Please select a State Location").should("exist")
        cy.contains("Please Enter Make").should("exist")
        cy.contains("Please Enter Model").should("exist")
     }
@@ -53,7 +54,7 @@ export const Admin_AddVehicle_Nodata = () => {
            cy.contains("Next step").click()
            cy.get(".mantine-1hss7nx").contains("Select images of vehicle (PNG, JPG, JPEG)").attachFile(['jeep1.jpeg','jeep2.jpeg'],{ subjectType: 'drag-n-drop'})
            cy.contains("Submit").click()
-           cy.wait(3 * second)
+           cy.wait(2 * second)
            cy.contains("Vehicle has been added to the database successfully.").should("exist")
            cy.wait(10 * second)
                                         ////// View Vehicle /////////
@@ -104,12 +105,12 @@ export const Admin_AddVehicle_Nodata = () => {
            /////////// Add Vehicel Form ///////
        
            // VIN
-           cy.get('[placeholder="Enter VIN"]').type("1C4HJXEG9MW851795", { force: true })
+           cy.get('[placeholder="Enter VIN"]').type("2C3CDZAG7LH199134", { force: true })
            cy.get('.mantine-1swk166').click()
-           
+           cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
+            cy.contains("Get Valuation And Data").click()
            cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
            cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
-           cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
            cy.get('[placeholder="Enter State Location"]').click()
            cy.contains("Alabama").click()
            cy.contains("Next step").click()
@@ -135,9 +136,10 @@ export const Admin_AddVehicle_Nodata = () => {
                // VIN
                cy.get('[placeholder="Enter VIN"]').type("1C4HJXEG9MW851795", { force: true })
                cy.get('.mantine-1swk166').click()
+               cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
                cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
                cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
-               cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
+              // cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
                cy.get('[placeholder="Enter State Location"]').click()
                cy.contains("Alabama").click()
                cy.contains("Next step").click()
@@ -154,7 +156,7 @@ export const Admin_viewVehicle_View_IconButton= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("4. Vehicles").click()
     cy.contains("4.2 View Vehicles").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+    cy.get('[placeholder="Search"]').type("2C3CDZJG9NH247302")
         // cy.get('[placeholder="Filter by Status"]').click()   
         //      cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
@@ -170,7 +172,7 @@ export const Admin_viewVehicle_AddNotes= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("4. Vehicles").click()
     cy.contains("4.2 View Vehicles").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+    cy.get('[placeholder="Search"]').type("2C3CDZJG9NH247302")
         // cy.get('[placeholder="Filter by Status"]').click()   
         //      cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
@@ -213,7 +215,7 @@ export const Admin_viewVehicle_Edit_IconButton= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("4. Vehicles").click()
     cy.contains("4.2 View Vehicles").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+    cy.get('[placeholder="Search"]').type("2C3CDZJG9NH247302")
         //cy.get('[placeholder="Filter by Status"]').click()   
           //   cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
@@ -251,9 +253,9 @@ export const Admin_Search_Valid_VinNO =()=>{
     
         cy.get('[placeholder="Search"]').type("1C6RRFFG9RN120861")
         cy.get('[placeholder="Filter by Status"]').click()   
-             cy.contains("Active").click()
+             cy.contains("Deal Confirmed").click()
         cy.get('[placeholder="Filter by Phase"]').click()
-             cy.contains("Available").click()
+             cy.contains("Received By Customer").click()
         cy.contains("1C6RRFFG9RN120861").should("exist")
 
 }
@@ -310,14 +312,14 @@ export const Admin_Vehicle_StatusChanges_Active =()=>{
     cy.contains("4. Vehicles").click()
     cy.contains("4.2 View Vehicles").click()
     
-        cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-        cy.get('[placeholder="Filter by Status"]').click()   
-             cy.contains("Active").click()
+        cy.get('[placeholder="Search"]').type("4S3GTAT67P3721064")
+        // cy.get('[placeholder="Filter by Status"]').click()   
+        //      cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
              cy.contains("Available").click()
-             cy.contains("1FMSK8DH1LGC97871").should("exist")
+             cy.contains("4S3GTAT67P3721064").should("exist")
         cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
-        cy.contains("Block").click()
+        cy.contains("Unblock").click()
         cy.contains("Status Updated Successfully").should("exist")
 
 }
@@ -326,14 +328,14 @@ export const Admin_Vehicle_StatusChanges_Block=()=>{
     cy.contains("4. Vehicles").click()
     cy.contains("4.2 View Vehicles").click()
     
-        cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-        cy.get('[placeholder="Filter by Status"]').click()   
-             cy.contains("Block").click()
+        cy.get('[placeholder="Search"]').type("1G6DA1E32C0152845")
+        // cy.get('[placeholder="Filter by Status"]').click()   
+        //      cy.contains("Block").click()
         cy.get('[placeholder="Filter by Phase"]').click()
              cy.contains("Available").click()
-             cy.contains("1FMSK8DH1LGC97871").should("exist")
+             cy.contains("1G6DA1E32C0152845").should("exist")
         cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
-        cy.contains("Unblock").click()
+        cy.contains("Block").click()
         cy.contains("Status Updated Successfully").should("exist")
         
 }

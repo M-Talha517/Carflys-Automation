@@ -55,7 +55,7 @@ export const addUser_ValidData = () => {
 }
 
 export const addUser_DuplicateData = () => {
-    cy.intercept('POST', `${backendURL}/user`).as('User Email Already enter')
+    cy.intercept('POST', `${backendURL}/user`).as('A user with this email already exists.')
     cy.contains('2. User Management').click()
     cy.contains('2.1 Add Users').click()
 
@@ -74,7 +74,8 @@ export const addUser_DuplicateData = () => {
     cy.get('[placeholder="Enter Zip Code"]').type('10001')
     cy.get(".mantine-1avyp1d").contains("Drag and drop a file").attachFile('usama.jpg', { subjectType: 'drag-n-drop' })
     cy.get('[type="submit"]').click()
-    cy.wait("@User Email Already enter").its('response.statusCode').should('eq', 400);
+    cy.wait(4000)
+    cy.wait("@A user with this email already exists.").its('response.statusCode').should('eq', 400);
     
 }
 
@@ -166,8 +167,8 @@ export const viewuser_SearchEmail =()=>{
 export const viewuser_SearchDealership =()=>{
     cy.contains('2. User Management').click()
     cy.contains('2.2 View Users').click()
-    cy.get('[placeholder="Search"]').type("testSell")
-    cy.contains("testsell side").should("exist")
+    cy.get('[placeholder="Search"]').type("Auto Mart")
+    cy.contains("Auto Mart").should("exist")
 }
 export const viewuser_ClearFilterButton= () => {
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully')
@@ -178,7 +179,8 @@ export const viewuser_ClearFilterButton= () => {
     cy.contains("Dispatcher").click()
     cy.get('[placeholder="Filter by Status"]').click()
     cy.contains("Active").click()
-    cy.get('[placeholder="Search"]').type("khan")
+    cy.get('[placeholder="Search"]').type("Shah Rukh")
+    cy.contains("Shah Rukh").should("exist")
     cy.get("button").contains("Clear Filters").click()
    
     cy.wait("@User found Successfully").its('response.statusCode').should('eq', 200);
@@ -241,19 +243,24 @@ export const viewuser_Reset_Button= () => {
     cy.get('[placeholder="Search"]').type("shah@gmail.com")
     cy.contains('shah@gmail.com').should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
-    cy.contains("Update User").should("exist")
-    
+  
+    cy.get('[placeholder="Enter First Name"]').clear().type('abc')
+    cy.get('[placeholder="Enter Last Name"]').clear().type('xyz')
+    cy.get('[placeholder="Enter Password"]').type('Carflys@123')
+    cy.get('[placeholder="Enter Confirm Password"]').type('Carflys@123')
+    cy.get('[placeholder="Enter Cell Number"]').clear().type('+1(999)-999-9999')
+    cy.get('[placeholder="Enter Zip Code"]').clear().type('10002')
+
     cy.contains("Reset").click()
 
-    cy.get('[placeholder="Enter First Name"]').invoke('val').should('eq', '')
-    cy.get('[placeholder="Enter Last Name"]').invoke('val').should('eq', '')
+    cy.get('[placeholder="Enter First Name"]').invoke('val').should('eq', 'Shah')
+    cy.get('[placeholder="Enter Last Name"]').invoke('val').should('eq', 'Rukh')
    // cy.get('[placeholder="Enter Email"]').invoke('val').should('eq', '')
     cy.get('[placeholder="Enter Password"]').invoke('val').should('eq', '')
     cy.get('[placeholder="Enter Confirm Password"]').invoke('val').should('eq', '')
-    cy.get('[placeholder="Enter Cell Number"]').invoke('val').should('eq', '')
-    cy.get('[placeholder="Enter Zip Code"]').invoke('val').should('eq', '')
-    cy.get('[placeholder="Select State Location"]').invoke('val').should('eq', '')
-    cy.get(".mantine-1avyp1d").contains("Drop the file here ...").invoke('val').should('eq', '')
+    cy.get('[placeholder="Enter Cell Number"]').invoke('val').should('eq', '+1(333)-333-3333')
+    cy.get('[placeholder="Enter Zip Code"]').invoke('val').should('eq', '10001')
+    cy.get('[placeholder="Select State Location"]').invoke('val').should('eq', 'New York')
     cy.wait("@User found Successfully").its('response.statusCode').should('eq', 200);
 }
 export const viewuser_Delete_IconButton= () => {
@@ -268,7 +275,7 @@ export const viewuser_Delete_IconButton= () => {
     cy.contains("Dispatcher").click()
 
     cy.get('[placeholder="Select Dealership"]').click()
-       cy.contains("testsell").click()
+       cy.contains("Auto Mart").click()
     cy.get('[placeholder="Enter First Name"]').type('Abc')
     cy.get('[placeholder="Enter Last Name"]').type('Xyz')
     cy.get('[placeholder="Enter Email"]').type('user1@gmail.com')
@@ -329,7 +336,7 @@ export const Viewuser_StatusChanges =() =>{
 //       cy.contains("Active").click()
 //cy.contains("testsell").should("exist")
 cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
-cy.contains("Block").click()
+cy.contains("Unblock").click()
 
 }
 export const  viewuser_AddUser_Button=()=>{

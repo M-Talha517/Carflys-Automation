@@ -8,6 +8,7 @@ const minute = 60000
 export const TotalUsers_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
 
     let totaluser;
@@ -17,6 +18,7 @@ export const TotalUsers_Button = () => {
         totaluser = parseInt(text);
 
         cy.contains("Total Users").parent().parent().parent().click();
+        cy.wait(3000)
            //Total Seller
               cy.contains("Total Sellers").next().invoke('text').then((text) => {
 
@@ -53,6 +55,7 @@ export const TotalUsers_Button = () => {
 export const stats_seller = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
     cy.contains("Total Users").parent().parent().parent().click();
 
@@ -74,6 +77,7 @@ export const stats_seller = () => {
 export const stats_customer = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
     cy.contains("Total Users").parent().parent().parent().click();
 
@@ -95,6 +99,7 @@ export const stats_customer = () => {
 export const stats_inventorymanager = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
     cy.contains("Total Users").parent().parent().parent().click();
 
@@ -116,6 +121,7 @@ export const stats_inventorymanager = () => {
 export const stats_accountant = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
     cy.contains("Total Users").parent().parent().parent().click();
 
@@ -137,6 +143,7 @@ export const stats_accountant = () => {
 export const stats_dispatcher = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
     cy.contains("Total Users").parent().parent().parent().click();
 
@@ -158,6 +165,7 @@ export const stats_dispatcher = () => {
 export const stats_active_user = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/user`).as('User found Successfully');
     cy.contains("Total Users").parent().parent().parent().click();
 

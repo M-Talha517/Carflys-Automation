@@ -13,7 +13,7 @@ import { addEmployee_BlankField, addEmployee_DuplicateData, addEmployee_InValid_
 import { SellerLogin, addvehicle1,addvehicle2,addvehicle3, addvehicle4,AddvehicleImage, AddvehiclePdf,Search_InValid_VinNO,Search_Valid_VinNO, viewVehicle_View_IconButton, viewVehicle_Edit_IconButton, viewVehicle_Delete_IconButton, viewVehicle_AddNotes, viewVehicle_DeleteNotes, Search_ClearfilterButton, Seller_Vehicle_StatusChanges_Active, Seller_Vehicle_StatusChanges_Block } from "./Seller/3-Vehicle.cy"
 import { Chat_Search_AdminName, Chat_Search_EmployeeName, Chatwith_Admin, Chatwith_Admin_To_Seller, Chatwith_Employee_To_Seller, Chatwith_Seller_To_Admin, Chatwith_Seller_To_Employee } from "./Seller/7-Chats.cy"
 import { TotalStaff_Button, stats_accountant, stats_dispatcher, stats_inventorymanager } from "./Seller/Dashboard/1-Total Staff.cy"
-import { TotalOrder_Button, stats_AcceptedOffer_order, stats_AwaitingOffer_order, stats_BasicInfoProvided_order, stats_Cancelled_order, stats_Completed_order, stats_CreditApplicationProvided_order, stats_Delivered_order, stats_DeliveryOptionsProvided_order, stats_DirectPaymentPaid_order, stats_DownPaymentPaid_order, stats_FinanceOptionsProvided_order, stats_Processing_order, stats_ReviewedandCompleted_order, stats_ServicesProvided_order, stats_Shipped_order, stats_WarrantyOptionsProvided_order, stats_pending_order } from "./Seller/Dashboard/2-Total Order.cy"
+import { TotalOrder_Button, stats_AcceptedOffer_order, stats_AwaitingOffer_order, stats_BasicInfoProvided_order, stats_Cancelled_order, stats_Completed_order, stats_CreditApplicationProvided_order, stats_Delivered_order, stats_DeliveryOptionsProvided_order, stats_DirectPaymentPaid_order, stats_DownPaymentPaid_order, stats_FinanceOptionsProvided_order, stats_Processing_order, stats_ReviewedandCompleted_order, stats_ServicesProvided_order, stats_Shipped_order, stats_StipulationProvided, stats_WarrantyOptionsProvided_order, stats_pending_order } from "./Seller/Dashboard/2-Total Order.cy"
 import { TotalVehicle_Button, stats_Active_vehicle, stats_Blocked_vehicle, stats_InDeal_vehicle, stats_Sold_vehicle } from "./Seller/Dashboard/3-Total Vehicles.cy"
 import { TotalComplaints_Button, stats_Not_repliedcomplaints, stats_repliedcomplaints } from "./Seller/Dashboard/5-Total Complaints.cy"
 import { TotalReviews_Button, stats_NegativeReviews, stats_PositiveReviews } from "./Seller/Dashboard/6-Total Review.cy"
@@ -189,6 +189,12 @@ describe('Seller', function () {
             login2()
             stats_AcceptedOffer_order()
     
+         })
+         it("1.2.1.17-Verify stats of Stipulation Provided(TTP)",()=>{
+            cy.visit('/dashboard/stats-details')
+            cy.contains("Login").click()
+            Admin_login()
+            stats_StipulationProvided()
          })
      })
    })

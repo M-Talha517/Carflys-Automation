@@ -99,8 +99,13 @@ export const TotalOrder_Button = () => {
                           //Accepted Offer
                       cy.contains("Accepted Offer").next().invoke('text').then((text) => {
                         allSum += parseInt(text)
-                        cy.log(totalorder, allSum)
-                        expect(totalorder).to.equal(allSum)
+                        
+                           // Stipulation
+                           cy.contains("Stipulations Provided").next().invoke('text').then((text) => {
+                            allSum += parseInt(text)
+                            cy.log(totalorder, allSum)
+                            expect(totalorder).to.equal(allSum)
+                        });
 
                                           });
                                         });
@@ -140,7 +145,7 @@ export const stats_pending_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Pending").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(pending, totalRecords)
@@ -154,14 +159,14 @@ export const stats_DownPaymentPaid_order = () => {
     cy.contains("1. Dashboard").click()
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
-
+    cy.wait(4000)
     cy.contains("Down Payment Paid").next().invoke('text').then((text) => {
 
         const DownPaymentPaid = parseInt(text);
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Down Payment Paid").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(DownPaymentPaid, totalRecords)
@@ -182,7 +187,7 @@ export const stats_DirectPaymentPaid_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Direct Payment Paid").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(DirectPaymentPaid, totalRecords)
@@ -203,7 +208,7 @@ export const stats_Shipped_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Shipped").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(Shipped, totalRecords)
@@ -216,14 +221,14 @@ export const stats_Delivered_order = () => {
     cy.contains("1. Dashboard").click()
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
-
+    cy.wait(4000)
     cy.contains("Delivered").next().invoke('text').then((text) => {
 
         const Delivered = parseInt(text);
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Delivered").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(Delivered, totalRecords)
@@ -243,7 +248,7 @@ export const stats_Completed_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Completed").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(Completed, totalRecords)
@@ -264,7 +269,7 @@ export const stats_ReviewedandCompleted_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Reviewed and Completed").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(ReviewedandCompleted, totalRecords)
@@ -285,7 +290,7 @@ export const stats_Processing_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Processing").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(Processing, totalRecords)
@@ -306,7 +311,7 @@ export const stats_Cancelled_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Cancelled").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(Cancelled, totalRecords)
@@ -327,7 +332,7 @@ export const stats_BasicInfoProvided_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Basic Info Provided").click()
-
+cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(BasicInfoProvided, totalRecords)
@@ -348,7 +353,7 @@ export const stats_FinanceOptionsProvided_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Finance Options Provided").click()
-
+cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(FinanceOptionsProvided, totalRecords)
@@ -369,7 +374,7 @@ export const stats_CreditApplicationProvided_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Credit Application Provided").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(CreditApplicationProvided, totalRecords)
@@ -390,7 +395,7 @@ export const stats_DeliveryOptionsProvided_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Delivery Options Provided").click()
-
+        cy.wait(6000)
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(DeliveryOptionsProvided, totalRecords)
@@ -410,6 +415,7 @@ export const stats_WarrantyOptionsProvided_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Warranty Options Provided").click()
+        cy.wait(6000)
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
@@ -431,6 +437,7 @@ export const stats_ServicesProvided_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Services Provided").click()
+        cy.wait(6000)
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
@@ -452,6 +459,7 @@ export const stats_AwaitingOffer_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Awaiting Offer").click()
+        cy.wait(6000)
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
@@ -472,12 +480,34 @@ export const stats_AcceptedOffer_order = () => {
         const AcceptedOffer = parseInt(text);
 
         cy.get('[placeholder="Filter by Status"]').click()
-        cy.get(".mantine-Select-dropdown").contains("Accepted").click()
+        cy.get(".mantine-Select-dropdown").contains("Accepted Offer").click()
+        cy.wait(6000)
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
             cy.log(AcceptedOffer, totalRecords)
             expect(AcceptedOffer).to.equal(totalRecords);
+        })
+    });
+}
+
+export const stats_StipulationProvided = () => {
+
+    cy.contains("1. Dashboard").click()
+    cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
+    cy.contains("Total Orders").parent().parent().parent().click();
+    cy.wait(30000)
+    cy.contains("Stipulations Provided").next().invoke('text').then((text) => {
+
+        const stipulation = parseInt(text);
+
+        cy.get('[placeholder="Filter by Status"]').click()
+        cy.get(".mantine-Select-dropdown").contains("Stipulations Provided").click()
+cy.wait(6000)
+        cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
+            const totalRecords = parseInt(text.split(" ")[2]);
+            cy.log(stipulation, totalRecords)
+            expect(stipulation).to.equal(totalRecords);
         })
     });
 }

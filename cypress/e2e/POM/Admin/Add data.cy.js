@@ -8,6 +8,7 @@ const first_name = faker.name.firstName()                    // "Abdul"
 const last_name =  faker.name.lastName()                     //"Aziz"
 const user_type = "Seller"
 ///// Login Data ////
+const customer_email ="customer001@gmail.com"
 const employee_email ="Shah@gmail.com"
 const Admin_email= "admin@gmail.com"
 const user_email = "gmd@gmail.com"
@@ -79,6 +80,7 @@ export const login = () => {
     // cy.url().should('eq', '/dashboard')
      cy.wait("@Login Successfully").its('response.statusCode').should('eq', 200);
   }
+  
   export const Employee_login = () => {
     cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
     //cy.wait(10* second)
@@ -93,6 +95,22 @@ export const login = () => {
      //cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
      cy.wait("@Login Successfully").its('response.statusCode').should('eq', 200);
   }
+  export const customer_login = () => {
+    cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
+    //cy.wait(10* second)
+ // Email
+     cy.get('[placeholder="Enter Email"]').type(customer_email)    
+ // Password
+     cy.get('[placeholder="Enter Password"]').type(user_password)
+     cy.get('[type="submit"]').click()
+     cy.wait(5*second)
+     cy.contains("Dashboard")
+     cy.contains("Login successful.").should("exist")        ///////Invalid Password
+     //cy.url().should('eq', 'https://carflys-testing.vercel.app/dashboard')
+     cy.wait("@Login Successfully").its('response.statusCode').should('eq', 200);
+  }
+
+
   export const Invalidloginwithpass = () => {
     //cy.wait(10* second)
  // Email
@@ -104,6 +122,7 @@ export const login = () => {
      cy.contains("Invalid password.").should("not.exist")        ///////Invalid Password
      //cy.url().should('eq', 'https://carflys-frontend-new-dev.vercel.app/auth/login')
   }
+
 
                                      /////////// 5.View Services //////
 export const ViewServices =() =>{

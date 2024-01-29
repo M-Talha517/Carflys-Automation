@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+ <reference types="cypress" />
 import { backendURL } from "../extras"
 //// Wait ////
 const millisecond = 1
@@ -97,8 +97,13 @@ export const TotalOrder_Button = () => {
                           //Accepted Offer
                       cy.contains("Accepted Offer").next().invoke('text').then((text) => {
                         allSum += parseInt(text)
-                        cy.log(totalorder, allSum)
-                        expect(totalorder).to.equal(allSum)
+                    
+                           // Stipulation
+                           cy.contains("Stipulations Provided").next().invoke('text').then((text) => {
+                            allSum += parseInt(text)
+                            cy.log(totalorder, allSum)
+                            expect(totalorder).to.equal(allSum)
+                        });
 
                                           });
 
@@ -138,6 +143,7 @@ export const stats_pending_order = () => {
 
         cy.get('[placeholder="Filter by Status"]').click()
         cy.get(".mantine-Select-dropdown").contains("Pending").click()
+        cy.wait(6000)
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
@@ -480,7 +486,26 @@ export const stats_AcceptedOffer_order = () => {
         })
     });
 }
+export const stats_StipulationProvided = () => {
 
+    cy.contains("1. Dashboard").click()
+    cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
+    cy.contains("Total Orders").parent().parent().parent().click();
+    cy.wait(30000)
+    cy.contains("Stipulations Provided").next().invoke('text').then((text) => {
+
+        const stipulation = parseInt(text);
+
+        cy.get('[placeholder="Filter by Status"]').click()
+        cy.get(".mantine-Select-dropdown").contains("Stipulations Provided").click()
+
+        cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
+            const totalRecords = parseInt(text.split(" ")[2]);
+            cy.log(stipulation, totalRecords)
+            expect(stipulation).to.equal(totalRecords);
+        })
+    });
+}
 
 
 
