@@ -378,83 +378,83 @@ describe("Admin", ()=>{
      })
     })
         describe("2-User MAnagement", ()=>{
-            // describe("2.1- Add User", ()=>{
-            //     it("2.1.1-Add user with no data (TTF)", ()=>{
-            //         cy.visit('/dashboard/add-employee')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         addUser_NoData()
-            //      })
-            //      it("2.1.2-Add user with Valid data(TTP)", ()=>{
-            //         cy.visit('/dashboard/add-employee')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         addUser_ValidData()
+            describe("2.1- Add User", ()=>{
+                it("2.1.1-Add user with no data (TTF)", ()=>{
+                    cy.visit('/dashboard/add-employee')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addUser_NoData()
+                 })
+                 it("2.1.2-Add user with Valid data(TTP)", ()=>{
+                    cy.visit('/dashboard/add-employee')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addUser_ValidData()
 
-            //      })
-            //      it("2.1.3-Add user with duplicate data(TTF)", ()=>{
-            //         cy.visit('/dashboard/add-employee')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         addUser_DuplicateData()
+                 })
+                 it("2.1.3-Add user with duplicate data(TTF)", ()=>{
+                    cy.visit('/dashboard/add-employee')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addUser_DuplicateData()
 
-            //      })
-            //      it("2.1.4-Reset Button Functionality check(TTP)", ()=>{
-            //         cy.visit('/dashboard/add-employee')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         addUser_ResetButton()
-            //      })
-            //      it(" 2.1.5- InValid Zip-code throw error check(TTF)", ()=>{
-            //         cy.visit('/dashboard/add-employee')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         addUser_InValid_ZipCode()
+                 })
+                 it("2.1.4-Reset Button Functionality check(TTP)", ()=>{
+                    cy.visit('/dashboard/add-employee')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addUser_ResetButton()
+                 })
+                 it(" 2.1.5- InValid Zip-code throw error check(TTF)", ()=>{
+                    cy.visit('/dashboard/add-employee')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addUser_InValid_ZipCode()
     
-            //      })
-            //      it("2.1.6-Enter Valid Zip-Code(TTP)", ()=>{
-            //         cy.visit('/dashboard/add-employee')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         addUser_Valid_ZipCode()
-            //      })
+                 })
+                 it("2.1.6-Enter Valid Zip-Code(TTP)", ()=>{
+                    cy.visit('/dashboard/add-employee')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    addUser_Valid_ZipCode()
+                 })
                 
-            // })
+            })
             describe("2.2- View Users",()=>{
-               //  it("2.2.2-Filter Bar functionality Check(TTP)", ()=>{
-               //      cy.visit('/dashboard/view-employees')
-               //      cy.contains("Login").click()
-               //      Admin_login()
-               //     viewuser_filters()
-               //   })
-            // describe("2.2.3-Search-Bar", ()=>{
-            //     it("2.2.1-Search With Exist UserName(TTP)", ()=>{
-            //         cy.visit('/dashboard/view-employees')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         viewuser_SearchName()
+                it("2.2.2-Filter Bar functionality Check(TTP)", ()=>{
+                    cy.visit('/dashboard/view-employees')
+                    cy.contains("Login").click()
+                    Admin_login()
+                   viewuser_filters()
+                 })
+            describe("2.2.3-Search-Bar", ()=>{
+                it("2.2.1-Search With Exist UserName(TTP)", ()=>{
+                    cy.visit('/dashboard/view-employees')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    viewuser_SearchName()
     
-            //      })
-            //      it("2.2.2- Search with Exist User Email(TTP)", ()=>{
-            //         cy.visit('/dashboard/view-employees')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         viewuser_SearchEmail()
+                 })
+                 it("2.2.2- Search with Exist User Email(TTP)", ()=>{
+                    cy.visit('/dashboard/view-employees')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    viewuser_SearchEmail()
     
-            //      })
-            //      it("2.2.3-Search by Dealership(TTP)", ()=>{
-            //         cy.visit('/dashboard/view-employees')
-            //         cy.contains("Login").click()
-            //         Admin_login()
-            //         viewuser_SearchDealership()
-            //      })
-            // })
-            // it("2.2.4-Clear filter Button functionality check(TTP)", ()=>{
-            //     cy.visit('/dashboard/view-employees')
-            //     cy.contains("Login").click()
-            //     Admin_login()
-            //     viewuser_ClearFilterButton()
-            //  })
+                 })
+                 it("2.2.3-Search by Dealership(TTP)", ()=>{
+                    cy.visit('/dashboard/view-employees')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    viewuser_SearchDealership()
+                 })
+            })
+            it("2.2.4-Clear filter Button functionality check(TTP)", ()=>{
+                cy.visit('/dashboard/view-employees')
+                cy.contains("Login").click()
+                Admin_login()
+                viewuser_ClearFilterButton()
+             })
              describe("2.2.5-Actions functionality check",()=>{
                 it("2.2.5.1.1-Close Button On View Modal Functionality check", ()=>{
                     cy.visit('/dashboard/view-employees')
@@ -575,7 +575,9 @@ describe("Admin", ()=>{
                     Viewdealership_AdminApproval()
                  })
                
+
        })
+        })
 
         describe("4-Vehicles", ()=>{
           describe("4.1-Add Vehicle",()=>{
@@ -606,7 +608,21 @@ describe("Admin", ()=>{
                 Admin_AddVehicle_InvalidVin()
         })         
                   })
-                
+                describe("4.1.1.2-Step3 (Images and Model)",()=>{
+                   it("4.1.1.2.1-Image drag and drop functionality", ()=>{
+                    cy.visit('/dashboard/add-vehicle')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Admin_AddvehicleImage()
+                   })
+                   it("4.1.1.2.2-Pdf drag and drop functionality", ()=>{
+                    cy.visit('/dashboard/add-vehicle')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    Admin_AddvehiclePdf()
+                   })                  
+                  })
+
               })
           })
           describe("4.2-View Vehicles",()=>{
@@ -716,8 +732,11 @@ describe("Admin", ()=>{
             Admin_login()
             addWaranty_ValidData()
         })
+
             it.only("6.1.4-Reset Button functionality check(TTP)",()=>{
+
             it("6.1.4-Reset Button functionality check(TTP)",()=>{
+
               cy.visit('/dashboard/add-warranty')
               cy.contains("Login").click()
               Admin_login()
@@ -775,16 +794,20 @@ describe("Admin", ()=>{
                         viewWaranty_Edit_IconButton()
                      })
                 })
-                it.skip("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
-                    cy.visit('/dashboard/view-warranties')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    viewWaranty_Delete_IconButton()
-                 })
+
+                // it.skip("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
+                //     cy.visit('/dashboard/view-warranties')
+                //     cy.contains("Login").click()
+                //     Admin_login()
+                //     viewWaranty_Delete_IconButton()
+                //  })
             })
           })
         
-        })
+         })
+
+            })
+         
         describe("7-Leads",()=>{
             describe("7.2-View Icon functionality (TTP)",()=>{
                 it("7.2-View Icon functionality (TTP)",()=>{
@@ -841,6 +864,22 @@ describe("Admin", ()=>{
                 cy.contains("Login").click()
                 Admin_login()
                 Admin_Search_Order_InValid_VinNO()
+ 
+             })
+             it("8.2.3-Search with Valid Vehicle Name(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_Search_Order_VehicleName()
+            
+             })
+             it("8.2.4-Search with Valid Customer Name(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_Search_Order_CustomerName()
+             })
+
             
              })
              it("8.2.3-Search with Valid Vehicle Name(TTP)",()=>{
@@ -870,8 +909,22 @@ describe("Admin", ()=>{
             Admin_login()
             Admin_Order_ClearFilterButton()
          })
+         
+          describe("8.3-Filters", ()=>{
+            it("8.3-Filters by status Check functionality(TTP)",()=>{
+                cy.visit('/dashboard/orders')
+                cy.contains("Login").click()
+                Admin_login()
+                Admin_order_Filter_BY_Status()
+             })
+          })
+          it("8.4-Clear Filter Button",()=>{
+            cy.visit('/dashboard/orders')
+            cy.contains("Login").click()
+            Admin_login()
+            Admin_Order_ClearFilterButton()
+         })
 
-        })
         describe("10.Payments", ()=>{
           describe("10.1-Search",()=>{
             it("10.1.1-Search by Valid VIN(TTP)",()=>{
@@ -1322,6 +1375,3 @@ describe("Admin", ()=>{
             })
        })
        
-
-})
-})
