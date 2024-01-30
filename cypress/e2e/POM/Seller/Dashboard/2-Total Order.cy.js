@@ -491,7 +491,7 @@ export const stats_StipulationProvided = () => {
     cy.contains("1. Dashboard").click()
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
-    cy.wait(30000)
+    cy.wait(3000)
     cy.contains("Stipulations Provided").next().invoke('text').then((text) => {
 
         const stipulation = parseInt(text);

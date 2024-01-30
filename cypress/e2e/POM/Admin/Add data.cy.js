@@ -55,7 +55,7 @@ export const login = () => {
 
  export const login2 = () => {
     cy.intercept('POST', `${backendURL}/auth/login`).as('Login Successfully')
-    cy.wait(10* second)
+   // cy.wait(2* second)
  // Email
      cy.get('[placeholder="Enter Email"]').type(x)    
  // Password

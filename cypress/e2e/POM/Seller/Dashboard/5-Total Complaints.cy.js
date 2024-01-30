@@ -50,10 +50,10 @@ export const stats_repliedcomplaints = () => {
 
         const repliedcomplaint  = parseInt(text);
 
-    ///filters by status
+    //filters by status
 
-        // cy.get('[placeholder="Filter by User Type"]').click()
-        // cy.get(".mantine-Select-dropdown").contains("Replied Complaints").click()
+        cy.get('[placeholder="Filter by User Type"]').click()
+        cy.get(".mantine-Select-dropdown").contains("Replied Complaints").click()
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
@@ -75,8 +75,8 @@ export const stats_Not_repliedcomplaints = () => {
         const notrepliedcomplaint  = parseInt(text);
 
     ///filters by status
-        // cy.get('[placeholder="Filter by User Type"]').click()
-        // cy.get(".mantine-Select-dropdown").contains("Not Replied Complaints").click()
+        cy.get('[placeholder="Filter by User Type"]').click()
+        cy.get(".mantine-Select-dropdown").contains("Not Replied Complaints").click()
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);

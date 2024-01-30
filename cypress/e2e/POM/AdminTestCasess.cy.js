@@ -720,7 +720,7 @@ describe("Admin", ()=>{
         describe("6-Warantay",()=>{
           describe("6.1- Add Waranty",()=>{
             it("6.1.1-Add Waranty With blank fields(TTF)",()=>{
-                cy.visit('/dashboard/add-warranty')
+                cy.visit('/dashboard/add-warranty') 
                 cy.contains("Login").click()
                 Admin_login()
                 addWaranty_BlankFields()
