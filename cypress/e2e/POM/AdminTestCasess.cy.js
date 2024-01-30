@@ -246,12 +246,12 @@ describe("Admin", ()=>{
           stats_Sold_vehicle()
        })
      })
-     describe.only("1.4-Payment",()=>{
+     describe("1.4-Payment",()=>{
       describe("1.4.1-Verifying Total Payments(TTP)",()=>{
-          it.only("1.4.1-Verifying Total Payments(TTP)",()=>{
+          it("1.4.1-Verifying Total Payments(TTP)",()=>{
               cy.visit('/dashboard/stats-details')
               cy.contains("Login").click()
-              Admin_login()
+              Admin_login() 
               TotalPayments_Button()
            })
            it("1.4.1.1-Verify Stats Of Pending Status(TTP)",()=>{
@@ -733,7 +733,7 @@ describe("Admin", ()=>{
             addWaranty_ValidData()
         })
 
-            it.only("6.1.4-Reset Button functionality check(TTP)",()=>{
+            it("6.1.4-Reset Button functionality check(TTP)",()=>{
 
             it("6.1.4-Reset Button functionality check(TTP)",()=>{
 
@@ -1044,7 +1044,7 @@ describe("Admin", ()=>{
                 Admin_login()
                 admin_addExpense_BlankData()
              })
-             it.only("11.3.2-Add Expense with Valid data(TTP)",()=>{
+             it("11.3.2-Add Expense with Valid data(TTP)",()=>{
                 cy.visit('/dashboard/add-expense')
                 cy.contains("Login").click()
                 Admin_login()
