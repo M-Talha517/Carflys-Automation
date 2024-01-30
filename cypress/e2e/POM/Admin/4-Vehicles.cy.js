@@ -41,22 +41,21 @@ export const Admin_AddVehicle_Nodata = () => {
 
            cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
            cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
-           cy.get('[placeholder="Enter Mileage"]').clear().type('19400')
+          // cy.get('[placeholder="Enter Mileage"]').clear().type('19400')
            cy.get('[placeholder="Enter State Location"]').click()
              cy.contains("Alabama").click()
            cy.contains("Next step").click()
        
                    ////////// Vehicle Description //////////
-                   //const ele = cy.get(".mantine-RichTextEditor-content").find("p");
-                  // ele.setInnerText = "Text"
            cy.get(".mantine-RichTextEditor-content").find("p").invoke("text", "abc") 
            cy.wait(4000)   
            cy.contains("Next step").click()
            cy.get(".mantine-1hss7nx").contains("Select images of vehicle (PNG, JPG, JPEG)").attachFile(['jeep1.jpeg','jeep2.jpeg'],{ subjectType: 'drag-n-drop'})
+           cy.wait(3000)
            cy.contains("Submit").click()
            cy.wait(2 * second)
            cy.contains("Vehicle has been added to the database successfully.").should("exist")
-           cy.wait(10 * second)
+           cy.wait(3 * second)
                                         ////// View Vehicle /////////
        
            cy.contains("4.2 View Vehicles").click()
@@ -107,10 +106,10 @@ export const Admin_AddVehicle_Nodata = () => {
            // VIN
            cy.get('[placeholder="Enter VIN"]').type("2C3CDZAG7LH199134", { force: true })
            cy.get('.mantine-1swk166').click()
-           cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
-            cy.contains("Get Valuation And Data").click()
-           cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
-           cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
+           cy.get('[placeholder="Enter Mileage"]').invoke("text", "23400") 
+           cy.get("button").contains("Get Valuation And Data").click()
+           cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("10500")
+           cy.get('[placeholder="Enter Cost Price"]').clear().type('8500')
            cy.get('[placeholder="Enter State Location"]').click()
            cy.contains("Alabama").click()
            cy.contains("Next step").click()
@@ -134,12 +133,12 @@ export const Admin_AddVehicle_Nodata = () => {
                cy.wait(2000)
                   cy.contains("Super Car Wheel").click()
                // VIN
-               cy.get('[placeholder="Enter VIN"]').type("1C4HJXEG9MW851795", { force: true })
+               cy.get('[placeholder="Enter VIN"]').type("2C3CDZAG7LH199134", { force: true })
                cy.get('.mantine-1swk166').click()
-               cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
-               cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
-               cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
-              // cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
+               cy.get('[placeholder="Enter Mileage"]').invoke("text", "20400") 
+                   cy.get("button").contains("Get Valuation And Data").click()
+               cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("10500")
+               cy.get('[placeholder="Enter Cost Price"]').clear().type('8000')
                cy.get('[placeholder="Enter State Location"]').click()
                cy.contains("Alabama").click()
                cy.contains("Next step").click()

@@ -57,8 +57,8 @@ export const ViewExpense_Search_VinNo=()=>{
     cy.contains("6. Accounting").click()
                   /////////// View Expense //////////////
     cy.contains("6.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
-    cy.contains("5FNYF6H22MB016055").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
 }
 export const ViewExpense_Search_VehicleName=()=>{
     cy.contains("6. Accounting").click()
@@ -75,24 +75,24 @@ export const ViewExpense_Search_InValid_VinNo=()=>{
 export const ViewExpense_View_IconButton= ()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
     cy.contains("View expense").should("exist")      
    }
    export const ViewExpense_Edit_IconButton= ()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
     cy.contains("Update Expense").should("exist")
    }
    export const ViewExpense_Delete_IconButton= ()=>{
     cy.contains("6. Accounting").click()
     cy.contains("6.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-trash").click()
     cy.contains("Delete Expense").should("exist") 
     cy.get("button").contains("Delete").click()  

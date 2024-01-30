@@ -577,148 +577,130 @@ describe("Admin", ()=>{
                
        // })
 
-        describe("4-Vehicles", ()=>{
-          describe("4.1-Add Vehicle",()=>{
-             describe("4.1.1-Stepper", ()=>{
-                describe("4.1.1.1-Step1 (Vehicle Info)", ()=>{
-                    it("4.1.1.1.1-Add Vehicle Info with no data(TTF)", ()=>{
-                            cy.visit('/dashboard/add-vehicle')
-                            cy.contains("Login").click()
-                            Admin_login()
-                            Admin_AddVehicle_Nodata()
-                    })
-                    it.only("4.1.1.1.2-Add Vehicle with Valid data(TTP)", ()=>{
-                        cy.visit('/dashboard/add-vehicle')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        Admin_AddVehicle_ValidData()
-                })
-                it("4.1.1.1.3-Add Vehicle with already existed VIN(TTF)", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_AddVehicle_AlreadyExist()
-            })
-               it("4.1.1.1.4-Add Vehicle with Invalid VIN(TTF)", ()=>{
-                cy.visit('/dashboard/add-vehicle')
-                cy.contains("Login").click()
-                Admin_login()
-                Admin_AddVehicle_InvalidVin()
-        })         
-                  })
-                describe.only("4.1.1.2-Step3 (Images and Model)",()=>{
-                   it("4.1.1.2.1-Image drag and drop functionality", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_AddvehicleImage()
-                   })
-                   it("4.1.1.2.2-Pdf drag and drop functionality", ()=>{
-                    cy.visit('/dashboard/add-vehicle')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_AddvehiclePdf()
-                   })                  
-                  })
-              })
-          })
-          describe("4.2-View Vehicles",()=>{
-              describe("4.2.1-Table List View",()=>{
-                 describe("4.2.1.1-Actions Icon functionality",()=>{
-                     describe("4.2.1.1.1-View iconfunctionality check(TTP)",()=>{
-                       it("4.2.1.1.1.1-View icon functionality check(TTP)", ()=>{
-                          cy.visit('/dashboard/view-vehicles')
-                          cy.contains("Login").click()
-                          Admin_login()
-                          Admin_viewVehicle_View_IconButton()
-                       })
-                       describe("4.2.1.1.1.1-Vehicle Notes", ()=>{
-                         it("4.2.1.1.1.1.2Add Note",()=>{
-                            cy.visit('/dashboard/view-vehicles')
-                            cy.contains("Login").click()
-                            Admin_login()
-                            Admin_viewVehicle_AddNotes()
-                         })
-                         it.skip("4.2.1.1.1.1.3-Delete Note",()=>{
-                            cy.visit('/dashboard/view-vehicles')
-                            cy.contains("Login").click()
-                            Admin_login()
-                            Admin_viewVehicle_DeleteNotes()
-                         })
-                       })
-                      })
-                      it("4.2.1.1.2-Edit Icon functionality check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-vehicles')
-                          cy.contains("Login").click()
-                          Admin_login()
-                          Admin_viewVehicle_Edit_IconButton()
-                      })
-                      it.skip("4.2.1.3-Delete Icon functionality check(TTP)", ()=>{
-                        cy.visit('/dashboard/view-vehicles')
-                          cy.contains("Login").click()
-                          Admin_login()
-                          Admin_viewVehicle_Delete_IconButton()
-                      })
-                  })
-                  describe("4.2.1.2-status",()=>{
-                     it("Active status functionality(TTP)", ()=>{
-                        cy.visit('/dashboard/view-vehicles')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        Admin_Vehicle_StatusChanges_Active()
-                      })
-                      it("Block status functionality(TTP)", ()=>{
-                        cy.visit('/dashboard/view-vehicles')
-                        cy.contains("Login").click()
-                        Admin_login()
-                        Admin_Vehicle_StatusChanges_Block()
-                      })
-                  })
-              })
-              describe("4.2.2-Search",()=>{
-                it("4.2.2.1-Search by Valid Data(TTP)", ()=>{
-                    cy.visit('/dashboard/view-vehicles')
-                      cy.contains("Login").click()
-                      Admin_login()
-                     Admin_Search_Valid_VinNO()
-                  })
-                  it("4.2.2.2-Search by InValid Data (TTF)", ()=>{
-                    cy.visit('/dashboard/view-vehicles')
-                      cy.contains("Login").click()
-                      Admin_login()
-                      Admin_Search_InValid_VinNO()
-                  })
+        // describe("4-Vehicles", ()=>{
+        //   describe("4.1-Add Vehicle",()=>{
+        //      describe("4.1.1-Stepper", ()=>{
+        //         describe("4.1.1.1-Step1 (Vehicle Info)", ()=>{
+        //             it("4.1.1.1.1-Add Vehicle Info with no data(TTF)", ()=>{
+        //                     cy.visit('/dashboard/add-vehicle')
+        //                     cy.contains("Login").click()
+        //                     Admin_login()
+        //                     Admin_AddVehicle_Nodata()
+        //             })
+        //             it.only("4.1.1.1.2-Add Vehicle with Valid data(TTP)", ()=>{
+        //                 cy.visit('/dashboard/add-vehicle')
+        //                 cy.contains("Login").click()
+        //                 Admin_login()
+        //                 Admin_AddVehicle_ValidData()
+        //         })
+        //         it("4.1.1.1.3-Add Vehicle with already existed VIN(TTF)", ()=>{
+        //             cy.visit('/dashboard/add-vehicle')
+        //             cy.contains("Login").click()
+        //             Admin_login()
+        //             Admin_AddVehicle_AlreadyExist()
+        //     })
+        //        it("4.1.1.1.4-Add Vehicle with Invalid VIN(TTF)", ()=>{
+        //         cy.visit('/dashboard/add-vehicle')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_AddVehicle_InvalidVin()
+        // })         
+        //           })
+                
+        //       })
+        //   })
+        //   describe("4.2-View Vehicles",()=>{
+        //       describe("4.2.1-Table List View",()=>{
+        //          describe("4.2.1.1-Actions Icon functionality",()=>{
+        //              describe("4.2.1.1.1-View iconfunctionality check(TTP)",()=>{
+        //                it("4.2.1.1.1.1-View icon functionality check(TTP)", ()=>{
+        //                   cy.visit('/dashboard/view-vehicles')
+        //                   cy.contains("Login").click()
+        //                   Admin_login()
+        //                   Admin_viewVehicle_View_IconButton()
+        //                })
+        //                describe("4.2.1.1.1.1-Vehicle Notes", ()=>{
+        //                  it("4.2.1.1.1.1.2Add Note",()=>{
+        //                     cy.visit('/dashboard/view-vehicles')
+        //                     cy.contains("Login").click()
+        //                     Admin_login()
+        //                     Admin_viewVehicle_AddNotes()
+        //                  })
+                       
+        //                })
+        //               })
+        //               it("4.2.1.1.2-Edit Icon functionality check(TTP)", ()=>{
+        //                 cy.visit('/dashboard/view-vehicles')
+        //                   cy.contains("Login").click()
+        //                   Admin_login()
+        //                   Admin_viewVehicle_Edit_IconButton()
+        //               })
+        //               it.skip("4.2.1.3-Delete Icon functionality check(TTP)", ()=>{
+        //                 cy.visit('/dashboard/view-vehicles')
+        //                   cy.contains("Login").click()
+        //                   Admin_login()
+        //                   Admin_viewVehicle_Delete_IconButton()
+        //               })
+        //           })
+        //           describe("4.2.1.2-status",()=>{
+        //              it("Active status functionality(TTP)", ()=>{
+        //                 cy.visit('/dashboard/view-vehicles')
+        //                 cy.contains("Login").click()
+        //                 Admin_login()
+        //                 Admin_Vehicle_StatusChanges_Active()
+        //               })
+        //               it("Block status functionality(TTP)", ()=>{
+        //                 cy.visit('/dashboard/view-vehicles')
+        //                 cy.contains("Login").click()
+        //                 Admin_login()
+        //                 Admin_Vehicle_StatusChanges_Block()
+        //               })
+        //           })
+        //       })
+        //       describe("4.2.2-Search",()=>{
+        //         it("4.2.2.1-Search by Valid Data(TTP)", ()=>{
+        //             cy.visit('/dashboard/view-vehicles')
+        //               cy.contains("Login").click()
+        //               Admin_login()
+        //              Admin_Search_Valid_VinNO()
+        //           })
+        //           it("4.2.2.2-Search by InValid Data (TTF)", ()=>{
+        //             cy.visit('/dashboard/view-vehicles')
+        //               cy.contains("Login").click()
+        //               Admin_login()
+        //               Admin_Search_InValid_VinNO()
+        //           })
 
-              })
-              it("4.2.3-Clear filter button", ()=>{
-                cy.visit('/dashboard/view-vehicles')
-                cy.contains("Login").click()
-                Admin_login()
-                Admin_ClearfilterButton()
-              })
-              describe("4.2.5-Filters functionality", ()=>{
-                  it("4.2.5.1-Filter by status(TTP)", ()=>{
-                    cy.visit('/dashboard/view-vehicles')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_filterByStatus()
-                  })   
-                  it("4.2.5.2-Filter by phase(TTP)", ()=>{
-                    cy.visit('/dashboard/view-vehicles')
-                    cy.contains("Login").click()
-                    Admin_login()
-                    Admin_filterByPhase()
-                  }) 
-              })
-              it("4.2.6-Add Vehicle Button functionality check(TTP)", ()=>{
-               cy.visit('/dashboard/view-vehicles')
-               cy.contains("Login").click()
-               Admin_login()
-              Admin_View_AddVehicle_Button()
-             })
+        //       })
+        //       it("4.2.3-Clear filter button", ()=>{
+        //         cy.visit('/dashboard/view-vehicles')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_ClearfilterButton()
+        //       })
+        //       describe("4.2.5-Filters functionality", ()=>{
+        //           it("4.2.5.1-Filter by status(TTP)", ()=>{
+        //             cy.visit('/dashboard/view-vehicles')
+        //             cy.contains("Login").click()
+        //             Admin_login()
+        //             Admin_filterByStatus()
+        //           })   
+        //           it("4.2.5.2-Filter by phase(TTP)", ()=>{
+        //             cy.visit('/dashboard/view-vehicles')
+        //             cy.contains("Login").click()
+        //             Admin_login()
+        //             Admin_filterByPhase()
+        //           }) 
+        //       })
+        //       it("4.2.6-Add Vehicle Button functionality check(TTP)", ()=>{
+        //        cy.visit('/dashboard/view-vehicles')
+        //        cy.contains("Login").click()
+        //        Admin_login()
+        //       Admin_View_AddVehicle_Button()
+        //      })
             
-            })
-        })
+        //     })
+        // })
       //   describe("6-Warantay",()=>{
       //     describe("6.1- Add Waranty",()=>{
       //       it("6.1.1-Add Waranty With blank fields(TTF)",()=>{
@@ -734,7 +716,7 @@ describe("Admin", ()=>{
       //       Admin_login()
       //       addWaranty_ValidData()
       //   })
-      //       it("6.1.4-Reset Button functionality check(TTP)",()=>{
+      //       it.only("6.1.4-Reset Button functionality check(TTP)",()=>{
       //         cy.visit('/dashboard/add-warranty')
       //         cy.contains("Login").click()
       //         Admin_login()
@@ -742,12 +724,12 @@ describe("Admin", ()=>{
       //  })
       //     })
       //     describe("6.2-View Waranty",()=>{
-      //        it("6.2.2-Add Warranty Button functionality check(TTP)",()=>{
-      //           cy.visit('/dashboard/view-warranties')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           viewWaranty_AddButton()
-      //        })
+      //       //  it("6.2.2-Add Warranty Button functionality check(TTP)",()=>{
+      //       //     cy.visit('/dashboard/view-warranties')
+      //       //     cy.contains("Login").click()
+      //       //     Admin_login()
+      //       //     viewWaranty_AddButton()
+      //       //  })
       //       describe("6.2.3-Actions Icons In table",()=>{
       //           describe("6.2.3.1-View Icon button (TTP)",()=>{
       //               it("6.2.3.1.1-View Icon functionality check(TTP)",()=>{
@@ -766,12 +748,12 @@ describe("Admin", ()=>{
       //                })
       //           })
       //           describe("6.2.3.2-Edit Icon Button(TTP)",()=>{
-      //               it("6.2.3.2.1-Reset Button functionality check(TTP)",()=>{
-      //                   cy.visit('/dashboard/view-warranties')
-      //                   cy.contains("Login").click()
-      //                   Admin_login()
-      //                   viewWaranty_Edit_ResetButton()
-      //                })
+      //               // it("6.2.3.2.1-Reset Button functionality check(TTP)",()=>{
+      //               //     cy.visit('/dashboard/view-warranties')
+      //               //     cy.contains("Login").click()
+      //               //     Admin_login()
+      //               //     viewWaranty_Edit_ResetButton()
+      //               //  })
       //                it("6.2.3.2.2-Edit Icon functionality check(TTP)",()=>{
       //                   cy.visit('/dashboard/view-warranties')
       //                   cy.contains("Login").click()
@@ -779,309 +761,302 @@ describe("Admin", ()=>{
       //                   viewWaranty_Edit_IconButton()
       //                })
       //           })
-      //           it.skip("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
-      //               cy.visit('/dashboard/view-warranties')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               viewWaranty_Delete_IconButton()
-      //            })
+      //           // it.skip("6.2.3.3-Delete Icon Button functionality(TTP)",()=>{
+      //           //     cy.visit('/dashboard/view-warranties')
+      //           //     cy.contains("Login").click()
+      //           //     Admin_login()
+      //           //     viewWaranty_Delete_IconButton()
+      //           //  })
       //       })
       //     })
         
-      //   })
-      //   describe("7-Leads",()=>{
-      //       describe("7.2-View Icon functionality (TTP)",()=>{
-      //           it("7.2-View Icon functionality (TTP)",()=>{
-      //               cy.visit('/dashboard/view-leads')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               leads_View_IconButton()
-      //            })
-      //            it("7.2.1-Close Button on View Modal(TTP)",()=>{
-      //               cy.visit('/dashboard/view-leads')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               leads_View_ModalCloseButton()
-      //            })
-      //        })
-      //        it("7.3-Delete Icon Functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/view-leads')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           leads_Delete_IconButton()
-      //        })
-      //   })
-      //   describe("8-Orders", ()=>{
-      //     describe("8.1-Order table list View",()=>{
-      //       it("8.1.1-View Icon Button Check functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_order_View_IconButton()
-      //        })
-      //        it("8.1.1.1-Close Button On View Modal functionality Check(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_order_View_ModalCloseButton()
-      //        })
-      //        it("8.1.2-Status functionality check(TTP)",()=>{
-      //          cy.visit('/dashboard/orders')
-      //          cy.contains("Login").click()
-      //          Admin_login()
-      //          Admin_Order_statusChanges()
-      //       })
-      //     })
-      //     describe("8.2-Search",()=>{
-      //       it("8.2.1-Search with Valid VIN(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_VinNO()
-            
-      //        })
-      //        it("8.2.2-Search with Invalid VIN(TTF)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_InValid_VinNO()
-            
-      //        })
-      //        it("8.2.3-Search with Valid Vehicle Name(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_VehicleName()
-            
-      //        })
-      //        it("8.2.4-Search with Valid Customer Name(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Order_CustomerName()
-      //        })
-            
-
-
-      //     })
-      //     describe("8.3-Filters", ()=>{
-      //       it("8.3-Filters by status Check functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/orders')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_order_Filter_BY_Status()
-      //        })
-      //     })
-      //     it("8.4-Clear Filter Button",()=>{
-      //       cy.visit('/dashboard/orders')
-      //       cy.contains("Login").click()
-      //       Admin_login()
-      //       Admin_Order_ClearFilterButton()
       //    })
+        // describe("7-Leads",()=>{
+        //     describe("7.2-View Icon functionality (TTP)",()=>{
+        //         it("7.2-View Icon functionality (TTP)",()=>{
+        //             cy.visit('/dashboard/view-leads')
+        //             cy.contains("Login").click()
+        //             Admin_login()
+        //             leads_View_IconButton()
+        //          })
+        //          it("7.2.1-Close Button on View Modal(TTP)",()=>{
+        //             cy.visit('/dashboard/view-leads')
+        //             cy.contains("Login").click()
+        //             Admin_login()
+        //             leads_View_ModalCloseButton()
+        //          })
+        //      })
+        //      it("7.3-Delete Icon Functionality(TTP)",()=>{
+        //         cy.visit('/dashboard/view-leads')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         leads_Delete_IconButton()
+        //      })
+        // })
+        // describe("8-Orders", ()=>{
+        //   describe("8.1-Order table list View",()=>{
+        //     it("8.1.1-View Icon Button Check functionality(TTP)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_order_View_IconButton()
+        //      })
+        //      it("8.1.1.1-Close Button On View Modal functionality Check(TTP)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_order_View_ModalCloseButton()
+        //      })
+        //      it("8.1.2-Status functionality check(TTP)",()=>{
+        //        cy.visit('/dashboard/orders')
+        //        cy.contains("Login").click()
+        //        Admin_login()
+        //        Admin_Order_statusChanges()
+        //     })
+        //   })
+        //   describe("8.2-Search",()=>{
+        //     it("8.2.1-Search with Valid VIN(TTP)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Order_VinNO()
+            
+        //      })
+        //      it("8.2.2-Search with Invalid VIN(TTF)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Order_InValid_VinNO()
+            
+        //      })
+        //      it("8.2.3-Search with Valid Vehicle Name(TTP)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Order_VehicleName()
+        //      })
+        //      it("8.2.4-Search with Valid Customer Name(TTP)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Order_CustomerName()
+        //      })
+        //   })
+        //   describe("8.3-Filters", ()=>{
+        //     it("8.3-Filters by status Check functionality(TTP)",()=>{
+        //         cy.visit('/dashboard/orders')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_order_Filter_BY_Status()
+        //      })
+        //   })
+        //   it("8.4-Clear Filter Button",()=>{
+        //     cy.visit('/dashboard/orders')
+        //     cy.contains("Login").click()
+        //     Admin_login()
+        //     Admin_Order_ClearFilterButton()
+        //  })
 
-      //   })
-      //   describe("10.Payments", ()=>{
-      //     describe("10.1-Search",()=>{
-      //       it("10.1.1-Search by Valid VIN(TTP)",()=>{
-      //           cy.visit('/dashboard/payments')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Payment_VinNo()
-      //        })
-      //        it("10.1.2-Search with Vehicle Name(TTP)",()=>{
-      //           cy.visit('/dashboard/payments')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Payment_VehicleName()
-      //        })
-      //        it("10.1.3-Searching by Invalid VIN(TTF)",()=>{
-      //           cy.visit('/dashboard/payments')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Search_Payment_InValid_VinNo()
-      //        })
-      //     })
-      //     describe("10.2-Filters",()=>{
-      //       it("10.2.1-Filter by Status Functionality Check(TTP)",()=>{
-      //           cy.visit('/dashboard/payments')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           Admin_Filters_Payment()
-      //        })
-      //     })
-      //     it("10.3-Clear filters Button(TTP)",()=>{
-      //       cy.visit('/dashboard/payments')
-      //       cy.contains("Login").click()
-      //       Admin_login()
-      //       Admin__Payment_ClearFilterButton()
-      //    })
-      //   })
-      //   describe("11.Accounting",()=>{
-      //    describe("11.1-Add Revenue",()=>{
-      //          it("11.1.1-Add Revenue with Blank fields(TTF)", ()=>{
-      //           cy.visit('/dashboard/add-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addRevenue_Blank_filed()
-      //          })
-      //          it("11.1.2-Select Vehicle by Drop down list(TTP)", ()=>{
-      //           cy.visit('/dashboard/add-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addRevenue_DropDown_List()
-      //          })
-      //          it("11.1.3-Add Revenue with Valid Data(TTP)", ()=>{
-      //           cy.visit('/dashboard/add-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addRevenue_Valid_Data()
-      //          })
-      //          it("11.1.4-Reset Button(TTP)", ()=>{
-      //           cy.visit('/dashboard/add-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addRevenue_ResetButton()
-      //          })
-      //    })
-      //    describe("11.2-View Revenue", ()=>{
-      //      describe("11.2.1-Search", ()=>{
-      //       it("11.2.1.1-Search with Valid VIN(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_Search_VinNo()
-      //        })
-      //        it("11.2.1.2-Search with Vehicle Name(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_Search_VehicleName()
-      //        })
-
+        // })
+        // describe("10.Payments", ()=>{
+        //   describe("10.1-Search",()=>{
+        //     it("10.1.1-Search by Valid VIN(TTP)",()=>{
+        //         cy.visit('/dashboard/payments')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Payment_VinNo()
+        //      })
+        //      it("10.1.2-Search with Vehicle Name(TTP)",()=>{
+        //         cy.visit('/dashboard/payments')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Payment_VehicleName()
+        //      })
+        //      it("10.1.3-Searching by Invalid VIN(TTF)",()=>{
+        //         cy.visit('/dashboard/payments')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Search_Payment_InValid_VinNo()
+        //      })
+        //   })
+        //   describe("10.2-Filters",()=>{
+        //     it("10.2.1-Filter by Status Functionality Check(TTP)",()=>{
+        //         cy.visit('/dashboard/payments')
+        //         cy.contains("Login").click()
+        //         Admin_login()
+        //         Admin_Filters_Payment()
+        //      })
+        //   })
+        //   it("10.3-Clear filters Button(TTP)",()=>{
+        //     cy.visit('/dashboard/payments')
+        //     cy.contains("Login").click()
+        //     Admin_login()
+        //     Admin__Payment_ClearFilterButton()
+        //  })
+        // })
+        describe("11.Accounting",()=>{
+         describe("11.1-Add Revenue",()=>{
+               it("11.1.1-Add Revenue with Blank fields(TTF)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addRevenue_Blank_filed()
+               })
+               it("11.1.2-Select Vehicle by Drop down list(TTP)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addRevenue_DropDown_List()
+               })
+               it("11.1.3-Add Revenue with Valid Data(TTP)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addRevenue_Valid_Data()
+               })
+               it("11.1.4-Reset Button(TTP)", ()=>{
+                cy.visit('/dashboard/add-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addRevenue_ResetButton()
+               })
+         })
+         describe("11.2-View Revenue", ()=>{
+           describe("11.2.1-Search", ()=>{
+            it("11.2.1.1-Search with Valid VIN(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_Search_VinNo()
+             })
+             it("11.2.1.2-Search with Vehicle Name(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_Search_VehicleName()
+             })
+           })
+           describe("11.2.3-Table list View",()=>{
+            it("11.2.3.1.View Icon Button functionality(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_View_IconButton()
+             })
+             it("11.2.3.1.1-Close Button On View Modal Functionality check(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_ModalCloseButton()
+             })
+             it("11.2.3.2.Edit Icon Button functionality(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_Edit_IconButton()
+             })
+             it("11.2.3.2.1-Reset Button On Update Revenue functionality(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_Edit_ResetButton()
+             })
+             it("11.2.3.3-Delete Icon Button functionality(TTP)",()=>{
+                cy.visit('/dashboard/view-revenue')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_ViewRevenue_Delete_IconButton()
+             })
              
-
-      //      })
-      //      describe("11.2.3-Table list View",()=>{
-      //       it("11.2.3.1.View Icon Button functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_View_IconButton()
-      //        })
-      //        it("11.2.3.1.1-Close Button On View Modal Functionality check(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_ModalCloseButton()
-      //        })
-      //        it("11.2.3.2.Edit Icon Button functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_Edit_IconButton()
-      //        })
-      //        it("11.2.3.2.1-Reset Button On Update Revenue functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_Edit_ResetButton()
-      //        })
-      //        it("11.2.3.3-Delete Icon Button functionality(TTP)",()=>{
-      //           cy.visit('/dashboard/view-revenue')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_ViewRevenue_Delete_IconButton()
-      //        })
-             
-      //      })
-      //    })
-      //    describe("11.3-Add Expense",()=>{
-      //       it("11.3.1-Add Expense with no data(TTF)",()=>{
-      //           cy.visit('/dashboard/add-expense')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addExpense_BlankData()
-      //        })
-      //        it("11.3.2-Add Expense with Valid data(TTP)",()=>{
-      //           cy.visit('/dashboard/add-expense')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addExpense_ValidData()
-      //        })
-      //        it("11.3.3-Reset Button Functionality check(TTP)",()=>{
-      //           cy.visit('/dashboard/add-expense')
-      //           cy.contains("Login").click()
-      //           Admin_login()
-      //           admin_addExpense_ResetButton()
-      //        })
-      //    })
-      //    describe("11.4-View Expense",()=>{
-      //       describe("11.4.1-Search", ()=>{
-      //           it("11.4.2.4-Search with Expense type(TTP)",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_Search_ExpenseType()
-      //            })
-      //       })
-      //       describe("11.4.3-Table List View",()=>{
-      //           it("11.4.3.1-View Icon Button(TTP)",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_View_IconButton()
-      //            })
-      //            it("11.4.3.1.1-Close Button on View Modal(TTP)",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_View_ModalCloseButton()
-      //            })
-      //            it("11.4.3.2-Edit Icon Button(TTP)",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_Edit_IconButton()
-      //            })
-      //            it("11.4.3.2.1-Reset Button functionality on Update Expense(TTP) ",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_Edit_ResetButton()
-      //            })
-      //            it("11.4.3.3-Delete Icon Button(TTP)",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_Delete_IconButton()
-      //            })
-      //            it("11.4.4-Add Expenses Button functionality(TTP)",()=>{
-      //               cy.visit('/dashboard/view-expense')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewExpense_viewscreen_AddButton()
-      //            })
+           })
+         })
+         describe("11.3-Add Expense",()=>{
+            it("11.3.1-Add Expense with no data(TTF)",()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addExpense_BlankData()
+             })
+             it.only("11.3.2-Add Expense with Valid data(TTP)",()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addExpense_ValidData()
+             })
+             it("11.3.3-Reset Button Functionality check(TTP)",()=>{
+                cy.visit('/dashboard/add-expense')
+                cy.contains("Login").click()
+                Admin_login()
+                admin_addExpense_ResetButton()
+             })
+         })
+         describe("11.4-View Expense",()=>{
+            describe("11.4.1-Search", ()=>{
+                it("11.4.2.4-Search with Expense type(TTP)",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_Search_ExpenseType()
+                 })
+            })
+            describe("11.4.3-Table List View",()=>{
+                it("11.4.3.1-View Icon Button(TTP)",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_View_IconButton()
+                 })
+                 it("11.4.3.1.1-Close Button on View Modal(TTP)",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_View_ModalCloseButton()
+                 })
+                 it("11.4.3.2-Edit Icon Button(TTP)",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_Edit_IconButton()
+                 })
+                 it("11.4.3.2.1-Reset Button functionality on Update Expense(TTP) ",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_Edit_ResetButton()
+                 })
+                 it("11.4.3.3-Delete Icon Button(TTP)",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_Delete_IconButton()
+                 })
+                 it("11.4.4-Add Expenses Button functionality(TTP)",()=>{
+                    cy.visit('/dashboard/view-expense')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewExpense_viewscreen_AddButton()
+                 })
               
-      //       })
-      //    })
-      //    describe("11.5-View Profit Report",()=>{
-      //       describe("11.5.1-Search",()=>{
-      //           it("11.5.1.1-Searching with Valid VIN(TTP)",()=>{
-      //               cy.visit('/dashboard/profit-report')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewProfit_Search_Valid_VinNo()
-      //            })
-      //            it("11.5.1.2-Searching with Invalid VIN(TTF)",()=>{
-      //               cy.visit('/dashboard/profit-report')
-      //               cy.contains("Login").click()
-      //               Admin_login()
-      //               admin_ViewProfit_Search_InValid_VinNo()
-      //            })
-      //        })
-      //    })
+            })
+         })
+         describe("11.5-View Profit Report",()=>{
+            describe("11.5.1-Search",()=>{
+                it("11.5.1.1-Searching with Valid VIN(TTP)",()=>{
+                    cy.visit('/dashboard/profit-report')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewProfit_Search_Valid_VinNo()
+                 })
+                 it("11.5.1.2-Searching with Invalid VIN(TTF)",()=>{
+                    cy.visit('/dashboard/profit-report')
+                    cy.contains("Login").click()
+                    Admin_login()
+                    admin_ViewProfit_Search_InValid_VinNo()
+                 })
+             })
+         })
         
-      //   })
+        })
       //   describe("12-Chats", function(){
       //       describe("12.1-Search-Bar",function(){
       //         it("12.1.1-Can Search every User(TTP)", ()=>{

@@ -33,27 +33,27 @@ export const admin_addRevenue_Blank_filed= ()=>{
      
      // Vehicle select
      cy.get('[placeholder="Select Vehicle"]').click()
-        cy.contains("2020 Ford Explorer XLT").click()
+        cy.contains("2011 Honda CR-V SE").click()
      
      // Reference type
-     cy.get('[placeholder="Enter Reference"]').type("Full Payment for 1FMSK8DH1LGC97871")        /// 1C4HJXDN7NW246787
+     cy.get('[placeholder="Enter Reference"]').type("Full Payment for 5J6RE3H43BL058780")        /// 1C4HJXDN7NW246787
      // Reference Email 
      cy.get('[placeholder="Enter Reference Email"]').type("gmd@gmail.com")
      // Reference Details 
-     cy.get('[placeholder="Enter Reference Details"]').type("Full Payment for 1FMSK8DH1LGC97871 in Vehicle Order")
+     cy.get('[placeholder="Enter Reference Details"]').type("Full Payment for 5J6RE3H43BL058780 in Vehicle Order")
      // Reference Date
      cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
      // Revenue Amount 
-     cy.get('[placeholder="Enter Revenue Amount"]').type("35000")
+     cy.get('[placeholder="Enter Revenue Amount"]').clear().type("35000")
      // Revenue Details 
-     cy.get('[placeholder="Enter Revenue Details"]').type("Full Payment for 1FMSK8DH1LGC97871")
+     cy.get('[placeholder="Enter Revenue Details"]').type("Full Payment for 5J6RE3H43BL058780")
      // Add Revenue Button
      cy.get('[type="submit"]').click()
      cy.wait(10* second)
      /////////////////  View Revenue //////////////
-     cy.contains("6.2 View Revenue").click()
-     cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-     cy.contains("1FMSK8DH1LGC97871").should("exist")
+     cy.contains("11.2 View Revenue").click()
+     cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+     cy.contains("5J6RE3H43BL058780").should("exist")
     }
     export const admin_addRevenue_ResetButton= ()=>{
        cy.contains("11. Accounting").click()
@@ -101,16 +101,18 @@ export const admin_addRevenue_Blank_filed= ()=>{
  export const admin_ViewRevenue_View_IconButton= ()=>{
        cy.contains("11. Accounting").click()
        cy.contains("11.2 View Revenue").click()
-       cy.get('[placeholder="Search"]').type("1FTFW1ET2DFB58683")
-       cy.contains("1FTFW1ET2DFB58683").should("exist")
+       cy.get('[placeholder="Search"]').type("3FA6P0G72LR161694")
+       cy.wait(3000)
+       cy.contains("3FA6P0G72LR161694").should("exist")
        cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
        cy.contains("View revenue").should("exist")      
       }
  export const admin_ViewRevenue_ModalCloseButton= ()=>{
         cy.contains("11. Accounting").click()
         cy.contains("11.2 View Revenue").click()
-        cy.get('[placeholder="Search"]').type("1FTFW1ET2DFB58683")
-        cy.contains("1FTFW1ET2DFB58683").should("exist")
+        cy.get('[placeholder="Search"]').type("3FA6P0G72LR161694")
+        cy.wait(3000)
+        cy.contains("3FA6P0G72LR161694").should("exist")
         cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
         cy.contains("View revenue").should("exist")      
         cy.get("button").contains("Close").click()
@@ -118,8 +120,9 @@ export const admin_addRevenue_Blank_filed= ()=>{
  export const admin_ViewRevenue_Edit_IconButton= ()=>{
        cy.contains("11. Accounting").click()
        cy.contains("11.2 View Revenue").click()
-       cy.get('[placeholder="Search"]').type("1C6RRFFG9RN120861")
-       cy.contains("1FTFW1ET2DFB58683").should("exist")
+       cy.get('[placeholder="Search"]').type("3FA6P0G72LR161694")
+       cy.wait(3000)
+       cy.contains("3FA6P0G72LR161694").should("exist")
        cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
        cy.contains("Update Revenue").should("exist")
  
@@ -127,7 +130,8 @@ export const admin_addRevenue_Blank_filed= ()=>{
  export const admin_ViewRevenue_Edit_ResetButton= ()=>{
         cy.contains("11. Accounting").click()
         cy.contains("11.2 View Revenue").click()
-        cy.get('[placeholder="Search"]').type("1FTFW1ET2DFB58683")
+        cy.get('[placeholder="Search"]').type("3FA6P0G72LR161694")
+        cy.wait(3000)
         cy.contains("1FTFW1ET2DFB58683").should("exist")
         cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
         cy.contains("Update Revenue").should("exist")
@@ -145,8 +149,8 @@ export const admin_addRevenue_Blank_filed= ()=>{
  export const admin_ViewRevenue_Delete_IconButton= ()=>{
        cy.contains("11. Accounting").click()
        cy.contains("11.2 View Revenue").click()
-       cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-       cy.contains("1FMSK8DH1LGC97871").should("exist")
+       cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+       cy.contains("5J6RE3H43BL058780").should("exist")
        cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-trash").click()
        cy.contains("Delete Revenue").should("exist") 
        cy.get("button").contains("Delete").click()   

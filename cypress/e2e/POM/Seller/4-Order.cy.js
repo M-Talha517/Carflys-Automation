@@ -56,9 +56,9 @@ const minute = 60000
                 cy.get('[placeholder="Filter by Status"]').click()
                    cy.contains("Down Payment Paid").click
                 cy.contains("2010 Honda Pilot Touring").should("exist")
-            /// down payment paid to shipped    
+            /// down payment paid to Conform Order    
                 cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
-                cy.contains("Shipped").click()
+                cy.contains("Confirm Order").click()
                 cy.contains("Status Updated Successfully").should("exist")
             //// shipped to delivered
                 cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()

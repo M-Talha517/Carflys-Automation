@@ -40,21 +40,22 @@ export const admin_addExpense_ValidData=()=>{
 //Expense Type
     cy.get('[placeholder="Enter Expense Type"]').click()
       cy.contains("Rent/Lease Payment").click()
+      cy.wait(2000)
 // select vehicle
       cy.get('[placeholder="Select Vehicle"]').click()
-      cy.contains("2020 Ford Explorer XLT").click()
+      cy.contains("2011 Honda CR-V SE").click()
 // Reference Date
     cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
 // Expense Amount
     cy.get('[placeholder="Enter Expense Amount"]').clear().type("39000")
 // Expense Details
-    cy.get('[placeholder="Enter Expense Details"]').type("Vehicle Purchase: 1FMSK8DH1LGC97871 - 2020 Ford Explorer XLT")
+    cy.get('[placeholder="Enter Expense Details"]').type("Vehicle Purchase: 5J6RE3H43BL058780 - 2020 Ford Explorer XLT")
 // add Expense button
     cy.get('[type="submit"]').click()
     cy.wait(10* second)
                   /////////// View Expense //////////////
     cy.contains("11.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
 }
 export const admin_addExpense_ResetButton=()=>{
     cy.contains("11. Accounting").click()
@@ -69,13 +70,13 @@ export const admin_addExpense_ResetButton=()=>{
     cy.contains("Rent/Lease Payment").click()
 // select vehicle
      cy.get('[placeholder="Select Vehicle"]').click()
-       cy.contains("2020 Ford Explorer XLT").click()
+       cy.contains("2011 Honda CR-V SE").click()
     // Reference Date
     cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
     // Expense Amount
     cy.get('[placeholder="Enter Expense Amount"]').clear().type("39000")
     // Expense Details
-    cy.get('[placeholder="Enter Expense Details"]').type("Vehicle Purchase: 1FMSK8DH1LGC97871 - 2020 Ford Explorer XLT")
+    cy.get('[placeholder="Enter Expense Details"]').type("Vehicle Purchase: 5J6RE3H43BL058780 - 2011 Honda CR-V SE")
     // add Expense button
     cy.get("button").contains("Reset").click()
     
@@ -115,16 +116,16 @@ export const admin_ViewExpense_Search_ExpenseType=()=>{
 export const admin_ViewExpense_View_IconButton= ()=>{
     cy.contains("11. Accounting").click()
     cy.contains("11.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-    cy.contains("1FMSK8DH1LGC97871").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
     cy.contains("View expense").should("exist")      
    }
 export const admin_ViewExpense_View_ModalCloseButton= ()=>{
     cy.contains("11. Accounting").click()
     cy.contains("11.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-    cy.contains("1FMSK8DH1LGC97871").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
     cy.contains("View expense").should("exist") 
     cy.get("button").contains("Close").click()     
@@ -132,8 +133,8 @@ export const admin_ViewExpense_View_ModalCloseButton= ()=>{
    export const admin_ViewExpense_Edit_IconButton= ()=>{
     cy.contains("11. Accounting").click()
     cy.contains("11.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-    cy.contains("1FMSK8DH1LGC97871").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-pencil").click()
     cy.contains("Update Expense").should("exist")
    }
@@ -151,8 +152,8 @@ export const admin_ViewExpense_View_ModalCloseButton= ()=>{
    export const admin_ViewExpense_Delete_IconButton= ()=>{
     cy.contains("11. Accounting").click()
     cy.contains("11.4 View Expense").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8DH1LGC97871")
-    cy.contains("1FMSK8DH1LGC97871").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-trash").click()
     cy.contains("Delete Expense").should("exist") 
     cy.get("button").contains("Delete").click()  

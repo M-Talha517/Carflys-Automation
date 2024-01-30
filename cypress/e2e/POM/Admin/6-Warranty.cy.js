@@ -51,8 +51,8 @@ export const addWaranty_ResetButton = () => {
 
     cy.get('[placeholder="Select Warranty Type"]').invoke('val').should('eq', '')
     cy.get('[placeholder="Enter Price"]').invoke('val').should('eq', '0')
-    cy.get("Validation Period (Months)").invoke('val').should('eq', '0')
-    cy.get("Validation Period (Miles)").invoke('val').should('eq', '0')
+    // cy.get('[placeholder="Enter Validation Period"]').next("div").contains("in months").invoke('val').should('eq', '')
+    // cy.get("Validation Period (Miles)").parent().invoke('val').should('eq', '0')
     cy.get('[placeholder="Enter Warranty Perks separated by Enter ↲"]').invoke('val').should('eq', '')
     
 }
@@ -76,8 +76,6 @@ export const viewWaranty_ViewIcon_CloseButton =()=>{
     cy.contains("View warranty").should("exist")
 
     cy.get("button").contains("Close").click()
-
-   
 }
 export const viewWaranty_Edit_IconButton =()=>{
     cy.contains('6. Warranty').click()

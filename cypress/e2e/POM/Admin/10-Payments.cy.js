@@ -11,6 +11,7 @@ export const Admin_Search_Payment_VinNo =() =>{
     // Filters
          cy.get('[placeholder="Filter by Status"]').click()
             cy.contains("Success").click()
+            cy.wait(4000)
             cy.contains("5FNYF6H22MB016055").should("exist")
 
 }

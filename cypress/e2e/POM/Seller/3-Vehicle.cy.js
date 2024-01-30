@@ -15,17 +15,19 @@ cy.contains("3. Vehicles").click()
     /////////// Add Vehicel Form ///////
 
     // VIN
-    cy.get('[placeholder="Enter VIN"]').type("1C4HJXEG9MW851795", { force: true })
+    cy.get('[placeholder="Enter VIN"]').type("5J6RE3H43BL058780", { force: true })
 
     cy.get('.mantine-1swk166').click()  
     cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
-    cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
-    cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
-    cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
+    cy.get("button").contains("Get Valuation And Data").click()
+    cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("10500")
+    cy.get('[placeholder="Enter Cost Price"]').clear().type('8000')
+    //cy.get('[placeholder="Enter Mileage"]').clear().type('19,400')
     cy.contains("Next step").click()
 
             ////////// Vehicle Description //////////
-    cy.get('[class="ProseMirror"]').clear().type("This used car is a reliable and well-maintained vehicle that has been carefully inspected and serviced to ensure its optimal performance.")    
+    cy.get(".mantine-RichTextEditor-content").find("p").invoke("text", "abc") 
+   //// cy.get('[class="ProseMirror"]').clear().type("This used car is a reliable and well-maintained vehicle that has been carefully inspected and serviced to ensure its optimal performance.")    
     cy.contains("Next step").click()
     cy.get(".mantine-1hss7nx").contains("Select images of vehicle (PNG, JPG, JPEG)").attachFile(['jeep1.jpeg','jeep2.jpeg'],{ subjectType: 'drag-n-drop'})
     cy.contains("Submit").click()
@@ -35,19 +37,19 @@ cy.contains("3. Vehicles").click()
                                  ////// View Vehicle /////////
 
     cy.contains("3.2 View Vehicles").click()
-    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
     cy.get('[placeholder="Filter by Status"]').click()   
          cy.contains("Active").click()
     cy.get('[placeholder="Filter by Phase"]').click()
          cy.contains("Available").click()
-         cy.contains("1C4HJXEG9MW851795").should("exist")
+         cy.contains("5J6RE3H43BL058780").should("exist")
  }
  export const addvehicle1 = () => {
  cy.contains("Login").click()  
 cy.contains("3. Vehicles").click()   
     cy.contains("3.1 Add Vehicles").click()
     // VIN
-    cy.get('[placeholder="Enter VIN"]').type("1C4HJXEG9MW851795", { force: true })
+    cy.get('[placeholder="Enter VIN"]').type("5J6RE3H43BL058780", { force: true })
     // Decode VIN Button
     cy.get('.mantine-1swk166').click()
     cy.contains("The provided VIN already exists.").should("exist")
@@ -61,7 +63,7 @@ cy.contains("3. Vehicles").click()
        cy.contains("Please Enter a Title of 3 or more length").should("exist")
        cy.contains("Please Enter a minimum price of $1").should("exist")
        cy.contains("Please Enter a minimum cost price of $1").should("exist")       
-       cy.contains("Please Enter a valid mileage between 1 and 999,999").should("exist")
+       cy.contains("Please Enter a valid mileage between 1 and 250,000").should("exist")
        cy.contains("Please Enter Make").should("exist")
        cy.contains("Please Enter Model").should("exist")
     }
@@ -136,12 +138,12 @@ export const Search_Valid_VinNO =()=>{
     cy.contains("3. Vehicles").click()
     cy.contains("3.2 View Vehicles").click()
     
-        cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
+        cy.get('[placeholder="Search"]').type("5FNRL38699B054484")
         cy.get('[placeholder="Filter by Status"]').click()   
              cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
              cy.contains("Available").click()
-        cy.contains("1C4HJXEG9MW851795").should("exist")
+        cy.contains("5FNRL38699B054484").should("exist")
 
 }
 export const Search_InValid_VinNO =()=>{
@@ -161,7 +163,7 @@ export const Search_ClearfilterButton =()=>{
     cy.contains("3. Vehicles").click()
     cy.contains("3.2 View Vehicles").click()
     
-        cy.get('[placeholder="Search"]').type("1C5HJXEG6MW851795")
+        cy.get('[placeholder="Search"]').type("5FNRL38699B054484")
         cy.get('[placeholder="Filter by Status"]').click()   
              cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
@@ -172,7 +174,7 @@ export const viewVehicle_View_IconButton= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("3. Vehicles").click()
     cy.contains("3.2 View Vehicles").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+    cy.get('[placeholder="Search"]').type("5FNRL38699B054484")
         // cy.get('[placeholder="Filter by Status"]').click()   
         //      cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
@@ -188,7 +190,7 @@ export const viewVehicle_Edit_IconButton= () => {
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully')
     cy.contains("3. Vehicles").click()
     cy.contains("3.2 View Vehicles").click()
-    cy.get('[placeholder="Search"]').type("1FMSK8FH8NGB68090")
+    cy.get('[placeholder="Search"]').type("5FNRL38699B054484")
         //cy.get('[placeholder="Filter by Status"]').click()   
           //   cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
@@ -270,12 +272,12 @@ export const Seller_Vehicle_StatusChanges_Active =()=>{
     cy.contains("3. Vehicles").click()
     cy.contains("3.2 View Vehicles").click()
     
-        cy.get('[placeholder="Search"]').type("1C6RRFFG9RN120861")
+        cy.get('[placeholder="Search"]').type("5FNRL38699B054484")
         cy.get('[placeholder="Filter by Status"]').click()   
              cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
              cy.contains("Available").click()
-             cy.contains("1C6RRFFG9RN120861").should("exist")
+             cy.contains("5FNRL38699B054484").should("exist")
         cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
         cy.contains("Block").click()
         cy.contains("Status Updated Successfully").should("exist")
@@ -286,12 +288,12 @@ export const Seller_Vehicle_StatusChanges_Block=()=>{
     cy.contains("3. Vehicles").click()
     cy.contains("3.2 View Vehicles").click()
     
-        cy.get('[placeholder="Search"]').type("1C6RRFFG9RN120861")
+        cy.get('[placeholder="Search"]').type("5FNRL38699B054484")
         cy.get('[placeholder="Filter by Status"]').click()   
              cy.contains("Active").click()
         cy.get('[placeholder="Filter by Phase"]').click()
              cy.contains("Available").click()
-             cy.contains("1C6RRFFG9RN120861").should("exist")
+             cy.contains("5FNRL38699B054484").should("exist")
         cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
         cy.contains("Unblock").click()
         cy.contains("Status Updated Successfully").should("exist")

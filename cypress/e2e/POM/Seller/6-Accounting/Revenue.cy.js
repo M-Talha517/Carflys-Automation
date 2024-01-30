@@ -36,24 +36,24 @@ export const addRevenue_Valid_Data= ()=>{
        cy.contains("2021 Jeep Wrangler Unlimited Sahara").click()
     
     // Reference type
-    cy.get('[placeholder="Enter Reference"]').type("Full Payment for 1C4HJXEG9MW851795")        /// 1C4HJXDN7NW246787
+    cy.get('[placeholder="Enter Reference"]').type("Full Payment for 5J6RE3H43BL058780")        /// 1C4HJXDN7NW246787
     // Reference Email 
     cy.get('[placeholder="Enter Reference Email"]').type("gmd@gmail.com")
     // Reference Details 
-    cy.get('[placeholder="Enter Reference Details"]').type("Full Payment for 1C4HJXEG9MW851795 in Vehicle Order")
+    cy.get('[placeholder="Enter Reference Details"]').type("Full Payment for 5J6RE3H43BL058780 in Vehicle Order")
     // Reference Date
     cy.get('[placeholder="Pick Reference Date"]').type("December 1, 2023")
     // Revenue Amount 
     cy.get('[placeholder="Enter Revenue Amount"]').type("35000")
     // Revenue Details 
-    cy.get('[placeholder="Enter Revenue Details"]').type("Full Payment for 1C4HJXEG9MW851795")
+    cy.get('[placeholder="Enter Revenue Details"]').type("Full Payment for 5J6RE3H43BL058780")
     // Add Revenue Button
     cy.get('[type="submit"]').click()
     cy.wait(10* second)
     /////////////////  View Revenue //////////////
     cy.contains("6.2 View Revenue").click()
-    cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-    cy.contains("1C4HJXEG9MW851795").should("exist")
+    cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+    cy.contains("5J6RE3H43BL058780").should("exist")
    }
    export const addRevenue_ResetButton= ()=>{
       cy.contains("6. Accounting").click()
@@ -112,8 +112,8 @@ export const ViewRevenue_Edit_IconButton= ()=>{
 export const ViewRevenue_Delete_IconButton= ()=>{
       cy.contains("6. Accounting").click()
       cy.contains("6.2 View Revenue").click()
-      cy.get('[placeholder="Search"]').type("1C4HJXEG9MW851795")
-      cy.contains("1C4HJXEG9MW851795").should("exist")
+      cy.get('[placeholder="Search"]').type("5J6RE3H43BL058780")
+      cy.contains("5J6RE3H43BL058780").should("exist")
       cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-trash").click()
       cy.contains("Delete Revenue").should("exist") 
       cy.get("button").contains("Delete").click()   
