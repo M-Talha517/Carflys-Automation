@@ -3,8 +3,6 @@ const millisecond = 1
 const second = 1000
 const minute = 60000
 
-
-
 export const Search_Review_FirstName  =() => {
     cy.contains("8. Reviews").click()
 //search field
