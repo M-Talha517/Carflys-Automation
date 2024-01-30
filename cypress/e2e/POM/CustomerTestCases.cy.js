@@ -11,52 +11,52 @@ describe("Customer Side",()=>{
     beforeEach(()=>{
         cy.viewport(1305, 790)
     })
-//     describe("2-Orders",()=>{
-//         describe("2.2-filters", ()=>{
-//             it("2.2-Filters by status Check functionality(TTP)",()=>{
-//                 cy.visit('/dashboard/stats-details')
-//                 cy.contains("Login").click()
-//                 customer_login()
-//                 customer_order_Filter_BY_Status()
-//             })
-//         })
-//         describe("2.3-Search",()=>{
-//             it("2.3.1-Search by Valid VIN(TTP)",()=>{
-//                 cy.visit('/dashboard/stats-details')
-//                 cy.contains("Login").click()
-//                 customer_login()
-//                 customer_Search_Order_VinNO()
-//             })
-//             it("2.3.2-Search by Vehicle Name(TTP)",()=>{
-//                 cy.visit('/dashboard/stats-details')
-//                 cy.contains("Login").click()
-//                 customer_login()
-//                 customer_Search_Order_VehicleName()
-//             })
-//             it("2.4-Clear filter button",()=>{
-//                cy.visit('/dashboard/stats-details')
-//                 cy.contains("Login").click()
-//                 customer_login()
-//                  customer_Order_ClearFilterButton()
+    describe("2-Orders",()=>{
+        describe("2.2-filters", ()=>{
+            it("2.2-Filters by status Check functionality(TTP)",()=>{
+                cy.visit('/dashboard/stats-details')
+                cy.contains("Login").click()
+                customer_login()
+                customer_order_Filter_BY_Status()
+            })
+        })
+        describe("2.3-Search",()=>{
+            it("2.3.1-Search by Valid VIN(TTP)",()=>{
+                cy.visit('/dashboard/stats-details')
+                cy.contains("Login").click()
+                customer_login()
+                customer_Search_Order_VinNO()
+            })
+            it("2.3.2-Search by Vehicle Name(TTP)",()=>{
+                cy.visit('/dashboard/stats-details')
+                cy.contains("Login").click()
+                customer_login()
+                customer_Search_Order_VehicleName()
+            })
+            it("2.4-Clear filter button",()=>{
+               cy.visit('/dashboard/stats-details')
+                cy.contains("Login").click()
+                customer_login()
+                 customer_Order_ClearFilterButton()
 
-//             })
-//         })
-//         describe("2.5-table list view",()=>{
-//            it("2.5.1-View Icon functionality check(TTP)",()=>{
-//             cy.visit('/dashboard/stats-details')
-//             cy.contains("Login").click()
-//             customer_login()
-//             customer_order_View_IconButton()
-//            })
-//            it("2.5.1.2-Close Button On View Modal Funtcionlity check(TTP)",()=>{
-//             cy.visit('/dashboard/stats-details')
-//             cy.contains("Login").click()
-//             customer_login()
-//             customer_order_View_ModalCloseButton()
-//            })
-//         })
+            })
+        })
+        describe("2.5-table list view",()=>{
+           it("2.5.1-View Icon functionality check(TTP)",()=>{
+            cy.visit('/dashboard/stats-details')
+            cy.contains("Login").click()
+            customer_login()
+            customer_order_View_IconButton()
+           })
+           it("2.5.1.2-Close Button On View Modal Funtcionlity check(TTP)",()=>{
+            cy.visit('/dashboard/stats-details')
+            cy.contains("Login").click()
+            customer_login()
+            customer_order_View_ModalCloseButton()
+           })
+        })
       
-//  })
+ })
   describe("3.Complaints",()=>{
       describe("3.1-Add Complaints",()=>{
       it("3.1.1-Add Complaint with no data(TTF)",()=>{
