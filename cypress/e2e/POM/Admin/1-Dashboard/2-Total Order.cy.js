@@ -8,6 +8,7 @@ const minute = 60000
 export const TotalOrder_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
 
     let totalorder;
@@ -136,6 +137,7 @@ export const TotalOrder_Button = () => {
 export const stats_pending_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -157,6 +159,7 @@ export const stats_pending_order = () => {
 export const stats_DownPaymentPaid_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
     cy.wait(4000)
@@ -178,6 +181,7 @@ export const stats_DownPaymentPaid_order = () => {
 export const stats_DirectPaymentPaid_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -199,6 +203,7 @@ export const stats_DirectPaymentPaid_order = () => {
 export const stats_Shipped_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -219,6 +224,7 @@ export const stats_Shipped_order = () => {
 export const stats_Delivered_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
     cy.wait(4000)
@@ -239,6 +245,7 @@ export const stats_Delivered_order = () => {
 export const stats_Completed_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -260,6 +267,7 @@ export const stats_Completed_order = () => {
 export const stats_ReviewedandCompleted_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -281,6 +289,7 @@ export const stats_ReviewedandCompleted_order = () => {
 export const stats_Processing_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -302,6 +311,7 @@ export const stats_Processing_order = () => {
 export const stats_Cancelled_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -323,6 +333,7 @@ export const stats_Cancelled_order = () => {
 export const stats_BasicInfoProvided_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -344,6 +355,7 @@ cy.wait(6000)
 export const stats_FinanceOptionsProvided_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -365,6 +377,7 @@ cy.wait(6000)
 export const stats_CreditApplicationProvided_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -386,6 +399,7 @@ export const stats_CreditApplicationProvided_order = () => {
 export const stats_DeliveryOptionsProvided_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -406,6 +420,7 @@ export const stats_DeliveryOptionsProvided_order = () => {
 export const stats_WarrantyOptionsProvided_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -428,6 +443,7 @@ export const stats_WarrantyOptionsProvided_order = () => {
 export const stats_ServicesProvided_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -450,6 +466,7 @@ export const stats_ServicesProvided_order = () => {
 export const stats_AwaitingOffer_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -472,6 +489,7 @@ export const stats_AwaitingOffer_order = () => {
 export const stats_AcceptedOffer_order = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
 
@@ -494,6 +512,7 @@ export const stats_AcceptedOffer_order = () => {
 export const stats_StipulationProvided = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/order`).as('Orders found Successfully');
     cy.contains("Total Orders").parent().parent().parent().click();
     cy.wait(30000)

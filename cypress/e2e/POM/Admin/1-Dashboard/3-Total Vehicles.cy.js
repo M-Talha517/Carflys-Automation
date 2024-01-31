@@ -9,6 +9,7 @@ const minute = 60000
 export const TotalVehicle_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicle found Successfully');
 
     let totalvehicle;
@@ -48,6 +49,7 @@ export const TotalVehicle_Button = () => {
 export const stats_Active_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -69,6 +71,7 @@ export const stats_Active_vehicle = () => {
 export const stats_Blocked_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -90,6 +93,7 @@ export const stats_Blocked_vehicle = () => {
 export const stats_InDeal_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -111,6 +115,7 @@ export const stats_InDeal_vehicle = () => {
 export const stats_Sold_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -133,6 +138,7 @@ export const stats_Sold_vehicle = () => {
 export const stats_Available_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -154,6 +160,7 @@ export const stats_Available_vehicle = () => {
 export const stats_InTransit_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -174,6 +181,7 @@ export const stats_InTransit_vehicle = () => {
 export const stats_Delivered_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 
@@ -195,6 +203,7 @@ export const stats_Delivered_vehicle = () => {
 export const stats_ReceivedByCustomer_vehicle = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/vehicle`).as('Vehicles found Successfully');
     cy.contains("Total Vehicles").parent().parent().parent().click();
 

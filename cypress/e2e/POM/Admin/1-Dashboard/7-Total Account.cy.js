@@ -9,6 +9,7 @@ const minute = 60000
 export const TotalAccount_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/expense`).as('Accounts found Successfully');
 
     let totalaccount;
@@ -41,6 +42,7 @@ export const TotalAccount_Button = () => {
 export const stats_Expenses_Count = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/expense`).as('Accounts found Successfully');
     cy.contains("Total Accounts").parent().parent().parent().click();
 
@@ -64,6 +66,7 @@ export const stats_Expenses_Count = () => {
 export const stats_Revenue_Count = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/expense`).as('Accounts found Successfully');
     cy.contains("Total Accounts").parent().parent().parent().click();
 
@@ -90,7 +93,7 @@ export const stats_TotalExpense_Ammount = () => {
     let isNextPageEnabled = true;
   
     cy.contains("1. Dashboard").click();
-  
+    cy.wait(3000)
     cy.contains("Total Accounts").parent().parent().parent().click();
   
     // Get total expenses
@@ -142,7 +145,7 @@ export const stats_TotalExpense_Ammount = () => {
     let isNextPageEnabled = true;
   
     cy.contains("1. Dashboard").click();
-  
+    cy.wait(3000)
     cy.contains("Total Accounts").parent().parent().parent().click();
   
     // Get total revenue before switching to the "Revenues" tab
@@ -185,7 +188,7 @@ export const stats_TotalExpense_Ammount = () => {
   export const stats_TotalProfit = () => {
 
     cy.contains("1. Dashboard").click()
-
+    cy.wait(3000)
     cy.contains("Total Accounts").parent().parent().parent().click();
     let totalprofit;
     

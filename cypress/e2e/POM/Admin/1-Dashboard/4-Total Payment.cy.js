@@ -9,6 +9,7 @@ const minute = 60000
 export const TotalPayments_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/payment`).as('Payment found Successfully');
 
     let totalpayment;
@@ -68,7 +69,7 @@ export const stats_Pending_payment = () => {
     let isNextPageEnabled = true;
 
     cy.contains("1. Dashboard").click();
-
+    cy.wait(3000)
     cy.contains("Total Payment").parent().parent().parent().click();
 
     cy.get('[placeholder="Filter by Status"]').click()
@@ -112,7 +113,7 @@ export const stats_Successful_payment = () => {
     let isNextPageEnabled = true;
 
     cy.contains("1. Dashboard").click();
-
+    cy.wait(3000)
     cy.contains("Total Payment").parent().parent().parent().click();
 
     cy.get('[placeholder="Filter by Status"]').click()
@@ -158,7 +159,7 @@ export const stats_Refunded_payment = () => {
     let isNextPageEnabled = true;
 
     cy.contains("1. Dashboard").click();
-
+    cy.wait(3000)
     cy.contains("Total Payment").parent().parent().parent().click();
 
     cy.get('[placeholder="Filter by Status"]').click()
@@ -203,7 +204,7 @@ export const stats_Cancelled_payment = () => {
     let isNextPageEnabled = true;
 
     cy.contains("1. Dashboard").click();
-
+    cy.wait(3000)
     cy.contains("Total Payment").parent().parent().parent().click();
 
     cy.get('[placeholder="Filter by Status"]').click()

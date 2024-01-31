@@ -9,6 +9,7 @@ const minute = 60000
 export const TotalReviews_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/review`).as('Reviews found Successfully');
 
     let totalreview;
@@ -41,6 +42,7 @@ export const TotalReviews_Button = () => {
 export const stats_PositiveReviews = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/review`).as('Reviews found Successfully');
     cy.contains("Total Reviews").parent().parent().parent().click();
 
@@ -48,10 +50,10 @@ export const stats_PositiveReviews = () => {
 
         const positivereview  = parseInt(text);
 
-    ///filters by status
+    //filters by status
 
-        // cy.get('[placeholder="Filter by User Type"]').click()
-        // cy.get(".mantine-Select-dropdown").contains("Positive Reviews").click()
+        cy.get('[placeholder="Filter by User Type"]').click()
+        cy.get(".mantine-Select-dropdown").contains("Positive Reviews").click()
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);
@@ -65,6 +67,7 @@ export const stats_PositiveReviews = () => {
 export const stats_NegativeReviews = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/review`).as('Reviews found Successfully');
     cy.contains("Total Reviews").parent().parent().parent().click();
 
@@ -73,8 +76,8 @@ export const stats_NegativeReviews = () => {
         const negativereview  = parseInt(text);
 
     ///filters by status
-        // cy.get('[placeholder="Filter by User Type"]').click()
-        // cy.get(".mantine-Select-dropdown").contains("Negative Reviews").click()
+        cy.get('[placeholder="Filter by User Type"]').click()
+        cy.get(".mantine-Select-dropdown").contains("Negative Reviews").click()
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
             const totalRecords = parseInt(text.split(" ")[2]);

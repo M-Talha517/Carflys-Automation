@@ -9,6 +9,7 @@ const minute = 60000
 export const TotalComplaints_Button = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/complaint`).as('Complaint found Successfully');
 
     let totalcomplaint;
@@ -43,6 +44,7 @@ export const TotalComplaints_Button = () => {
 export const stats_repliedcomplaints = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/complaint`).as('Complaint found Successfully');
     cy.contains("Total Complaints").parent().parent().parent().click();
 
@@ -67,6 +69,7 @@ export const stats_repliedcomplaints = () => {
 export const stats_Not_repliedcomplaints = () => {
 
     cy.contains("1. Dashboard").click()
+    cy.wait(3000)
     cy.intercept('GET', `${backendURL}/complaint`).as('Complaint found Successfully');
     cy.contains("Total Complaints").parent().parent().parent().click();
 

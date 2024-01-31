@@ -74,7 +74,7 @@ describe("Admin", ()=>{
      })
      describe("1.2-Total Orders",()=>{
        describe("1.2.1-Verifying Total Orders(TTP)",()=>{
-          it("1.1.1.2-Verifying Stats of Orders(TTP)",()=>{
+          it.only("1.1.1.2-Verifying Stats of Orders(TTP)",()=>{
               cy.visit('/dashboard/stats-details')
               cy.contains("Login").click()
              Admin_login()
