@@ -21,26 +21,27 @@ export const Admin_AddVehicle_Nodata = () => {
    
     export const Admin_AddVehicle_ValidData = () => {
 
-        cy.contains("Login").click()  
+        cy.contains("Login").click()
        
        cy.contains("4. Vehicles").click()
            cy.contains("4.1 Add Vehicles").click()
-       
+
            /////////// Add Vehicel Form ///////
-       
            // VIN
            cy.get('[placeholder="Select Dealership"]').click()
            cy.wait(3000)
-              cy.contains("Super Car Wheel").click()
+              cy.contains("Super Wheel").click()
 
 
            cy.get('[placeholder="Enter VIN"]').type("5J6RE3H43BL058780", { force: true })
            cy.get('.mantine-1swk166').click()
-           cy.get('[placeholder="Enter Mileage"]').invoke("text", "19400") 
+          // cy.get(".mantine-Modal-content ").get(".mantine-TextInput-wrapper").contains("Vehicle Mileage").find('[placeholder="Enter Mileage"]').type("20000")
+           //cy.contains("Vehicle Mileage").get('[placeholder="Enter Mileage"]').invoke("text", "0").type(19400) 
+           cy.contains("Vehicle Mileage").get('[placeholder="Enter Mileage"]').parent().find('["type=number"]').type(4000)
            cy.get("button").contains("Get Valuation And Data").click()
 
-           cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("45500")
-           cy.get('[placeholder="Enter Cost Price"]').clear().type('39000')
+           cy.contains("Retail Price").parent().parent().find("input[type=number]").clear().type("20000")
+           cy.get('[placeholder="Enter Cost Price"]').clear().type('18000')
           // cy.get('[placeholder="Enter Mileage"]').clear().type('19400')
            cy.get('[placeholder="Enter State Location"]').click()
              cy.contains("Alabama").click()

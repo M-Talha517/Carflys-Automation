@@ -8,11 +8,11 @@ export const Admin_order_View_IconButton =() => {
 
     cy.contains("8. Orders").click()
 //search field
-   cy.get('[placeholder="Search"]').type("5FNYF6H22MB016055")
+   cy.get('[placeholder="Search"]').type("1GCHSAEA5F1258876")
    cy.wait(3000)
 //filters
     cy.get('[placeholder="Filter by Status"]').click()
-       cy.contains("Down Payment Paid").click()
+       cy.contains("Cancelled").click()
     cy.wait(2000)
     cy.get(".rdt_TableBody").find("div").first().find(".icon-tabler-eye").click()
     cy.contains("View Order").should("exist")

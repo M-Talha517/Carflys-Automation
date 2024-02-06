@@ -8,7 +8,7 @@ const first_name = faker.name.firstName()                    // "Abdul"
 const last_name =  faker.name.lastName()                     //"Aziz"
 const user_type = "Seller"
 ///// Login Data ////
-const customer_email ="customer001@gmail.com"
+const customer_email ="customer@gmail.com"
 const employee_email ="Shah@gmail.com"
 const Admin_email= "admin@gmail.com"
 const user_email = "gmd@gmail.com"
@@ -22,20 +22,20 @@ const x= user_email
  export const signup = () => {
     cy.contains("Login").click()
     cy.contains("Register Here").click()
-    cy.get('[placeholder="User Type"]').type(user_type, { force: true })
+    cy.get('[placeholder="Select User Type *"]').type(user_type, { force: true })
     cy.contains(user_type).click()
-    cy.get('[placeholder="Enter First Name"]').type(first_name)
-    cy.get('[placeholder="Enter Last Name"]').type(last_name)
-    cy.get('[placeholder="Enter Cell Number"]').type("+1(372)-873-8728")
+    cy.get('[placeholder="Enter First Name *"]').type(first_name)
+    cy.get('[placeholder="Enter Last Name *"]').type(last_name)
+    cy.get('[placeholder="Enter Cell Number *"]').type("+1(372)-873-8728")
     // cy.get('[placeholder="Enter Email"]').as('email')
     // cy.wait('@email')
-    cy.get('[placeholder="Enter Email"]').type(sign_up_email)
-    cy.get('[placeholder="Enter Password"]').type("Carflys@123")
+    cy.get('[placeholder="Enter Email *"]').type("sebedic363@bitofee.com")  ///jawom70509@bitofee.com
+    cy.get('[placeholder="Enter Password *"]').type("Carflys@123")
     cy.wait(5* second)
-    cy.get('[placeholder="Confirm Password"]').type("Carflys@123")
+    cy.get('[placeholder="Confirm Password *"]').type("Carflys@123")
     cy.wait(5* second)
     cy.contains('Sign up').click()
-
+    
 }
                                       ///// forget //////
 export const forget= () =>{
@@ -45,12 +45,13 @@ export const forget= () =>{
 }
                                            ///// login /////
 export const login = () => {
-   cy.wait(10* second)
+   cy.wait(5* second)
 // Email
-    cy.get('[placeholder="Enter Email"]').type(sign_up_email)   
+    cy.get('[placeholder="Enter Email"]').type("sebedic363@bitofee.com")    ////jawom70509@bitofee.com
 // Password
     cy.get('[placeholder="Enter Password"]').type(user_password)
     cy.get('[type="submit"]').click()
+    
  }
 
  export const login2 = () => {

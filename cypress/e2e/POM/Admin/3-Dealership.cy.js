@@ -243,20 +243,23 @@ cy.contains("testsell").should("exist")
 cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
 cy.contains("Block").click()
 }
-// export const Viewdealership_AdminApproval =() =>{
-//     cy.contains("3. View Dealerships").click()
-// // search field
-//     cy.get('[placeholder="Search"]').type("testsell")
-// // Filters Dealer Type
-//     cy.get('[placeholder="Filter by Dealer Type"]').click()
-//        cy.contains("Whole Seller")
-// // // Filters By Dealer Status
-// //    cy.get('[placeholder="Filter by Status"]').click()
-// //       cy.contains("Active").click()
-// cy.contains("testsell").should("exist")
-// cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
-// cy.contains("Approve").click()
-// }
+
+
+export const Viewdealership_AdminApproval =() =>{
+    cy.contains("3. View Dealerships").click()
+// search field
+    cy.get('[placeholder="Search"]').type("Royal Motor")
+// Filters Dealer Type
+    cy.get('[placeholder="Filter by Dealer Type"]').click()
+       cy.contains("Whole Seller")
+// // Filters By Dealer Status
+//    cy.get('[placeholder="Filter by Status"]').click()
+//       cy.contains("Active").click()
+cy.contains("Royal Motor").should("exist")
+cy.get(".rdt_TableBody").find("div").first().find('[aria-haspopup="menu"]').click()
+cy.contains("Activate").click()
+
+}
 
 
 

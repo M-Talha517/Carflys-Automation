@@ -52,7 +52,7 @@ export const stats_PositiveReviews = () => {
 
     //filters by status
 
-        cy.get('[placeholder="Filter by User Type"]').click()
+        cy.get('[placeholder="Filter by Type"]').click()
         cy.get(".mantine-Select-dropdown").contains("Positive Reviews").click()
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {
@@ -76,7 +76,7 @@ export const stats_NegativeReviews = () => {
         const negativereview  = parseInt(text);
 
     ///filters by status
-        cy.get('[placeholder="Filter by User Type"]').click()
+        cy.get('[placeholder="Filter by Type"]').click()
         cy.get(".mantine-Select-dropdown").contains("Negative Reviews").click()
 
         cy.get(".rdt_Pagination").contains("of", { matchCase: true }).invoke("text").then((text) => {

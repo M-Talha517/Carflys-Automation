@@ -34,7 +34,7 @@ export const Admin_Profile_Update_ValidData = () => {
     cy.get('[placeholder="Enter Last Name"]').clear().type("Admin")
     cy.get('[placeholder="Enter Cell Number"]').clear().type("+1(444)-444-4444")
     cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').clear().type("10001")
-    cy.get('[placeholder="Select State Location"]').invoke('val').should('eq', 'New York')
+    cy.get('[placeholder="Enter State/Location"]').invoke('val').should('eq', 'New York')
     //cy.get(".mantine-1avyp1d").contains("Drag and drop a file").attachFile('usama.jpg', { subjectType: 'drag-n-drop' })
     cy.contains("Profile Information").parent().find("button").contains("Update").click()
     cy.contains("Profile updated successfully").should("exist")
@@ -42,7 +42,7 @@ export const Admin_Profile_Update_ValidData = () => {
 export const Admin_Profile_ValidZip_Code = () => {
     cy.contains("15. Settings").click()
     cy.contains("Profile Information").parent().find('input[placeholder="Enter Zip Code"]').clear().type("10001")
-    cy.get('[placeholder="Select State Location"]').invoke('val').should('eq', 'New York')
+    cy.get('[placeholder="Enter State/Location"]').invoke('val').should('eq', 'New York')
 }
 export const Admin_Profile_InValidZip_Code = () => {
     cy.contains("15. Settings").click()

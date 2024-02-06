@@ -70,6 +70,7 @@ export const addEmployee_ValidData = () => {
     cy.get('[placeholder="Select State Location"]').invoke('val').should('eq', 'New York')
     cy.get(".mantine-1avyp1d").contains("Drag and drop a file").attachFile('usama.jpg', { subjectType: 'drag-n-drop' })
     cy.get('[type="submit"]').click()
+    cy.wait(3000)
     cy.wait("@postUser").its('response.statusCode').should('eq', 201);
     ////////// View Users ///////
     cy.wait(10 * second)
