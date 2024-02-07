@@ -10,8 +10,13 @@ export const Vehicle_order_Finance =()=>{
     cy.get("button").get(".mantine-Burger-root").click()
     cy.contains("Vehicle").click()                                               /// 5FNRL6H72LB034983
 // Search Car                                                                    /// 1G6DA1E32C0152845  //5TDERKEC3MS057113
+<<<<<<< HEAD
     cy.get('[placeholder="Search by make, model"]').type("JN1EV7EL9KM290367")   ///KNDJN2A25F7162188  //5FNRL3H70AB078251
     cy.get(".mantine-fkmmcr").click()   //mantine-1rn52sj      //.mantine-1s4s1c6 
+=======
+    cy.get('[placeholder="Search by make, model"]').type("3N1AB8CV8NY267679")   ///KNDJN2A25F7162188  //5FNRL3H70AB078251
+    cy.get(".mantine-fkmmcr").click()  //.mantine-1s4s1c6
+>>>>>>> bf211123bc3153001a9f5f044a6a31a9f7b8dd77
     cy.wait(3000)
    // cy.contains("Browse Vehicles").parent().find("button").contains("Buy Now").click()
     cy.get(".mantine-p60k53").contains("Buy Now").click()
