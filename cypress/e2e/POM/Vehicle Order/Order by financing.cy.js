@@ -13,7 +13,6 @@ export const Vehicle_order_Finance =()=>{
     cy.get('[placeholder="Search by make, model"]').type("3N1AB8CV8NY267679")   
     cy.get(".mantine-fkmmcr").click()   //mantine-1rn52sj      //.mantine-1s4s1c6 
     cy.wait(3000)
-   // cy.contains("Browse Vehicles").parent().find("button").contains("Buy Now").click()
     cy.get(".mantine-p60k53").contains("Buy Now").click()
    cy.contains('First Name').next("div").find('[type="text"]').clear().type('ANDERSON')
    cy.contains('Middle Name').next("div").find('[type="text"]').clear().type('SR')
@@ -27,6 +26,7 @@ export const Vehicle_order_Finance =()=>{
 //    cy.contains('State').next("div").invoke("California").should('eq', 'California')
 //    cy.contains('City').next("div").invoke("California City").should('eq','California City')
    cy.contains('County').next("div").find('[type="text"]').type('CA')
+
    //cy.contains("Personal Details").parent().find("button").contains("Save and Continue").click()
    cy.get("button").contains("Save and Continue").click()
    cy.wait(2000)
@@ -51,6 +51,15 @@ export const Vehicle_order_Finance =()=>{
     cy.contains('Income Amount').next("div").find('[type="number"]').clear().type('3500')
     cy.contains('Employment Title/Position').next("div").find('[type="text"]').type('test')
     cy.contains('Total Months at Employment/Time Retired').next("div").find('[type="number"]').clear().type('12')
+
+    cy.contains("Driver's license number").next("div").find('[type="number"]').type('we-234554-4545')
+    cy.contains("Driver's license state").next("div").click()
+       cy.contains("Washington").click()
+       cy.contains("Driver's license issue date").next("div").find('[type="number"]').clear().type('January 3, 2022')
+       cy.contains("Driver's license expiration date").next("div").find('[type="number"]').clear().type('January 3, 2026')
+
+
+
 
     cy.contains('Cash Down Payment Amount').next("div").find('[type="number"]').clear().type('1000')
     cy.contains('Term').next("div").find('[type="number"]').clear().type('20')

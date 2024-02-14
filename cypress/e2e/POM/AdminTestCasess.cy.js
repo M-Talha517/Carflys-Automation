@@ -25,8 +25,8 @@ import { addWaranty_BlankFields, addWaranty_ResetButton, addWaranty_ValidData, v
 
 describe("Admin", ()=>{
       beforeEach(()=>{
-       //  cy.visit("https://carflys-testing.vercel.app/")
-       cy.visit("https://carflys-dev.vercel.app/")
+         cy.visit("https://carflys-testing.vercel.app/")
+      // cy.visit("https://carflys-dev.vercel.app/")
          cy.contains("Login").click()
          cy.wait(3000)
        })
@@ -484,11 +484,9 @@ describe("Admin", ()=>{
                //      Admin_login()
                //      Viewdealership_AdminApproval()
                //   })
-               
-
        })
        
-        describe("4-Vehicles", ()=>{
+        describe.only("4-Vehicles", ()=>{
           describe("4.1-Add Vehicle",()=>{
              describe("4.1.1-Stepper", ()=>{
                 describe("4.1.1.1-Step1 (Vehicle Info)", ()=>{
@@ -537,7 +535,6 @@ describe("Admin", ()=>{
                        })
                        describe("4.2.1.1.1.1-Vehicle Notes", ()=>{
                          it("4.2.1.1.1.1.2Add Note",()=>{
-                       
                             Admin_login()
                             Admin_viewVehicle_AddNotes()
                          })
@@ -1073,8 +1070,6 @@ describe("Admin", ()=>{
                     viewcomplaint_Search_Dealership()
                   })
 
-
-
             })
             describe("14.2.3-View Icon In Action(TTP)",()=>{
                 it("14.2.3-View Icon In Action(TTP)",()=>{
@@ -1087,9 +1082,6 @@ describe("Admin", ()=>{
                     Admin_login()
                     viewcomplaint_View_ModalCloseButton()
                 })
-
-
-
             })
             it("14.2.4-Clear Search Button functionality check(TTP)",()=>{
    
@@ -1141,7 +1133,6 @@ describe("Admin", ()=>{
                 admin_Password_didNot_Match()
                })
               it.skip("15.2.3-Update password with Valid data(TTP)", ()=>{
-    
                 Admin_login()
                admin_Password_UpdateValid()
               })

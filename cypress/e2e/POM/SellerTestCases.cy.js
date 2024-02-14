@@ -25,6 +25,13 @@ import { Search_Complaint_FirstName } from "./Seller/9-Complaints.cy"
 //////// Test Cases //////////////
                       //  (TC#3.1.1.1.5-TTP) should add and view Vehicle with valid data
 describe('Seller', function () {
+    beforeEach(()=>{
+        cy.visit("https://carflys-testing.vercel.app/")
+     // cy.visit("https://carflys-dev.vercel.app/")
+        cy.contains("Login").click()
+        cy.wait(3000)
+      })
+ 
   describe("1-Dashboard",()=>{
     describe("1.1-Total Staff",()=>{
         it("1.1.1-Verifying Total Staff Functionality(TTP)",()=>{
@@ -455,7 +462,7 @@ describe('Seller', function () {
           })
         })
     })
-       describe("3-Vhecile", function (){
+       describe.only("3-Vhecile", function (){
         describe("3.1-Add Vehicle",function (){
             describe("3.1.1-Steppers Add Vehicles",function (){
                 describe("3.1.1.1-Vehicle Info Form",function(){

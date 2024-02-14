@@ -11,10 +11,9 @@ describe("Seller", ()=>{
      })
 
      it("Seller SignUp Flow",()=>{
-    //   signup()
-    //   cy.pause()
+      // signup()
+      // cy.pause()
       login()
-
       SellerSignup()
       Admin_login()
       Viewdealership_AdminApproval()

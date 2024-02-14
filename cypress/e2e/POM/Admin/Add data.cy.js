@@ -29,7 +29,7 @@ const x= user_email
     cy.get('[placeholder="Enter Cell Number *"]').type("+1(372)-873-8728")
     // cy.get('[placeholder="Enter Email"]').as('email')
     // cy.wait('@email')
-    cy.get('[placeholder="Enter Email *"]').type("sebedic363@bitofee.com")  ///jawom70509@bitofee.com
+    cy.get('[placeholder="Enter Email *"]').type("dace.rick@dealoaks.com")  ///jawom70509@bitofee.com
     cy.get('[placeholder="Enter Password *"]').type("Carflys@123")
     cy.wait(5* second)
     cy.get('[placeholder="Confirm Password *"]').type("Carflys@123")
@@ -47,7 +47,7 @@ export const forget= () =>{
 export const login = () => {
    cy.wait(5* second)
 // Email
-    cy.get('[placeholder="Enter Email"]').type("sebedic363@bitofee.com")    ////jawom70509@bitofee.com
+    cy.get('[placeholder="Enter Email"]').type("dace.rick@dealoaks.com")    ////jawom70509@bitofee.com
 // Password
     cy.get('[placeholder="Enter Password"]').type(user_password)
     cy.get('[type="submit"]').click()
